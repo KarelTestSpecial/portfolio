@@ -1,44 +1,21 @@
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQzIVbzK4ypdzPzP6piHAXf3LvYTuFqRJ2hixI4GNF75hfSWjeWEOKFUbj6S8JwHiH76azirz2BsHTI/pub?gid=0&single=true&output=tsv';
+const tsvPath = path.join(__dirname, '..', 'projects', 'projects.tsv');
 const outputPath = path.join(__dirname, '..', 'src', 'data', 'projects.json');
 
-const options = {
-  headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-  }
-};
-
-https.get(url, options, (res) => {
-  if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
-    https.get(res.headers.location, options, (redirectRes) => {
-      processResponse(redirectRes);
-    }).on('error', (e) => {
-        console.error(`Got error on redirect: ${e.message}`);
-    });
-    return;
-  }
-  processResponse(res);
-}).on('error', (e) => {
-  console.error(`Got error: ${e.message}`);
-});
-
-function processResponse(res) {
-    let rawData = '';
-    res.setEncoding('utf8');
-    res.on('data', (chunk) => { rawData += chunk; });
-    res.on('end', () => {
-        try {
-            const projects = parseTsv(rawData);
-            const categorizedProjects = categorizeProjects(projects);
-            fs.writeFileSync(outputPath, JSON.stringify(categorizedProjects, null, 2));
-            console.log(`Successfully updated projects.json with ${projects.length} projects.`);
-        } catch (e) {
-            console.error('Error processing data:', e.message);
-        }
-    });
+try {
+    const rawData = fs.readFileSync(tsvPath, 'utf8');
+    const projects = parseTsv(rawData);
+    const categorizedProjects = categorizeProjects(projects);
+    fs.writeFileSync(outputPath, JSON.stringify(categorizedProjects, null, 2));
+    console.log(`Successfully updated projects.json with ${projects.length} projects.`);
+} catch (e) {
+    console.error('Error processing data:', e.message);
+    if (e.code === 'ENOENT') {
+        console.error(`Error: The file was not found at ${tsvPath}`);
+        console.error("Please make sure the file 'projects.tsv' exists in the 'projects' directory.");
+    }
 }
 
 function parseTsv(tsvData) {
