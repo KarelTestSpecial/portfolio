@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
                     <div className="card-body">
                       <h5 className="card-title">{project.name}</h5>
                       <p className="card-text">{project.description}</p>
-                      {project.liveLink && (
+                      {project.liveLink && project.status === 'active' && (
                         <a href={project.liveLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">View Extension</a>
                       )}
                       {project.githubLink && (
@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
                       {project.githubLink && (
                         <a href={project.githubLink} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
                       )}
-                      {project.liveLink && (
+                      {project.liveLink && project.status === 'active' && (
                         <a href={project.liveLink} className="btn btn-primary ms-2" target="_blank" rel="noopener noreferrer">Live Demo</a>
                       )}
                     </div>
@@ -70,7 +70,7 @@ const Projects: React.FC = () => {
                     <div className="card-body">
                       <h5 className="card-title">{website.name}</h5>
                       <p className="card-text">{website.description}</p>
-                      {website.liveLink && (
+                      {website.liveLink && website.status === 'active' && (
                         <a href={website.liveLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Website</a>
                       )}
                       {website.githubLink && (
