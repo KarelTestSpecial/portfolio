@@ -43,7 +43,6 @@ function categorizeProjects(projects) {
         const project = {
             name: p.name,
             description: p.description,
-            link: p.link,
             githubLink: p.githubLink,
             liveLink: p.liveLink,
             status: p.status
