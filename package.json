@@ -28,7 +28,7 @@
     "update-cv": "node scripts/update-cv.js",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d build",
-    "update-and-deploy": "pnpm run update-projects && pnpm run deploy"
+    "update-and-deploy": "pnpm run update-projects && pnpm run build && pnpm run deploy"
   },
   "eslintConfig": {
     "extends": [
