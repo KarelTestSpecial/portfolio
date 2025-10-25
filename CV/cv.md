@@ -2,7 +2,7 @@
 
 # **Karel Decherf**
 
-Hurstweg 9, 9000 Gent | [karel.decherf@gmail.be](mailto:karel.decherf@gmail.be) [linkedin.com/in/karel-decherf-8212a9221](https://www.linkedin.com/in/karel-decherf-8212a9221) | [github.com/KarelTestSpecial](https://github.com/KarelTestSpecial)
+Hurstweg 9, 9000 Gent | [karel.decherf@gmail.be](mailto:karel.decherf@gmail.be) | [linkedin.com/in/karel-decherf-8212a9221](https://www.linkedin.com/in/karel-decherf-8212a9221) | [github.com/KarelTestSpecial](https://github.com/KarelTestSpecial)
 
 ---
 
@@ -52,15 +52,15 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 
 ---
 
-### **Vaardigheden**
+### **IT Skills**
 
-* **AI & Automatisering:** Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity, NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter, CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy  
-* **Programmeertalen & Frameworks:** JavaScript, TypeScript, Python, Java, Rust, Kotlin, PHP, SQL, Perl, RPG, Visual Basic, .Net, ASP.NET Core  
-* **Web & Databases:** React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase, Supabase, PostgreSQL, MySQL  
-* **Software & IDEs:** VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google Workspace, MS Office, Odoo, Notion  
-* **Webdesign:** Figma, Canva, Photoshop, Wordpress, Wix  
-* **Besturingssystemen:** Windows, Linux, ChromeOS  
-* **Netwerkprotocollen:** IIS, WINS, DHCP, DNS
+* **AI Tools & Automation:** Google Jules 2.0, Google Gemini CLI, Google Firebase Studio, Google AI Studio, GitHub SpecKit, GitHub Copilot, OpenAI ChatGPT, Anthropic Claude, Perplexity, Qwen, Manus AI, Genspark, Abacus DeepAgent, Lemon AI, AWS Kiro  
+* **Full-Stack Development:** Java (JSP, Spring Boot, Spring Security (JWT), Spring Data JPA (Hibernate), Maven), JavaScript/TypeScript (Node.js, Express.js, NestJS; React; Vite, Vitest), Python (Django, Flask), PHP (Laravel, FastAPI), Perl, Visual Basic, .NET (ASP.NET Core), IBM RPG, SQL, HTML, CSS, JSON, XML, RESTful API  
+* **DevOps, Cloud & Infrastructure:** PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Google Cloud Platform, Azure  
+* **Testing & QA:** JUnit 5, Mockito, Spring Boot Test (`@SpringBootTest`), Jest, React Testing Library, Cypress, Playwright, Postman  
+* **Development Tools & Software:** VS Code, Cursor, Replit, Microsoft Office, Google Workspace, Odoo, Notion, Bash / PowerShell / Terminal  
+* **Web Design & Graphics:** Figma, Canva, Photoshop, Photopea, WordPress, Wix  
+* **Operating Systems & Networking:** Windows, Linux, ChromeOS, WINS, DHCP, DNS
 
 ---
 
