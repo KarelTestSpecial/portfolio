@@ -6,23 +6,42 @@ This is a personal portfolio website built with React to showcase projects and p
 
 ## How to Update the Website
 
-The website content is managed through a local `projects.tsv` file. To update the site with the latest projects and deploy it, follow these steps.
+The website content is managed through the `projects/projects.tsv` file. The deployment process is now automated.
 
-### 1. Installation (Only needs to be done once)
+### Automated Deployment (Recommended)
+
+The website is automatically updated and deployed whenever changes are made to the `projects/projects.tsv` file on the `main` branch. This is the recommended way to update the project list.
+
+You can trigger the automation in two ways:
+1.  **Edit the file locally**, commit the change, and push it to the `main` branch on GitHub.
+2.  **Edit the `projects/projects.tsv` file directly on GitHub** using its web interface.
+
+Once the changes are pushed or saved on GitHub, a GitHub Actions workflow will automatically run. It will:
+1.  Rebuild the project data from `projects/projects.tsv`.
+2.  Build the production version of the website.
+3.  Deploy the new version to GitHub Pages.
+
+It can take a few minutes for the changes to become visible on the live URL. You can monitor the progress of the deployment in the "Actions" tab of the GitHub repository.
+
+### Manual Local Updates
+
+If you want to test changes locally before deploying, you can still use the manual process.
+
+#### 1. Installation (Only needs to be done once)
 Before you can run any commands, you need to install the project's dependencies.
 ```bash
 pnpm install
 ```
 
-### 2. Update Content
+#### 2. Update Content
 Project management is done by directly editing the `projects/projects.tsv` file.
 
 1.  **Open the file `projects/projects.tsv`** in the root of this project.
 2.  **Add a new row** for a new project, or **edit an existing row** to modify a project. Make sure to maintain the tab-separated structure.
 3.  **Save the file.**
 
-### 3. Update and Deploy
-To publish your changes to the live website, run the following single command in your terminal:
+#### 3. Update and Deploy Manually
+To publish your changes to the live website from your local machine, run the following single command in your terminal:
 ```bash
 pnpm run update-and-deploy
 ```
