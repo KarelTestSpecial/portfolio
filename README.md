@@ -48,7 +48,9 @@ To publish changes that are not automatically deployed (like an update to your C
 3.  Above the list of runs, you will see a message: *"This workflow has a `workflow_dispatch` event trigger."* Click the **"Run workflow"** button.
 4.  A dropdown will appear. You can leave the branch as `main` and just click the green **"Run workflow"** button.
 
-This will start a new deployment using the latest version of all files in your repository, including the updated `cv.json`.
+This will start a new deployment using the latest version of all files in your repository.
+
+**Note:** The manual deployment runs the same full process as the automatic one, including regenerating the `projects.json` file. This is necessary to ensure the build succeeds in a clean CI environment where generated files do not exist by default.
 
 ### Manual Local Updates
 
