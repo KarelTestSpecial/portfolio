@@ -50,7 +50,9 @@ const About: React.FC = () => {
             <h4>Skills</h4>
             {Object.entries(cvData.skills).map(([category, skills]) => (
               <p key={category}>
-                <strong>{category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> {skills}
+                <span>
+                  <strong>{category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> {skills}
+                </span>
               </p>
             ))}
             <h4>Talen</h4>
