@@ -14,9 +14,9 @@ github	YouTube Playlist Collector	https://github.com/KarelTestSpecial/youtube-co
 github	YouTube Playlist 2-Way Collector	https://github.com/KarelTestSpecial/youtube-2way-collector			Collect videos from YouTube playlists and save them to a Google Sheet. Edit / Re-arrange your playlists in the Google Sheet and save the changes back to YouTube.
 github	OCR combi	https://github.com/KarelTestSpecial/ocr-combi-addon			A Google Workspace Add-on for Google Drive that streamlines the process of text recognition (OCR) and document merging.
 github	Vegan BioTech Report	https://github.com/profdrkdc/Vegan-BioTech-Report	https://profdrkdc.github.io/Vegan-BioTech-Report/	active	Een geautomatiseerd rapport dat data verzamelt en presenteert, draaiend op GitHub Actions.
-website	Portfolio	https://github.com/KarelTestSpecial/portfolio	https://kareltestspecial.github.io/portfolio/	active	Mijn portfolio website.
-website	Portfolio 2	https://github.com/KarelTestSpecial/portfolio-2			Mijn alternatieve portfolio website.
-website	Portfolio Vite	https://github.com/KarelTestSpecial/portfolio-vite-1			Mijn portfolio website gebouwd met Vite.
+website	Portfolio	https://github.com/KarelTestSpecial/portfolio	https://kareltestspecial.github.io/portfolio/	inactive	Mijn portfolio website.
+website	Portfolio 2	https://github.com/KarelTestSpecial/portfolio-2	https://kareltestspecial.github.io/portfolio-2/	active	Mijn alternatieve portfolio website.
+website	Portfolio Vite	https://github.com/KarelTestSpecial/portfolio-vite-1	https://kareltestspecial.github.io/portfolio-vite-1/	active	Mijn portfolio website gebouwd met Vite.
 website	AutiWiki		https://autiwiki.com	active	Een wiki over autisme.
 website	Kanban Pro	https://github.com/KarelTestSpecial/kanbanpro	https://kanbanpro-frontend.onrender.com/	active	Kanbanboard. Kanban functionaliteit niet volledig afgewerkt, vooral een showcase van mijn architecturale full-stack vaardigheden.Stack: Java (Spring Boot), React (TypeScript), PostgreSQL & Docker. Gehost op Render; de applicatie kan na inactiviteit traag opstarten.
 cli-tool	Linux Partitie Analyser	https://github.com/KarelTestSpecial/linuxanalyser			Analyseert de Crostini Linux-omgeving op een Chromebook. Inventariseert handmatig geïnstalleerde Debian-pakketten, node_modules-mappen en de home-directory. De Google Gemini API gebruikt om intelligente inzichten, samenvattingen en gepersonaliseerde onderhoudstips te genereren
