@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
                           <a href={project.liveLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">View Extension</a>
                         )}
                         {project.githubLink && (
-                          <a href={project.githubLink} className="btn btn-secondary ms-2" target="_blank" rel="noopener noreferrer">GitHub</a>
+                          <a href={project.githubLink} className="btn btn-success ms-2" target="_blank" rel="noopener noreferrer">GitHub</a>
                         )}
                       </div>
                     </div>
@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
                       <p className="card-text">{project.description}</p>
                       <div className="mt-auto">
                         {project.githubLink && (
-                          <a href={project.githubLink} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                          <a href={project.githubLink} className="btn btn-success" target="_blank" rel="noopener noreferrer">GitHub</a>
                         )}
                         {project.liveLink && project.status === 'active' && (
                           <a href={project.liveLink} className="btn btn-primary ms-2" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -79,7 +79,7 @@ const Projects: React.FC = () => {
                           <a href={website.liveLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Website</a>
                         )}
                         {website.githubLink && (
-                          <a href={website.githubLink} className="btn btn-secondary ms-2" target="_blank" rel="noopener noreferrer">GitHub</a>
+                          <a href={website.githubLink} className="btn btn-success ms-2" target="_blank" rel="noopener noreferrer">GitHub</a>
                         )}
                       </div>
                     </div>
