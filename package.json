@@ -26,9 +26,9 @@
     "eject": "react-scripts eject",
     "update-projects": "node scripts/update-projects.js",
     "update-cv": "node scripts/update-cv.js",
-    "predeploy": "npm run build",
+    "predeploy": "pnpm run build",
     "deploy": "gh-pages -d build",
-    "update-and-deploy": "npm run update-projects && npm run deploy"
+    "update-and-deploy": "pnpm run update-projects && pnpm run deploy"
   },
   "eslintConfig": {
     "extends": [
