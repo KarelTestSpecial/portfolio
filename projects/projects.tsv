@@ -1,26 +1,26 @@
-type	name	description	githubLink	liveLink	status
-chrome	Zeer Praktische Klok Versie 1.2	Een Chrome extensie.		https://chromewebstore.google.com/detail/very-practical-clock/ncooonkkjoeikgkbbljefnmhldpgdpdn	active
-chrome	Battery Percentage Versie 1.0	Een Chrome extensie.		https://chromewebstore.google.com/detail/bcknfhofonlfillmlonppglflhgdbeoa	active
-chrome	New Tab Organizer 1.1	Een Chrome extensie.		https://chromewebstore.google.com/detail/new-tab-organizer/llhggelkoodddbgmnmfplcmchbbkkjpk	active
-chrome	Google AI Studio - File Reader	Een Chrome extensie.		https://chromewebstore.google.com/detail/google-ai-studio-file-rea/holadmfpcclmpmkdkmcanifihneflfop?authuser=0&hl=en&pli=1	active
-chrome	NotebookLM Source Uploader Versie 1.2	Een Chrome extensie.		https://chromewebstore.google.com/detail/notebooklm-source-uploade/cflibmhmbbbnkjhobikinkkabplcijdj	active
-chrome	YouTube Playlist Collector	Een Chrome extensie.		https://chromewebstore.google.com/detail/youtube-playlist-collecto/noadbldckkkcfkhghjehpdldgppbggde	active
-chrome	Youtube Rightclick	Een Chrome extensie.		https://chromewebstore.google.com/detail/youtube-rightclick/dceebkineaajkfponfimilfebkgbcchh	active
-github	URL-pulse	Een GitHub project.	https://github.com/KarelTestSpecial/url-pulse	https://kareltestspecial.github.io/url-pulse/	inactive
-github	Newtab Startpage Dashboard	Een GitHub project.	https://github.com/KarelTestSpecial/startpage
-github	Custom Data Tree	Een GitHub project.	https://github.com/KarelTestSpecial/custom-data-tree/	https://kareltestspecial.github.io/custom-data-tree/	active
-github	Longevity Food Health data tree	Een GitHub project.	https://github.com/KarelTestSpecial/LFH/	https://kareltestspecial.github.io/LFH/	active
-github	Link-in-bio-Hub	Een GitHub project.	https://github.com/KarelTestSpecial/link-in-bio-hub-repo	https://linkinbiohub.web.app	inactive
-github	AI Studio File Reader	Een GitHub project.	https://github.com/KarelTestSpecial/aistudioreader
-github	NotebookLM Source Uploader	Een GitHub project.	https://github.com/KarelTestSpecial/notebooklm-source-loader
-github	Battery Percentage	Een GitHub project.	https://github.com/KarelTestSpecial/battery-percentage
-github	Zeer Praktische Klok	Een GitHub project.	https://github.com/KarelTestSpecial/very-practical-clock
-github	YouTube Rightclick CSV	Een GitHub project.	https://github.com/KarelTestSpecial/youtube-rightclick-csv
-github	YouTube Playlist CSV	Een GitHub project.	https://github.com/KarelTestSpecial/youtube-playlist-csv
-github	YouTube Playlist Collector	Een GitHub project.	https://github.com/KarelTestSpecial/youtube-playlist-collector
-github	YouTube Playlist 2-Way Collector	Een GitHub project.	https://github.com/KarelTestSpecial/youtube-2way-collector
-github	OCR combi	Een GitHub project.	https://github.com/KarelTestSpecial/ocr-combi-addon
-github	Vegan BioTech Report	Een GitHub project.	https://github.com/profdrkdc/Vegan-BioTech-Report	https://profdrkdc.github.io/Vegan-BioTech-Report/	active
-website	Portfolio	Mijn alternatieve portfolio website.		https://kareltestspecial.github.io/portfolio-2/	active
-website	AutiWiki	Een wiki over autisme.		https://autiwiki.com	active
-website	Longevity & Health Optimization	Met Manus.im gebouwd in onder 5 minuten (onafgewerkt gelaten om mogelijkheden en beperkingen te tonen)		https://longevity-aaczmm.manus.space/	active
+type	name	githubLink	liveLink	status	description
+chrome	Zeer Praktische Klok Versie 1.2	https://github.com/KarelTestSpecial/very-practical-clock	https://chromewebstore.google.com/detail/very-practical-clock/ncooonkkjoeikgkbbljefnmhldpgdpdn	active	A customizable digital clock that always stays on top
+chrome	Battery Percentage Versie 1.0	https://github.com/KarelTestSpecial/battery-percentage	https://chromewebstore.google.com/detail/bcknfhofonlfillmlonppglflhgdbeoa	active	Displays the battery percentage in digital form on the toolbar or its own floating window, and sends smart notifications.
+chrome	New Tab Organizer 1.1	https://github.com/KarelTestSpecial/startpage	https://chromewebstore.google.com/detail/new-tab-organizer/llhggelkoodddbgmnmfplcmchbbkkjpk	active	A customizable startpage with your bookmarks and notes.
+chrome	Google AI Studio - File Reader	https://github.com/KarelTestSpecial/aistudioreader	https://chromewebstore.google.com/detail/google-ai-studio-file-rea/holadmfpcclmpmkdkmcanifihneflfop	active	Converts Google AI Studio File into an easy-to-read text file
+chrome	NotebookLM Source Uploader 1.2	https://github.com/KarelTestSpecial/notebooklm-source-loader	https://chromewebstore.google.com/detail/notebooklm-source-uploade/cflibmhmbbbnkjhobikinkkabplcijdj	active	Automates adding multiple website or YouTube links to Google NotebookLM.
+chrome	YouTube Playlist Collector	https://github.com/KarelTestSpecial/youtube-collector-csv	https://chromewebstore.google.com/detail/youtube-playlist-collecto/noadbldckkkcfkhghjehpdldgppbggde	active	Collects video links from the current YouTube playlist tab and exports them to a downloadable CSV file.
+chrome	Youtube Rightclick	https://github.com/KarelTestSpecial/youtube-rightclick-csv	https://chromewebstore.google.com/detail/youtube-rightclick/dceebkineaajkfponfimilfebkgbcchh	active	Easily add YouTube video URLs to a CSV list via right-click or toolbar button. Quick capture for content curators & researchers.
+github	URL-pulse	https://github.com/KarelTestSpecial/url-pulse	https://kareltestspecial.github.io/url-pulse/	inactive	A monitoring tool automated with GitHub Actions that checks the status of URLs and reports on them. 
+github	Custom Data Tree	https://github.com/KarelTestSpecial/custom-data-tree/	https://kareltestspecial.github.io/custom-data-tree/	active	Build your own datatree.
+github	Longevity Food Health data tree	https://github.com/KarelTestSpecial/LFH/	https://kareltestspecial.github.io/LFH/	active	Een datatree over Longevity, Health & Food.
+github	Link-in-bio-Hub	https://github.com/KarelTestSpecial/link-in-bio-hub-repo	https://linkinbiohub.web.app	inactive	Een met Firebase gebouwde mobile first webapplicatie voor het centraliseren van social media links.
+github	YouTube Playlist Collector	https://github.com/KarelTestSpecial/youtube-collector-sheets			Downloads all the video-links of each and everyone of your YouTube playlists into a Google Sheet by the means of the official YouTube/Google API's.
+github	YouTube Playlist 2-Way Collector	https://github.com/KarelTestSpecial/youtube-2way-collector			Collect videos from YouTube playlists and save them to a Google Sheet. Edit / Re-arrange your playlists in the Google Sheet and save the changes back to YouTube.
+github	OCR combi	https://github.com/KarelTestSpecial/ocr-combi-addon			A Google Workspace Add-on for Google Drive that streamlines the process of text recognition (OCR) and document merging.
+github	Vegan BioTech Report	https://github.com/profdrkdc/Vegan-BioTech-Report	https://profdrkdc.github.io/Vegan-BioTech-Report/	active	Een geautomatiseerd rapport dat data verzamelt en presenteert, draaiend op GitHub Actions.
+website	Portfolio	https://github.com/KarelTestSpecial/portfolio	https://kareltestspecial.github.io/portfolio/	active	Mijn portfolio website.
+website	Portfolio 2	https://github.com/KarelTestSpecial/portfolio-2			Mijn alternatieve portfolio website.
+website	Portfolio Vite	https://github.com/KarelTestSpecial/portfolio-vite-1			Mijn portfolio website gebouwd met Vite.
+website	AutiWiki		https://autiwiki.com	active	Een wiki over autisme.
+website	Kanban Pro	https://github.com/KarelTestSpecial/kanbanpro	https://kanbanpro-frontend.onrender.com/	active	Kanbanboard. Kanban functionaliteit niet volledig afgewerkt, vooral een showcase van mijn architecturale full-stack vaardigheden.Stack: Java (Spring Boot), React (TypeScript), PostgreSQL & Docker. Gehost op Render; de applicatie kan na inactiviteit traag opstarten.
+cli-tool	Linux Partitie Analyser	https://github.com/KarelTestSpecial/linuxanalyser			Analyseert de Crostini Linux-omgeving op een Chromebook. Inventariseert handmatig geïnstalleerde Debian-pakketten, node_modules-mappen en de home-directory. De Google Gemini API gebruikt om intelligente inzichten, samenvattingen en gepersonaliseerde onderhoudstips te genereren
+tool	File Rename	https://github.com/KarelTestSpecial/Gdrive-FileRename			Rename files in your Google Drive. Two main functionalities: removing prefixes from filenames and renaming multiple files in a sequential order.
+tool	DocLog One	https://github.com/KarelTestSpecial/Gmail-doclog-one			A Google Workspace Add-on to help you efficiently rename files in your Google Drive. This tool provides two main functionalities: removing prefixes from filenames and renaming files in a sequential order.
+tool	Account Migration	https://github.com/KarelTestSpecial/accountmigration			Gmail DocLog One is a Google Workspace add-on for Gmail that helps you automatically log information about email attachments and links into a Google Sheet.
+tool	Google Drive Add-ons	https://github.com/KarelTestSpecial/variaGDriveAddons			Map Info Viewer, Footnote Remover
