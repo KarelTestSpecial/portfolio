@@ -48,13 +48,11 @@ const About: React.FC = () => {
           </div>
           <div className="col-md-6">
             <h4>Skills</h4>
-            {Object.entries(cvData.skills).map(([category, skills]) => (
-              <p key={category}>
-                <span>
-                  <strong>{category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> {skills}
-                </span>
-              </p>
-            ))}
+            {Object.entries(cvData.skills).map(([category, skills]) => {
+              const formattedCategory = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+              const html = `<strong>${formattedCategory}:</strong> ${skills}`;
+              return <p key={category} dangerouslySetInnerHTML={{ __html: html }} />;
+            })}
             <h4>Talen</h4>
             <ul className="list-unstyled">
               {cvData.languages.map((lang, index) => (

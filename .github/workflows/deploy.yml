@@ -36,7 +36,16 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Update, Build, and Deploy
+      - name: Deploy with Project Update (Automated Trigger)
+        if: github.event_name == 'push'
         run: pnpm run update-and-deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Deploy (Manual Trigger)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          pnpm run build
+          pnpm run deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
