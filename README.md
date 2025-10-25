@@ -2,6 +2,8 @@
 
 This is a personal portfolio website built with React to showcase projects and professional information. The website is live and deployed via GitHub Pages.
 
+**Live Site:** [https://kareltestspecial.github.io/portfolio/](https://kareltestspecial.github.io/portfolio/)
+
 ## How to Update the Website
 
 The website content is managed through a local `projects.tsv` file. To update the site with the latest projects and deploy it, follow these steps.
