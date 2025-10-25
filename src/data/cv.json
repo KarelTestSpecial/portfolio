@@ -48,7 +48,15 @@
       "description": ""
     }
   ],
-  "skills": {},
+  "skills": {
+    "ai_automatisering": "Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity, NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter, CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy",
+    "programmeertalen_frameworks": "JavaScript, TypeScript, Python, Java, Rust, Kotlin, PHP, SQL, Perl, RPG, Visual Basic, .Net, ASP.NET Core",
+    "web_databases": "React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase, Supabase, PostgreSQL, MySQL",
+    "software_ides": "VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google Workspace, MS Office, Odoo, Notion",
+    "webdesign": "Figma, Canva, Photoshop, Wordpress, Wix",
+    "besturingssystemen": "Windows, Linux, ChromeOS",
+    "netwerkprotocollen": "IIS, WINS, DHCP, DNS"
+  },
   "education": [
     {
       "degree": "Inleiding tot de Psychologie",
