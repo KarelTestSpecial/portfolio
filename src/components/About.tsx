@@ -48,13 +48,11 @@ const About: React.FC = () => {
           </div>
           <div className="col-md-6">
             <h4>Skills</h4>
-            <p><strong>AI & Automatisering:</strong> {cvData.skills.ai_automatisering}</p>
-            <p><strong>Programmeertalen & Frameworks:</strong> {cvData.skills.programmeertalen_frameworks}</p>
-            <p><strong>Web & Databases:</strong> {cvData.skills.web_databases}</p>
-            <p><strong>Software & IDEs:</strong> {cvData.skills.software_ides}</p>
-            <p><strong>Webdesign:</strong> {cvData.skills.webdesign}</p>
-            <p><strong>Besturingssystemen:</strong> {cvData.skills.besturingssystemen}</p>
-            <p><strong>Netwerkprotocollen:</strong> {cvData.skills.netwerkprotocollen}</p>
+            {Object.entries(cvData.skills).map(([category, skills]) => {
+              const formattedCategory = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+              const html = `<strong>${formattedCategory}:</strong> ${skills}`;
+              return <p key={category} dangerouslySetInnerHTML={{ __html: html }} />;
+            })}
             <h4>Talen</h4>
             <ul className="list-unstyled">
               {cvData.languages.map((lang, index) => (
