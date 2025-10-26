@@ -5,4 +5,20 @@
 
 #projects .card {
   width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#projects .card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#projects .card .card-text {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
 }
