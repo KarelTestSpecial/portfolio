@@ -9,3 +9,9 @@ test('renders the main project heading', async () => {
   const headingElement = await screen.findByRole('heading', { name: /My Projects/i });
   expect(headingElement).toBeInTheDocument();
 });
+
+test('header "My Portfolio" is a button', () => {
+  render(<App />);
+  const portfolioButton = screen.getByRole('button', { name: /My Portfolio/i });
+  expect(portfolioButton).toBeInTheDocument();
+});
