@@ -26,15 +26,19 @@ const Projects: React.FC = () => {
   };
 
   useEffect(() => {
+    // We need to select all cards to find the tallest one.
+    // The querySelectorAll method returns a static NodeList, which is sufficient.
     const cards = document.querySelectorAll('.project-card');
     if (cards.length === 0) return;
 
-    // Reset heights to auto to calculate natural height
+    // Resetting heights allows the browser to recalculate the natural height of each card
+    // based on its content, before we intervene.
     cards.forEach(card => {
       (card as HTMLElement).style.height = 'auto';
     });
 
-    // Use a timeout to allow the browser to reflow
+    // A brief timeout gives the browser a moment to reflow the layout after the height reset.
+    // This ensures that when we measure offsetHeight, we're getting the true, recalculated height.
     setTimeout(() => {
       let maxHeight = 0;
       cards.forEach(card => {
@@ -43,13 +47,16 @@ const Projects: React.FC = () => {
         }
       });
 
+      // If a valid maxHeight was found, apply it to all cards.
+      // This ensures all cards on the page have the same height, creating a uniform grid.
       if (maxHeight > 0) {
         cards.forEach(card => {
           (card as HTMLElement).style.height = `${maxHeight}px`;
         });
       }
-    }, 100); // 100ms delay might need adjustment
-  }, [chromeExtensions, githubProjects, websites]);
+    }, 100); // A 100ms delay is generally safe.
+  }, [chromeExtensions, githubProjects, websites]); // Rerun when project data changes.
+
 
   const renderProjectCard = (project: Project, index: number, type: string) => (
     <div className="col d-flex align-items-stretch" key={index}>
