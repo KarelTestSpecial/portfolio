@@ -1,8 +1,32 @@
 
-#projects .card .card-title {
+#projects .card {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 100%;
+  cursor: pointer;
+}
+
+#projects .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#projects .card-title {
+  min-height: 48px; /* Consistent title height */
   overflow-wrap: break-word;
 }
 
-#projects .card {
-  width: 100%;
+#projects .card-text {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+}
+
+#projects .card .mt-auto {
+  margin-top: auto; /* Pushes the buttons to the bottom */
 }
