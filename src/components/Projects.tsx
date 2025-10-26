@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import projectsData from '../data/projects.json';
 
@@ -25,42 +25,10 @@ const Projects: React.FC = () => {
     setSelectedProject(null);
   };
 
-  useEffect(() => {
-    // We need to select all cards to find the tallest one.
-    // The querySelectorAll method returns a static NodeList, which is sufficient.
-    const cards = document.querySelectorAll('.project-card');
-    if (cards.length === 0) return;
-
-    // Resetting heights allows the browser to recalculate the natural height of each card
-    // based on its content, before we intervene.
-    cards.forEach(card => {
-      (card as HTMLElement).style.height = 'auto';
-    });
-
-    // A brief timeout gives the browser a moment to reflow the layout after the height reset.
-    // This ensures that when we measure offsetHeight, we're getting the true, recalculated height.
-    setTimeout(() => {
-      let maxHeight = 0;
-      cards.forEach(card => {
-        if ((card as HTMLElement).offsetHeight > maxHeight) {
-          maxHeight = (card as HTMLElement).offsetHeight;
-        }
-      });
-
-      // If a valid maxHeight was found, apply it to all cards.
-      // This ensures all cards on the page have the same height, creating a uniform grid.
-      if (maxHeight > 0) {
-        cards.forEach(card => {
-          (card as HTMLElement).style.height = `${maxHeight}px`;
-        });
-      }
-    }, 100); // A 100ms delay is generally safe.
-  }, [chromeExtensions, githubProjects, websites]); // Rerun when project data changes.
-
 
   const renderProjectCard = (project: Project, index: number, type: string) => (
     <div className="col d-flex align-items-stretch" key={index}>
-      <div className="card shadow-sm h-100 project-card" onClick={() => handleShowModal(project)}>
+      <div className="card shadow-sm" onClick={() => handleShowModal(project)}>
         <div className="card-body d-flex flex-column">
           <h5 className="card-title">{project.name}</h5>
           <p className="card-text">{project.description}</p>
