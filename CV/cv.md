@@ -55,7 +55,7 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 ### **Vaardigheden**
 
 * **AI & Automatisering:** Google Gemini, OpenAI ChatGPT, Anthropic Claude, LangChain, Perplexity, NotebookLM, Firebase Studio, Google Jules, Google Colab, OpenRouter, CodePilot, CodeRabbit, Manus.im, GenSpark, N8N, Make, Google Opal, Lindy
-* **Programmeertalen & Frameworks:** JavaScript, TypeScript, Python, Java, Rust, Kotlin, PHP, SQL, Perl, RPG, Visual Basic, .Net, ASP.NET Core
+* **Programmeertalen & Frameworks:** Java, JavaScript, TypeScript, Python, SQL, Perl, RPG, Visual Basic, .Net, ASP.NET Core
 * **Web & Databases:** React, Node.js (Express.js), Django, Flask, HTML, CSS, JSON, XML, Firebase, Supabase, PostgreSQL, MySQL
 * **Software & IDEs:** VS Code, Cursor, Replit, Git, GitHub Actions, Google Cloud, Google Workspace, MS Office, Odoo, Notion
 * **Webdesign:** Figma, Canva, Photoshop, Wordpress, Wix
