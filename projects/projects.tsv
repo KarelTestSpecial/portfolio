@@ -10,7 +10,6 @@ github	Account Migration	https://github.com/KarelTestSpecial/accountmigration			
 github	Custom Data Tree	https://github.com/KarelTestSpecial/custom-data-tree/	https://kareltestspecial.github.io/custom-data-tree/	active	Build your own datatree.
 github	DocLog One	https://github.com/KarelTestSpecial/Gmail-doclog-one			Gmail DocLog One is a Google Workspace add-on for Gmail that helps you automatically log information about email attachments and links into a Google Sheet.
 github	File Rename	https://github.com/KarelTestSpecial/Gdrive-FileRename			Rename files in your Google Drive. Two main functionalities: removing prefixes from filenames and renaming multiple files in a sequential order.
-github	Google Drive Add-ons	https://github.com/KarelTestSpecial/variaGDriveAddons			Map Info Viewer, Footnote Remover
 github	Link-in-bio-Hub	https://github.com/KarelTestSpecial/link-in-bio-hub-repo	https://linkinbiohub.web.app	inactive	Een met Firebase gebouwde mobile first webapplicatie voor het centraliseren van social media links.
 github	Linux Partitie Analyser	https://github.com/KarelTestSpecial/linuxanalyser			Analyseert de Crostini Linux-omgeving op een Chromebook. Inventariseert handmatig geïnstalleerde Debian-pakketten, node_modules-mappen en de home-directory. De Google Gemini API genereert intelligente inzichten, samenvattingen en gepersonaliseerde onderhoudstips.
 github	Longevity Food Health data tree	https://github.com/KarelTestSpecial/LFH/	https://kareltestspecial.github.io/LFH/	active	Een datatree over Longevity, Health & Food.
@@ -24,4 +23,5 @@ website	Portfolio Vite	https://github.com/KarelTestSpecial/portfolio-vite-1	http
 website	AutiWiki		https://autiwiki.com	active	Een wiki over autisme.
 website	Kanban Pro	https://github.com/KarelTestSpecial/kanbanpro	https://kanbanpro-frontend.onrender.com/	active	Kanbanboard. Kanban functionaliteit niet volledig afgewerkt, vooral een showcase van mijn architecturale full-stack vaardigheden.Stack: Java (Spring Boot), React (TypeScript), PostgreSQL & Docker. Gehost op Render; de applicatie kan na inactiviteit traag opstarten.
 github	email-to-md	https://github.com/KarelTestSpecial/Gmail-to-Sheet/tree/feat-gmail-addon-email-to-md			This Gmail Add-on allows you to select all emails with a specific label, convert them sequentially into a single Markdown file, and save that file to your Google Drive.
+
 github	Gmail-to-Sheet	https://github.com/KarelTestSpecial/Gmail-to-Sheet			This Gmail Add-on allows you to select emails with a specific label and export key data (sender, date, time, subject, and plain text body) to a new Google Sheet file in your Google Drive.
