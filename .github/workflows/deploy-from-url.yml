@@ -43,7 +43,7 @@ jobs:
           else
             URL=$(cat tsv-url)
           fi
-          pnpm run update-projects-from-url -- "$URL"
+          pnpm run update-projects-from-url "$URL"
           pnpm run build
           pnpm run deploy
         env:
