@@ -1,0 +1,43 @@
+name: Deploy Portfolio Website
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'projects/projects.tsv'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8 # Specify pnpm version, adjust if needed
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+      - name: Update, Build, and Deploy
+        run: pnpm run update-and-deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
