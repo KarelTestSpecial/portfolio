@@ -46,8 +46,8 @@ const fetchData = (url, redirectCount = 0) => {
         });
 
         const projectsData = {
-          chromeExtensions: records.filter(p => p.type === 'chromeExtension'),
-          githubProjects: records.filter(p => p.type === 'githubProject'),
+          chromeExtensions: records.filter(p => p.type === 'chrome'),
+          githubProjects: records.filter(p => p.type === 'github'),
           websites: records.filter(p => p.type === 'website'),
         };
 
