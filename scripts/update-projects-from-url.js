@@ -3,11 +3,13 @@ const fs = require('fs');
 const path = require('path');
 const { parse } = require('csv-parse/sync');
 
-const url = process.argv[2];
-if (!url) {
+// Take the last argument as the URL to be robust against extra params from pnpm/shell.
+const args = process.argv.slice(2);
+if (args.length === 0) {
   console.error('Error: Please provide a URL as a command-line argument.');
   process.exit(1);
 }
+const url = args[args.length - 1];
 
 const PROJECTS_JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'projects.json');
 
