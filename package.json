@@ -26,6 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "update-projects": "node scripts/update-projects.js",
+    "update-projects-from-url": "node scripts/update-projects-from-url.js",
     "update-cv": "node scripts/update-cv.js",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d build",
