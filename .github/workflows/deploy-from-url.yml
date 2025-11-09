@@ -1,0 +1,50 @@
+name: Deploy Portfolio Website from URL
+
+on:
+  workflow_dispatch:
+    inputs:
+      tsv_url:
+        description: 'URL of the TSV file (optional; defaults to the content of the `tsv-url` file)'
+        required: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+      - name: Update projects from URL, Build, and Deploy
+        run: |
+          if [[ -n "${{ github.event.inputs.tsv_url }}" ]]; then
+            URL="${{ github.event.inputs.tsv_url }}"
+          else
+            URL=$(cat tsv-url)
+          fi
+          pnpm run update-projects-from-url -- "$URL"
+          pnpm run build
+          pnpm run deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
