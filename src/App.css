@@ -7,6 +7,11 @@ body {
   background-color: #f8f9fa; /* Fallback color */
   font-family: 'Poppins', sans-serif;
   color: #212529; /* Dark, readable text color */
+  text-shadow: 
+    -1px -1px 0 #fff,  /* schaduw linksboven */
+     1px -1px 0 #fff,  /* schaduw rechtsboven */
+    -1px  1px 0 #fff,  /* schaduw linksonder */
+     1px  1px 0 #fff;  /* schaduw rechtsonder */
 }
 
 #about, #projects, #contact, .jumbotron {
