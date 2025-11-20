@@ -51,6 +51,22 @@ To publish changes that are not automatically deployed (like an update to your C
 This will start a new deployment using the latest version of all files in your repository.
 
 **Note:** The manual deployment runs the same full process as the automatic one, including regenerating the `projects.json` file. This is necessary to ensure the build succeeds in a clean CI environment where generated files do not exist by default.
+---
+Het is mogelijk om de wijzigingen te publiceren direct vanaf de feature branch (feat/portfolio-redesign) om een live preview te krijgen, zonder dat je het eerst naar main hoeft te mergen.
+
+Het proces is bijna identiek aan wat ik eerder beschreef, met één kleine maar cruciale aanpassing:
+
+1.  Ga naar "Actions": Klik bovenaan in je GitHub repository op het tabblad "Actions".
+2.  Selecteer de deploy workflow: Zoek en klik op "Deploy Website" in de lijst.
+3.  Start de workflow en kies de branch: Klik op de "Run workflow" knop. Je ziet nu een dropdown-menu met "Use workflow from". Selecteer hier de branch feat/portfolio-redesign in plaats van main.
+4.  Klik op de groene "Run workflow" knop.
+
+De workflow zal nu de code van de feature branch gebruiken, deze builden en publiceren. Na een paar minuten kun je het resultaat op je portfolio-URL bekijken.
+
+Dit is een uitstekende manier om de wijzigingen live te testen. Als je tevreden bent, kun je daarna met een gerust hart de Pull Request mergen.
+
+
+---
 
 ### Manual Local Updates
 
