@@ -8,10 +8,10 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #212529; /* Dark, readable text color */
   text-shadow: 
-    -1px -1px 0 #fff,  /* schaduw linksboven */
-     1px -1px 0 #fff,  /* schaduw rechtsboven */
-    -1px  1px 0 #fff,  /* schaduw linksonder */
-     1px  1px 0 #fff;  /* schaduw rechtsonder */
+    -3px -3px 1 #fff,  /* schaduw linksboven */
+     3px -3px 1 #fff,  /* schaduw rechtsboven */
+    -3px  3px 1 #fff,  /* schaduw linksonder */
+     3px  3px 1 #fff;  /* schaduw rechtsonder */
 }
 
 #about, #projects, #contact, .jumbotron {
