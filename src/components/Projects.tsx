@@ -55,7 +55,7 @@ const Projects: React.FC = () => {
   );
 
   return (
-    <section id="projects" className="py-5 bg-light">
+    <section id="projects">
       <div className="container">
         <h2>My Projects</h2>
         <hr />
