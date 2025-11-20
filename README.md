@@ -51,6 +51,7 @@ To publish changes that are not automatically deployed (like an update to your C
 This will start a new deployment using the latest version of all files in your repository.
 
 **Note:** The manual deployment runs the same full process as the automatic one, including regenerating the `projects.json` file. This is necessary to ensure the build succeeds in a clean CI environment where generated files do not exist by default.
+
 ---
 Het is mogelijk om de wijzigingen te publiceren direct vanaf de feature branch (feat/portfolio-redesign) om een live preview te krijgen, zonder dat je het eerst naar main hoeft te mergen.
 
