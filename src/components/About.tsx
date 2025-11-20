@@ -3,7 +3,7 @@ import cvData from '../data/cv.json';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-5">
+    <section id="about">
       <div className="container">
         <h2>Curriculum Vitae</h2>
         <div className="row">
