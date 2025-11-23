@@ -7,7 +7,7 @@ const Header: React.FC = () => {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'rgba(204, 197, 184, 1)' }}>
         <div className="container">
           <button className="navbar-brand" style={{ border: 'none', background: 'none', cursor: 'default' }}>My Portfolio</button>
           <button className="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded={!isNavCollapsed} aria-label="Toggle navigation" onClick={handleNavCollapse}>

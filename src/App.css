@@ -54,11 +54,6 @@ a {
 
 #projects .card-text {
   flex-grow: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* Limit to 4 lines */
-  -webkit-box-orient: vertical;
 }
 
 #projects .card .mt-auto {
