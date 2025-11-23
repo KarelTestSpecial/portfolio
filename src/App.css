@@ -6,7 +6,7 @@ body {
   background-attachment: fixed;
   background-color: #f8f9fa; /* Fallback color */
   font-family: 'Poppins', sans-serif;
-  color: #212529; /* Dark, readable text color */
+  color: #000000
 }
 
 #about, #projects, #contact, .jumbotron {
