@@ -29,7 +29,7 @@ const About: React.FC = () => {
               {cvData.workExperience.map((job, index) => (
                 <li key={index}>
                   <strong>{job.period}: {job.role}</strong> - {job.company}
-                  {job.description && <p>{job.description}</p>}
+                  {job.description && <p className="text-readable-shadow">{job.description}</p>}
                 </li>
               ))}
             </ul>
