@@ -38,6 +38,7 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 **Andere Functies**
 
 * 2001 \- 2025 :  **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
+
 **Webontwikkelaar** | Visitronics NV, Leuven | 01/2001 – 08/2001
 
 * Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten.  
