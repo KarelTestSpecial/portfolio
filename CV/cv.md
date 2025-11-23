@@ -12,32 +12,11 @@ Gedreven en analytische IT-professional met een levenslange passie voor programm
 
 *Komt in aanmerking voor werkgeversubsidieregelingen, wat een extra voordeel kan bieden voor werkgevers.*
 
----
-
-### **Recente Projecten**
-
-Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden illustreren. Voor een compleet overzicht van al mijn werk, inclusief live demo's en broncode, kunt u mijn **portfolio website bezoeken: [kareltestspecial.github.io/portfolio/](https://kareltestspecial.github.io/portfolio/)**
-
-**Chrome Web Store Extensies**
-
-* **NotebookLM Source Uploader:** Vereenvoudigt het proces voor het uploaden van bronbestanden naar Google's NotebookLM.  
-* **Very Practical Clock & Battery Percentage:** Lichtgewicht en functionele extensies om de productiviteit en gebruikerservaring te verbeteren.  
-* **YouTube Playlist Collector & YouTube Rightclick:** Tools om de interactie met YouTube te stroomlijnen en data-export mogelijk te maken.
-
-**Webapplicaties & GitHub Repositories**
-
-* **Link-in-bio-Hub:** Een met Firebase gebouwde webapplicatie voor het centraliseren van social media links.  
-* **URL-pulse:** Een via GitHub Actions geautomatiseerde monitoringtool die de status van URL's controleert en rapporteert.  
-* **OCR Combinator:** Een tool ontwikkeld om de output van verschillende OCR-diensten te combineren en te verbeteren.  
-* **Vegan BioTech Report:** Een geautomatiseerd rapport dat data verzamelt en presenteert, draaiend op GitHub Actions.
-
----
-
 ### **Werkervaring**
 
-**Diverse Functies**
+**Diverse Functies** | 2001 \- 2025 
 
-* 2001 \- 2025 :  **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
+* **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
 
 **Webontwikkelaar** | Visitronics NV, Leuven | 01/2001 – 08/2001
 
@@ -49,9 +28,9 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 * Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en uitgaande goederen.  
 * Optimaliseren van de magazijnwerking voor maximale efficiëntie.
 
-**Diverse rollen**
+**Diverse rollen** | 04/1994 – 02/1997 
 
-* 04/1994 – 02/1997 :   vervuld als **Koerier**, **Uitzendkracht** (Randstad, Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
+* **Koerier**, **Uitzendkracht** (Randstad, Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
 
 ---
 
