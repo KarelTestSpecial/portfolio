@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 const path = require('path');
 
@@ -58,61 +59,40 @@ function parseCvMarkdown(md) {
     cv.profile = cleanLine(profileParts[0]);
     cv.notice = profileParts[1] ? cleanLine('Komt in aanmerking' + profileParts[1]) : '';
 
-    // --- Recent Projects ---
-    const projectsSection = getSection(md, '### **Recente Projecten**');
-    const projectLines = projectsSection.split('\n').filter(line => line.trim());
-    cv.recentProjects = {
-        introduction: cleanLine(projectLines.shift().replace('portfolio website bezoeken:', 'portfolio website bezoeken:')),
-        chromeExtensions: [],
-        webApplications: [],
-    };
-    let currentCategory = null;
-    projectLines.forEach(line => {
-        if (cleanLine(line).includes('Chrome Web Store Extensies')) {
-            currentCategory = 'chromeExtensions';
-        } else if (cleanLine(line).includes('Webapplicaties & GitHub Repositories')) {
-            currentCategory = 'webApplications';
-        } else if (currentCategory && line.startsWith('*')) {
-            const description = cleanLine(line.split(':').slice(1).join(':'));
-            const title = cleanLine(line.split(':')[0]);
-            cv.recentProjects[currentCategory].push(`${title}: ${description}`);
-        }
-    });
 
     // --- Work Experience ---
     const expSection = getSection(md, '### **Werkervaring**');
     cv.workExperience = [];
-    const expEntries = expSection.split(/\n\n(?=\*\*|Andere Functies)/);
-    expEntries.forEach(entry => {
-        const lines = entry.trim().split('\n');
-        const titleLine = lines.shift().trim();
-        if (titleLine.includes('|')) {
-            const [role, company, period] = titleLine.split('|').map(cleanLine);
-            const description = lines.map(l => cleanLine(l)).join(' ');
-            cv.workExperience.push({ role, company, period, description });
-        } else if (cleanLine(titleLine) === 'Andere Functies') {
-            lines.forEach(line => {
-                const cleanedLine = cleanLine(line);
-                if (cleanedLine.includes('Diverse rollen')) {
-                    const periodMatch = cleanedLine.match(/(\d{2}\/\d{4}\s*–\s*\d{2}\/\d{4})/);
-                    cv.workExperience.push({
-                        role: "Diverse rollen (o.a. Koerier, Uitzendkracht, Keukenhulp, Tele-enquêteur)",
-                        company: "Verschillende werkgevers (o.a. Randstad, Restaura)",
-                        period: periodMatch ? periodMatch[0] : "",
-                        description: "Deze diverse rollen tonen een sterke werkethiek en aanpassingsvermogen."
-                    });
-                } else if (cleanedLine.includes('Fabrieksarbeider')) {
-                    const periodMatch = cleanedLine.match(/(\d{4}\s*\\?-\s*\d{4})/);
-                    cv.workExperience.push({
-                        role: "Andere Functies",
-                        company: "Fabrieksarbeider (Pasec), Keukenhulp (Paviljoen C), Klerenhersteller (De Haven), Kok (FPC)",
-                        period: periodMatch ? periodMatch[0].replace('\\', '') : "",
-                        description: ""
-                    });
-                }
-            });
+    const lines = expSection.split('\n');
+    let currentJob = null;
+
+    lines.forEach(line => {
+        const cleaned = cleanLine(line);
+        if (line.includes('|')) {
+            // This is a title line, save the previous job and start a new one
+            if (currentJob) {
+                cv.workExperience.push(currentJob);
+            }
+
+            const parts = line.split('|').map(p => cleanLine(p.replace(/\\-/g, '-')));
+            let role = '', company = '', period = '';
+            if (parts.length === 3) {
+                [role, company, period] = parts;
+            } else if (parts.length === 2) {
+                [role, period] = parts;
+                company = '';
+            }
+            currentJob = { role, company, period, description: '' };
+        } else if (currentJob && cleaned) {
+            // This is a description line for the current job
+            currentJob.description = (currentJob.description + ' ' + cleaned).trim();
         }
     });
+
+    // Add the last job
+    if (currentJob) {
+        cv.workExperience.push(currentJob);
+    }
 
     // --- Skills ---
     const skillsSection = getSection(md, '### **Vaardigheden**');
