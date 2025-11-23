@@ -24,6 +24,12 @@
   },
   "workExperience": [
     {
+      "role": "Andere Functies",
+      "company": "Fabrieksarbeider (Pasec), Keukenhulp (Paviljoen C), Klerenhersteller (De Haven), Kok (FPC)",
+      "period": "2001 - 2025",
+      "description": ""
+    },
+    {
       "role": "Webontwikkelaar",
       "company": "Visitronics NV, Leuven",
       "period": "01/2001 – 08/2001",
@@ -34,18 +40,6 @@
       "company": "IKEA, Ternat",
       "period": "03/1998 – 01/2001",
       "description": " Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en uitgaande goederen. Optimaliseren van de magazijnwerking voor maximale efficiëntie."
-    },
-    {
-      "role": "Diverse rollen (o.a. Koerier, Uitzendkracht, Keukenhulp, Tele-enquêteur)",
-      "company": "Verschillende werkgevers (o.a. Randstad, Restaura)",
-      "period": "04/1994 – 02/1997",
-      "description": "Deze diverse rollen tonen een sterke werkethiek en aanpassingsvermogen."
-    },
-    {
-      "role": "Andere Functies",
-      "company": "Fabrieksarbeider (Pasec), Keukenhulp (Paviljoen C), Klerenhersteller (De Haven), Kok (FPC)",
-      "period": "2001 - 2025",
-      "description": ""
     }
   ],
   "skills": {
