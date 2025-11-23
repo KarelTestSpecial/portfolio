@@ -35,7 +35,7 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 
 ### **Werkervaring**
 
-**Andere Functies**
+**Diverse Functies**
 
 * 2001 \- 2025 :  **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
 
