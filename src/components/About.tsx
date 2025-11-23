@@ -8,7 +8,7 @@ const About: React.FC = () => {
         <h2>Curriculum Vitae</h2>
         <div className="row">
           <div className="col-md-12">
-            <p>{cvData.profile}</p>
+            <p className="text-readable-shadow">{cvData.profile}</p>
             <p><em>{cvData.notice}</em></p>
           </div>
         </div>

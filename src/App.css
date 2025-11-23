@@ -36,7 +36,7 @@ a {
   backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 100%;
   width: 100%;
   cursor: pointer;
 }
@@ -54,8 +54,15 @@ a {
 
 #projects .card-text {
   flex-grow: 1;
+  overflow: visible;
+  white-space: normal;
+  -webkit-line-clamp: unset;
 }
 
 #projects .card .mt-auto {
   margin-top: auto; /* Pushes the buttons to the bottom */
+}
+
+.text-readable-shadow {
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
 }
