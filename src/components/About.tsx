@@ -28,8 +28,8 @@ const About: React.FC = () => {
             <ul className="list-unstyled">
               {cvData.workExperience.map((job, index) => (
                 <li key={index}>
-                  <strong>{job.period}: {job.role}</strong> - {job.company}
-                  {job.description && <p>{job.description}</p>}
+                  <strong>{job.period}: {job.role}</strong> {job.company}
+                  {job.description && <p className="text-readable-shadow">{job.description}</p>}
                 </li>
               ))}
             </ul>
