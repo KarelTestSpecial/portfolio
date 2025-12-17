@@ -38,7 +38,7 @@ Gedreven en analytische IT-professional met een levenslange passie voor programm
 
 * **AI Tools & Automation:** Google Antigravity, Google Jules 2.0, Google Gemini CLI, Google Firebase Studio, Google AI Studio, GitHub SpecKit, GitHub Copilot, OpenAI ChatGPT, Anthropic Claude, Perplexity, Qwen, Manus AI, Genspark, Abacus DeepAgent, Lemon AI, AWS Kiro  
 * **Full-Stack Development:** Java (JSP, Spring Boot, Spring Security (JWT), Spring Data JPA (Hibernate), Maven), JavaScript/TypeScript (Node.js, Express.js, NestJS; React; Vite, Vitest), Python (Django, Flask), PHP (Laravel, FastAPI), Perl, Visual Basic, .NET (ASP.NET Core), IBM RPG, SQL, HTML, CSS, JSON, XML, RESTful API  
-* **DevOps, Cloud & Infrastructure:** PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Google Cloud Platform, Azure  
+* **DevOps, Cloud & Infrastructure:** PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Google Cloud Platform, Azure, Netlify, Vercel, Render 
 * **Testing & QA:** JUnit 5, Mockito, Spring Boot Test (`@SpringBootTest`), Jest, Vitest, React Testing Library, Cypress, Playwright, Postman  
 * **Development Tools & Software:** VS Code, Cursor, Replit, Microsoft Office, Google Workspace, Odoo, Notion, Bash / PowerShell / Terminal  
 * **Web Design & Graphics:** Figma, Canva, Photoshop, Photopea, WordPress, Wix  
