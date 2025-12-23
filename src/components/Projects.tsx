@@ -66,6 +66,7 @@ const Projects: React.FC = () => {
             <div className="row g-4 row-cols-1 row-cols-md-3">
               {websites.map((project, index) => renderProjectCard(project, index, 'website'))}
             </div>
+            <hr />
           </>
         )}
 
