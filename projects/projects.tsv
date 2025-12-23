@@ -26,4 +26,5 @@ website	AutiWiki		https://autiwiki.com	active	Een wiki over autisme.
 website	Kanban Pro	https://github.com/KarelTestSpecial/kanbanpro	https://kanbanpro-frontend.onrender.com/	active	Kanbanboard. Kanban functionaliteit niet volledig afgewerkt, vooral een showcase van mijn architecturale full-stack vaardigheden.Stack: Java (Spring Boot), React (TypeScript), PostgreSQL & Docker. Gehost op Render; de applicatie kan na inactiviteit traag opstarten.
 website	Portfolio	https://github.com/KarelTestSpecial/portfolio	https://kareltestspecial.github.io/portfolio/	inactive	Mijn portfolio website.
 website	Portfolio Vite	https://github.com/KarelTestSpecial/portfolio-vite-1	https://kareltestspecial.github.io/portfolio-vite-1/	active	Mijn portfolio website gebouwd met Vite.
+Athena CMS Factory		https://kareltestspecial.github.io/jitske-knipt/	active	Mijn athena cms factory software bouwt automatisch sites zoals deze mock-up site
 
