@@ -60,6 +60,16 @@ const Projects: React.FC = () => {
         <h2>My Projects</h2>
         <hr />
 
+        {websites.length > 0 && (
+          <>
+            <h3>Websites</h3>
+            <div className="row g-4 row-cols-1 row-cols-md-3">
+              {websites.map((project, index) => renderProjectCard(project, index, 'website'))}
+            </div>
+          </>
+        )}
+      </div>
+
         {chromeExtensions.length > 0 && (
           <>
             <h3>Chrome Extensions</h3>
@@ -79,16 +89,6 @@ const Projects: React.FC = () => {
             <hr />
           </>
         )}
-
-        {websites.length > 0 && (
-          <>
-            <h3>Websites</h3>
-            <div className="row g-4 row-cols-1 row-cols-md-3">
-              {websites.map((project, index) => renderProjectCard(project, index, 'website'))}
-            </div>
-          </>
-        )}
-      </div>
 
       {selectedProject && (
         <Modal show={showModal} onHide={handleCloseModal} centered>
