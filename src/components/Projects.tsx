@@ -68,7 +68,6 @@ const Projects: React.FC = () => {
             </div>
           </>
         )}
-      </div>
 
         {chromeExtensions.length > 0 && (
           <>
@@ -89,6 +88,7 @@ const Projects: React.FC = () => {
             <hr />
           </>
         )}
+      </div>
 
       {selectedProject && (
         <Modal show={showModal} onHide={handleCloseModal} centered>
