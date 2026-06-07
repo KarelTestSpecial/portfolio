@@ -48,7 +48,7 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 * Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen.
 
 **Overige functies** | * 1994 - 2025
-* Diverse rollen vervuld als **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC), **Koerier** (Pizza City), **Uitzendkracht** (Randstad, Brussel), **Magazijnier** (IKEA, Ternat), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
+* Diverse rollen vervuld als **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC), **Koerier** (Pizza City), **Uitzendkracht** (Randstad, Brussel), **Magazijnier** (IKEA, Ternat), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), blijk gevend van een sterke werkethiek en aanpassingsvermogen. 
 
 ---
 
