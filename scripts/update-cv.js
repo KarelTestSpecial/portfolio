@@ -61,7 +61,7 @@ function parseCvMarkdown(md) {
 
 
     // --- Work Experience ---
-    const expSection = getSection(md, 'Werkervaring');
+    const expSection = getSection(md, '### **Werkervaring**');
     cv.workExperience = [];
     const lines = expSection.split('\n');
     let currentJob = null;
