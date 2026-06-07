@@ -16,7 +16,6 @@ github	Linux Partitie Analyser	https://github.com/KarelTestSpecial/linuxanalyser
 github	Longevity Food Health data tree	https://github.com/KarelTestSpecial/LFH/	https://kareltestspecial.github.io/LFH/	active	Een datatree over Longevity, Health & Food.	
 github	OCR combi	https://github.com/KarelTestSpecial/ocr-combi-addon			A Google Workspace Add-on for Google Drive that streamlines the process of text recognition (OCR) and document merging.	
 github	URL-pulse	https://github.com/KarelTestSpecial/url-pulse	https://kareltestspecial.github.io/url-pulse/	inactive	A monitoring tool automated with GitHub Actions that checks the status of URLs and reports on them. 	
-website	Vegan BioTech Report	https://github.com/profdrkdc/Vegan-BioTech-Report	https://profdrkdc.github.io/Vegan-BioTech-Report/	active	Een geautomatiseerd rapport dat data verzamelt en presenteert, draaiend op GitHub Actions.	
 github	YouTube Playlist 2-Way Collector	https://github.com/KarelTestSpecial/youtube-2way-collector			Collect videos from YouTube playlists and save them to a Google Sheet. Edit / Re-arrange your playlists in the Google Sheet and save the changes back to YouTube.	
 github	YouTube Playlist Collector	https://github.com/KarelTestSpecial/youtube-collector-sheets			Downloads all the video-links of each and everyone of your YouTube playlists into a Google Sheet by the means of the official YouTube/Google API's.	
 github	Gmail-to-md	https://github.com/KarelTestSpecial/Gmail-to-Sheet/tree/feat-gmail-addon-email-to-md			This Gmail Add-on allows you to select all emails with a specific label, convert them sequentially into a single Markdown file, and save that file to your Google Drive.	
@@ -24,8 +23,9 @@ github	Gmail-to-Sheet	https://github.com/KarelTestSpecial/Gmail-to-Sheet			This 
 github	Home Assistant MCP (PR #1371)	https://github.com/homeassistant-ai/ha-mcp/pull/1371		merged	Thread-safe singleton cache voor ruamel.yaml en Executor async wrapper om CPU-spikes te elimineren.	
 github	Home Assistant MCP (PR #1396)	https://github.com/homeassistant-ai/ha-mcp/pull/1396		merged	Thread-Local YAML Cache Refactoring voor betere prestaties en thread-veiligheid.	
 github	Actual Budget (PR #7891)	https://github.com/actualbudget/actual/pull/7891		merged	Float naar Integer validatie toegevoegd voor consistente financiële data.	
-website	Portfolio	https://github.com/KarelTestSpecial/portfolio	https://kareltestspecial.github.io/portfolio/	inactive	Mijn portfolio website.	
-website	Portfolio Vite	https://github.com/KarelTestSpecial/portfolio-vite-1	https://kareltestspecial.github.io/portfolio-vite-1/	active	Mijn portfolio website gebouwd met Vite.	
-website	AutiWiki		https://autiwiki.netlify.app/	active	Een wiki over autisme.	
 website	De Vrije Realiteit (Boek)	https://github.com/profdrkdc/boek	https://profdrkdc.github.io/boek/#/	active	Een analytisch boek over menselijke competentie, AI en maatschappelijke transformatie. Gepubliceerd als tweetalige webapplicatie met Docsify op GitHub Pages.	
 website	Athena CMS Factory	https://github.com/athenacmsfactory/athena-x	https://athena-cms-factory.github.io/athena-hub	active	Een robuuste Static Site Generator (SSG) die autonoom portfolio-sites bouwt en deployt met GitHub Actions.
+website	Vegan BioTech Report	https://github.com/profdrkdc/Vegan-BioTech-Report	https://profdrkdc.github.io/Vegan-BioTech-Report/	active	Een geautomatiseerd rapport dat data verzamelt en presenteert, draaiend op GitHub Actions.	
+website	Portfolio	https://github.com/KarelTestSpecial/portfolio	https://kareltestspecial.github.io/portfolio/	inactive	Mijn portfolio website.	
+website	Portfolio Vite	https://github.com/KarelTestSpecial/portfolio-vite-1	https://kareltestspecial.github.io/portfolio-vite-1/	active	Mijn portfolio website gebouwd met Vite.	
+website	AutiWiki		https://autiwiki.netlify.app/	active	Een wiki over autisme.
