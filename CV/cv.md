@@ -12,25 +12,49 @@ Gedreven en analytische IT-professional met een levenslange passie voor programm
 
 *Komt in aanmerking voor werkgeversubsidieregelingen, wat een extra voordeel kan bieden voor werkgevers.*
 
+---
+
+### **Recente Projecten**
+
+Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden illustreren. Voor een compleet overzicht van al mijn werk, inclusief live demo's en broncode, kunt u mijn **portfolio website bezoeken: [kareltestspecial.github.io/portfolio/](https://kareltestspecial.github.io/portfolio/)**
+
+**Chrome Web Store Extensies**
+
+* **NotebookLM Source Uploader:** Vereenvoudigt het proces voor het uploaden van bronbestanden naar Google's NotebookLM.  
+* **Very Practical Clock & Battery Percentage:** Lichtgewicht en functionele extensies om de productiviteit en gebruikerservaring te verbeteren.  
+* **YouTube Playlist Collector & YouTube Rightclick:** Tools om de interactie met YouTube te stroomlijnen en data-export mogelijk te maken.
+
+**Webapplicaties, RAG & AI Compliance**
+
+* **Garrison OS (GOS) Compliance Auditor:** Een in Python ontwikkeld geautomatiseerd audit-framework om public websites en documenten te screenen op EU AI Act (o.a. Artikel 52) en GDPR compliantie.
+* **Local Private RAG Pipeline:** Ontwerp en implementatie van een lokaal, air-gapped Retrieval-Augmented Generation (RAG) systeem om betrouwbare antwoorden uit juridische en interne KMO-documenten te genereren zonder datalekrisico's.
+
+**Publicaties & Technisch Schrijven**
+
+* **"De Vrije Realiteit — De Weg naar Convergentie" (Boek):** Auteur van een analytisch boek over menselijke competentie, AI en maatschappelijke transformatie. Gepubliceerd als een tweetalige (NL/EN) webapplicatie met Docsify op GitHub Pages, inclusief Google Analytics integratie en beveiligde PDF-viewer. Lees online: [profdrkdc.github.io/boek](https://profdrkdc.github.io/boek/#/)
+
+**Open-Source Contributions & Bounty Hunting**
+
+* **Home Assistant MCP (PR #1371) - MERGED:** Ontwikkeling van een thread-safe singleton cache voor `ruamel.yaml` en een Executor async wrapper om CPU-spikes te elimineren in de Home Assistant integratie.
+* **ActivePieces (PR #13296):** Implementatie van een schone TypeScript fix voor de V3 engine. Succesvol doorstaan van de Greptile-apps AI-audit met een 4/5 confidence score.
+* **Actual Budget (PR #7891):** Optimalisatie van de CI/CD pipeline door de integratie van geautomatiseerde release-notes, resulterend in een volledig groen build-proces.
+
+---
+
 ### **Werkervaring**
-
-**Diverse Functies** | 2001 \- 2025 
-
-* **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
 
 **Webontwikkelaar** | Visitronics NV, Leuven | 01/2001 – 08/2001
 
 * Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten.  
 * Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen.
 
-**Magazijnier** | IKEA, Ternat | 03/1998 – 01/2001
+**Andere Functies**
 
-* Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en uitgaande goederen.  
-* Optimaliseren van de magazijnwerking voor maximale efficiëntie.
-
-**Diverse rollen** | 04/1994 – 02/1997 
-
-* **Koerier**, **Uitzendkracht** (Randstad, Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
+* 04/1994 – 02/1997 :  Diverse rollen vervuld als **Koerier**, **Uitzendkracht** (Randstad, Brussel), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
+* 03/1998 – 01/2001 : **Magazijnier** | IKEA, Ternat
+  * Verantwoordelijk voor voorraadbeheer en de verwerking van inkomende en uitgaande goederen.  
+  * Optimaliseren van de magazijnwerking voor maximale efficiëntie.
+* 2001 \- 2025 :  **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
 
 ---
 

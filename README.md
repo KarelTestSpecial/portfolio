@@ -6,9 +6,46 @@ This is a personal portfolio website built with React to showcase projects and p
 
 ## Content Management
 
-The website has two main types of content that can be updated: the **Project List** and the **CV**. Both are managed through files in the repository and have automated update processes.
+The website has three main ways to update the content: via **Google Sheets**, by editing the **Project List** file, or by updating the **CV**.
 
-### Updating the Project List
+### Updating from Google Sheets (Easiest)
+
+You can update the website directly from your project management Google Sheet using a custom menu.
+
+#### Setup Instructions:
+
+1.  **Generate a GitHub Personal Access Token (PAT):**
+    *   Go to [GitHub Settings -> Developer settings -> Personal access tokens -> Tokens (classic)](https://github.com/settings/tokens).
+    *   Click "Generate new token (classic)".
+    *   Give it a name (e.g., "Portfolio Google Sheets Update").
+    *   Select the **`repo`** and **`workflow`** scopes.
+    *   Generate the token and **copy it** (you won't see it again).
+
+2.  **Add the Script to your Google Sheet:**
+    *   Open your Google Sheet where you manage the projects.
+    *   Go to **Extensions -> Apps Script**.
+    *   Copy the content of the [`scripts/apps-script.js`](scripts/apps-script.js) file from this repository and paste it into the script editor (replace any existing code).
+    *   Save the script (click the floppy disk icon).
+
+3.  **Add your GitHub Token to the Script Properties:**
+    *   In the Apps Script editor, click on the **Project Settings** (gear icon) in the left sidebar.
+    *   Scroll down to **Script Properties** and click **Edit script properties**.
+    *   Click **Add script property**.
+    *   Property name: `GITHUB_PAT`
+    *   Value: (Paste your GitHub token here)
+    *   Click **Save script properties**.
+
+4.  **Refresh your Google Sheet:**
+    *   Reload the Google Sheet in your browser.
+    *   You should now see a new menu item called **"Portfolio"**.
+    *   Click **"Portfolio" -> "🚀 Update Website"**.
+    *   The first time you run it, you will need to grant permissions. Follow the prompts.
+
+Once set up, whenever you change your project list in the Google Sheet, just click the button to trigger a fresh deployment!
+
+---
+
+### Updating the Project List (Manual)
 
 The website's project list is managed through the `projects/projects.tsv` file. The deployment process is automated.
 
