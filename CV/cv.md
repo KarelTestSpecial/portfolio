@@ -43,13 +43,12 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 
 ### **Werkervaring**
 
-* 2001 \- 2025 :  **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC)
-
 **Webontwikkelaar** | Visitronics NV, Leuven | 01/2001 – 08/2001
 * Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten.  
 * Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen.
 
-* 04/1994 – 02/1997 :  Diverse rollen vervuld als **Koerier**, **Uitzendkracht** (Randstad, Brussel), **Magazijnier** (IKEA, Ternat), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
+**Overige functies** | * 1994 - 2025
+* Diverse rollen vervuld als **Fabrieksarbeider** (Pasec), **Keukenhulp** (Paviljoen C), **Klerenhersteller** (De Haven), **Kok** (FPC), **Koerier** (Pizza City), **Uitzendkracht** (Randstad, Brussel), **Magazijnier** (IKEA, Ternat), **Keukenhulp** (Restaura, Zaventem) en **Tele-enquêteur** (Tele-Performance), waaruit een sterke werkethiek en aanpassingsvermogen blijkt.  
 
 ---
 
