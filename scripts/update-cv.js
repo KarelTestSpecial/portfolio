@@ -85,7 +85,7 @@ function parseCvMarkdown(md) {
                 role: '',
                 company: '',
                 period: cleanLine(bulletMatch[1]),
-                description: cleanLine(bulletMatch[2])
+                description: [cleanLine(bulletMatch[2])]
             };
             return;
         }
@@ -104,13 +104,16 @@ function parseCvMarkdown(md) {
                 [role, period] = parts;
                 company = '';
             }
-            currentJob = { role, company, period, description: '' };
+            currentJob = { role, company, period, description: [] };
             return;
         }
 
-        // Description line for the current job
+        // Description bullet for the current job (keep as array)
         if (currentJob && cleaned) {
-            currentJob.description = (currentJob.description + ' ' + cleaned).trim();
+            if (!Array.isArray(currentJob.description)) {
+                currentJob.description = [];
+            }
+            currentJob.description.push(cleaned);
         }
     });
 

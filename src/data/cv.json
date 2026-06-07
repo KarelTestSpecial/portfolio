@@ -13,13 +13,26 @@
       "role": "Webontwikkelaar",
       "company": "Visitronics NV, Leuven",
       "period": "01/2001 – 08/2001",
-      "description": "Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten. Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen."
+      "description": [
+        "Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten.",
+        "Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen."
+      ]
     },
     {
       "role": "Overige functies",
-      "company": "",
+      "company": "Diverse rollen",
       "period": "1994 - 2025",
-      "description": "Diverse rollen vervuld als Fabrieksarbeider (Pasec), Keukenhulp (Paviljoen C), Klerenhersteller (De Haven), Kok (FPC), Koerier (Pizza City), Uitzendkracht (Randstad, Brussel), Magazijnier (IKEA, Ternat), Keukenhulp (Restaura, Zaventem) en Tele-enquêteur (Tele-Performance), blijk gevend van een sterke werkethiek en aanpassingsvermogen."
+      "description": [
+        "Fabrieksarbeider (Pasec)",
+        "Keukenhulp (Paviljoen C)",
+        "Klerenhersteller (De Haven)",
+        "Kok (FPC)",
+        "Koerier (Pizza City)",
+        "Uitzendkracht (Randstad, Brussel)",
+        "Magazijnier (IKEA, Ternat)",
+        "Keukenhulp (Restaura, Zaventem)",
+        "Tele-enquêteur (Tele-Performance)"
+      ]
     }
   ],
   "skills": {
