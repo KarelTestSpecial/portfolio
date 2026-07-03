@@ -1,4 +1,4 @@
-name: Deploy Portfolio Website from URL
+name: Deploy from Google Sheet
 
 on:
   workflow_dispatch:

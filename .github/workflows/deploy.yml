@@ -1,4 +1,4 @@
-name: Deploy Portfolio Website
+name: Deploy from repo TSV
 
 on:
   push:
