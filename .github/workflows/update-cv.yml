@@ -1,4 +1,4 @@
-name: Deploy from CV
+name: Deploy from repo CV
 
 on:
   push:
