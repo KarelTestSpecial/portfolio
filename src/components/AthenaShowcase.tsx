@@ -12,10 +12,7 @@ const sites: ShowcaseSite[] = [
   { name: 'Belgian Chocolate Shop', category: 'E-commerce', url: 'https://athena-cms-factory.github.io/chocolade-shop' },
   { name: 'Academy-1', category: 'Education', url: 'https://athena-cms-factory.github.io/academy-1' },
   { name: 'De Schaar', category: 'Beauty & Wellness', url: 'https://athena-cms-factory.github.io/de-schaar' },
-  { name: 'KDC IT Advies', category: 'IT Consultancy', url: 'https://athena-cms-factory.github.io/kdc-it-advies' },
   { name: 'Athena Pro', category: 'B2B / SaaS', url: 'https://athena-cms-factory.github.io/athena-pro' },
-  { name: 'Bakkerij de Graankorrel', category: 'Retail & Food', url: 'https://athena-cms-factory.github.io/bakkerij-de-graankorrel' },
-  { name: 'Cloud Architects', category: 'IT / Tech', url: 'https://athena-cms-factory.github.io/cloud-architects' },
   { name: 'Gentse Dakwerken', category: 'Construction', url: 'https://athena-cms-factory.github.io/gentse-dakwerken' },
   { name: 'Lex & Justitia Advocaten', category: 'Legal Services', url: 'https://athena-cms-factory.github.io/lex-justitia' },
 ];
