@@ -2,7 +2,7 @@
 
 # **Karel Decherf**
 
-Hurstweg 9, 9000 Gent | [karel.decherf@gmail.be](mailto:karel.decherf@gmail.be) [linkedin.com/in/karel-decherf-bb0b7140a](https://www.linkedin.com/in/karel-decherf-bb0b7140a) | [github.com/KarelTestSpecial](https://github.com/KarelTestSpecial)
+Hurstweg 9, 9000 Gent | [karel.decherf@gmail.com](mailto:karel.decherf@gmail.com) [linkedin.com/in/karel-decherf-bb0b7140a](https://www.linkedin.com/in/karel-decherf-bb0b7140a) | [github.com/KarelTestSpecial](https://github.com/KarelTestSpecial)
 
 ---
 
