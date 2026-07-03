@@ -9,7 +9,7 @@ body {
   color: #000000
 }
 
-#about, #projects, #contact, .jumbotron {
+#about, #projects, #contact, #athena-showcase, .jumbotron {
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(10px);
@@ -61,6 +61,18 @@ a {
 
 #projects .card .mt-auto {
   margin-top: auto; /* Pushes the buttons to the bottom */
+}
+
+#athena-showcase .card {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  height: 100%;
+  cursor: pointer;
+}
+
+#athena-showcase .card:hover {
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .text-readable-shadow {
