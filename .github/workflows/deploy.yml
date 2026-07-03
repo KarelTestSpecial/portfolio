@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - 'projects/projects.tsv'
-      - 'CV/cv.md'
   workflow_dispatch:
 
 jobs:
