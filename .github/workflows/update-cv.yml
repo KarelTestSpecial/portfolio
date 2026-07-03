@@ -1,4 +1,4 @@
-name: Update CV Data
+name: Deploy from CV
 
 on:
   push:
