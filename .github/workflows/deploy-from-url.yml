@@ -36,22 +36,23 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-      - name: Update projects from URL
+      - name: Fetch TSV from Google Sheet
         run: |
           if [[ -n "${{ github.event.inputs.tsv_url }}" ]]; then
             URL="${{ github.event.inputs.tsv_url }}"
           else
             URL=$(cat tsv-url)
           fi
-          pnpm run update-projects-from-url -- "$URL"
+          curl -fsSL "$URL" -o projects/projects.tsv
 
-      - name: Commit updated projects data to main
+      - name: Commit updated projects.tsv to main
         run: |
-          git add src/data/projects.json
-          git diff --staged --quiet || (git commit -m "chore: update projects data from Google Sheet" && git push)
+          git add projects/projects.tsv
+          git diff --staged --quiet || (git commit -m "chore: update projects.tsv from Google Sheet" && git push)
 
-      - name: Build and Deploy
+      - name: Generate data, Build and Deploy
         run: |
+          pnpm run update-projects
           pnpm run build
           pnpm run deploy
         env:
