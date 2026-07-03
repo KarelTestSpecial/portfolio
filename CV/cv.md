@@ -62,9 +62,9 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 
 ### **Vaardigheden**
 
-* **AI Tools & Automation:** Claude Code, OpenAI Codex, OpenCode, Google Antigravity IDE, Google Firebase Studio, Google AI Studio, GitHub SpecKit, GitHub Copilot, Perplexity, Qwen, Manus AI, Genspark, Abacus DeepAgent, Lemon AI, AWS Kiro  
+* **AI Tools & Automation:** Claude Code, OpenAI Codex, Google Antigravity IDE, Google Firebase Studio, Google AI Studio, OpenCode, GitHub SpecKit, GitHub Copilot, Perplexity, Qwen, Manus AI, Genspark, Abacus DeepAgent, Lemon AI, AWS Kiro  
 * **Full-Stack Development:** Java (JSP, Spring Boot, Spring Security (JWT), Spring Data JPA (Hibernate), Maven), JavaScript/TypeScript (Node.js, Express.js, NestJS; React; Vite, Vitest), Python (Django, Flask), PHP (Laravel, FastAPI), Perl, Visual Basic, .NET (ASP.NET Core), IBM RPG, SQL, HTML, CSS, JSON, XML, RESTful API  
-* **DevOps, Cloud & Infrastructure:** PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Google Cloud Platform, Azure, Netlify, Vercel, Render 
+* **DevOps, Cloud & Infrastructure:** PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Claude Cloud Platform, Google Cloud Platform, Azure, Netlify, Vercel, Render 
 * **Testing & QA:** JUnit 5, Mockito, Spring Boot Test (`@SpringBootTest`), Jest, Vitest, React Testing Library, Cypress, Playwright, Postman  
 * **Development Tools & Software:** VS Code, Cursor, Replit, Microsoft Office, Google Workspace, Odoo, Notion, Bash / PowerShell / Terminal  
 * **Web Design & Graphics:** Figma, Canva, Photoshop, Photopea, WordPress, Wix  
