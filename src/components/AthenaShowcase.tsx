@@ -13,7 +13,7 @@ const sites: ShowcaseSite[] = [
   { name: 'Academy-1', category: 'Education', url: 'https://athena-cms-factory.github.io/academy-1' },
   { name: 'De Schaar', category: 'Beauty & Wellness', url: 'https://athena-cms-factory.github.io/de-schaar' },
   { name: 'Athena Pro', category: 'B2B / SaaS', url: 'https://athena-cms-factory.github.io/athena-pro' },
-  { name: 'Gentse Dakwerken', category: 'Construction', url: 'https://athena-cms-factory.github.io/gentse-dakwerken' },
+  { name: 'Gentse Dakwerken', category: 'Construction', url: 'https://athena-cms-factory.github.io/gentse-dakwerken-v10' },
   { name: 'Lex & Justitia Advocaten', category: 'Legal Services', url: 'https://athena-cms-factory.github.io/lex-justitia' },
 ];
 
