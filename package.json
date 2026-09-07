@@ -53,5 +53,8 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["core-js", "core-js-pure"]
   }
 }
