@@ -1,7 +1,7 @@
 {
   "name": "Karel Decherf",
   "contact": {
-    "address": "Hurstweg 9, 9000 Gent",
+    "address": "",
     "email": "karel.decherf@gmail.com",
     "linkedin": "linkedin.com/in/karel-decherf-bb0b7140a",
     "github": "github.com/KarelTestSpecial"
@@ -24,9 +24,9 @@
       "period": "1994 - 2025",
       "description": [
         "Fabrieksarbeider (Pasec)",
-        "Keukenhulp (Paviljoen C)",
-        "Klerenhersteller (De Haven)",
-        "Kok (FPC)",
+        "Keukenhulp",
+        "Klerenhersteller",
+        "Kok",
         "Koerier (Pizza City)",
         "Uitzendkracht (Randstad, Brussel)",
         "Magazijnier (IKEA, Ternat)",
@@ -56,7 +56,7 @@
       "year": "2011"
     },
     {
-      "degree": "Professionele Bachelor in de Toegepaste Informatica",
+      "degree": "Hogere opleiding Toegepaste Informatica (A1)",
       "institution": "GOCI Aarschot",
       "year": "2001"
     },

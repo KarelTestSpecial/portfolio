@@ -2,7 +2,7 @@
 
 # **Karel Decherf**
 
-Hurstweg 9, 9000 Gent | [karel.decherf@gmail.com](mailto:karel.decherf@gmail.com) [linkedin.com/in/karel-decherf-bb0b7140a](https://www.linkedin.com/in/karel-decherf-bb0b7140a) | [github.com/KarelTestSpecial](https://github.com/KarelTestSpecial)
+[karel.decherf@gmail.com](mailto:karel.decherf@gmail.com) [linkedin.com/in/karel-decherf-bb0b7140a](https://www.linkedin.com/in/karel-decherf-bb0b7140a) | [github.com/KarelTestSpecial](https://github.com/KarelTestSpecial)
 
 ---
 
@@ -49,9 +49,9 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 
 **Overige functies** | Diverse rollen | 1994 - 2025
 * **Fabrieksarbeider** (Pasec)
-* **Keukenhulp** (Paviljoen C)
-* **Klerenhersteller** (De Haven)
-* **Kok** (FPC)
+* **Keukenhulp**
+* **Klerenhersteller**
+* **Kok**
 * **Koerier** (Pizza City)
 * **Uitzendkracht** (Randstad, Brussel)
 * **Magazijnier** (IKEA, Ternat)
@@ -76,7 +76,7 @@ Een selectie van persoonlijke projecten die mijn huidige technische vaardigheden
 
 * **Inleiding tot de Psychologie** | Open Universiteit | 2012  
 * **Omzetting Industrieel Ingenieur Mechanica (HTL4MMC)** | 2011  
-* **Professionele Bachelor in de Toegepaste Informatica** | GOCI Aarschot | 2001  
+* **Hogere opleiding Toegepaste Informatica (A1)** | GOCI Aarschot | 2001  
 * **Kandidatuur Industrieel Ingenieur (1e kand. cum laude)** | KIH De Nayer | 1995  
 * **Kandidatuur Filosofie** | KU Leuven | 1993 – 1994  
 * **ASO Wetenschappen-Wiskunde (8u Wis.)** | Sint-Godelieve-Instituut Lennik | 1993
