@@ -1,11 +1,11 @@
-name: Deploy from repo CV
+name: Update CV data
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'CV/cv.md'
+      - 'CV/**'
   workflow_dispatch:
 
 jobs:

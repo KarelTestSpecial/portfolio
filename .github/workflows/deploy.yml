@@ -1,11 +1,8 @@
-name: Deploy from repo TSV
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'projects/projects.tsv'
+    branches: [main]
   workflow_dispatch:
 
 jobs:

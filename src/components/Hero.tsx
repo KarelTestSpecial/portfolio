@@ -1,11 +1,14 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="jumbotron text-center">
       <div className="container">
-        <h1 className="display-4">Welcome to My Portfolio</h1>
-        <p className="lead text-muted text-readable-shadow">A showcase of my projects and skills.</p>
+        <h1 className="display-4">{t('hero.title')}</h1>
+        <p className="lead text-muted text-readable-shadow">{t('hero.subtitle')}</p>
       </div>
     </section>
   );

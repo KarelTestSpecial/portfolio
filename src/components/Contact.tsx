@@ -1,11 +1,14 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact">
       <div className="container">
-        <h2>Contact Me</h2>
-        <p>You can reach me at <a href="mailto:karel.decherf@gmail.com">karel.decherf@gmail.com</a></p>
+        <h2>{t('contact.title')}</h2>
+        <p>{t('contact.text')} <a href="mailto:karel.decherf@gmail.com">karel.decherf@gmail.com</a></p>
       </div>
     </section>
   );

@@ -2,8 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const mdPath = path.join(__dirname, '..', 'CV', 'cv.md');
-const jsonPath = path.join(__dirname, '..', 'src', 'data', 'cv.json');
+const cvDir = path.join(__dirname, '..', 'CV');
+const dataDir = path.join(__dirname, '..', 'src', 'data');
 
 // Helper function to extract a section from the markdown
 function getSection(text, startHeading) {
@@ -54,14 +54,25 @@ function parseCvMarkdown(md) {
     };
 
     // --- Profile & Notice ---
-    const profileSection = getSection(md, '### **Profiel**');
-    const profileParts = profileSection.split('Komt in aanmerking');
-    cv.profile = cleanLine(profileParts[0]);
-    cv.notice = profileParts[1] ? cleanLine('Komt in aanmerking' + profileParts[1]) : '';
+    const profileSection = getSection(md, '### **Profiel**') || getSection(md, '### **Profile**');
+    let profileParts = profileSection.split('Komt in aanmerking');
+    if (profileParts.length > 1) {
+        cv.profile = cleanLine(profileParts[0]);
+        cv.notice = cleanLine('Komt in aanmerking' + profileParts[1]);
+    } else {
+        profileParts = profileSection.split('Eligible for employer');
+        if (profileParts.length > 1) {
+            cv.profile = cleanLine(profileParts[0]);
+            cv.notice = cleanLine('Eligible for employer' + profileParts[1]);
+        } else {
+            cv.profile = cleanLine(profileSection);
+            cv.notice = '';
+        }
+    }
 
 
     // --- Work Experience ---
-    const expSection = getSection(md, '### **Werkervaring**');
+    const expSection = getSection(md, '### **Werkervaring**') || getSection(md, 'Work Experience');
     cv.workExperience = [];
     const lines = expSection.split('\n');
     let currentJob = null;
@@ -123,7 +134,7 @@ function parseCvMarkdown(md) {
     }
 
     // --- Skills ---
-    const skillsSection = getSection(md, '### **Vaardigheden**');
+    const skillsSection = getSection(md, '### **Vaardigheden**') || getSection(md, '### **Skills**');
     cv.skills = {};
     const skillLines = skillsSection.split('\n').filter(line => line.includes(':'));
     skillLines.forEach(line => {
@@ -134,7 +145,7 @@ function parseCvMarkdown(md) {
     });
 
     // --- Education ---
-    const eduSection = getSection(md, '### **Opleidingen en Cursussen**');
+    const eduSection = getSection(md, '### **Opleidingen en Cursussen**') || getSection(md, '### **Education**');
     cv.education = [];
     const eduLines = eduSection.split('\n').filter(line => line.trim());
     eduLines.forEach(line => {
@@ -149,11 +160,11 @@ function parseCvMarkdown(md) {
     });
 
     // --- Languages & Transport ---
-    const langSection = getSection(md, '### **Talen & Vervoer**');
+    const langSection = getSection(md, '### **Talen & Vervoer**') || getSection(md, '### **Languages & Mobility**');
     cv.languages = [];
     const langLines = langSection.split('\n').filter(line => line.trim());
     langLines.forEach(line => {
-        if (line.includes('Rijbewijs')) {
+        if (line.includes('Rijbewijs') || line.includes('Driving License')) {
             const parts = line.split(':');
             cv.transport = parts.length > 1 ? cleanLine(parts[1]) : '';
         } else if (line.includes(':')) {
@@ -167,15 +178,36 @@ function parseCvMarkdown(md) {
     return cv;
 }
 
+// Process NL CV
 try {
-    console.log('Reading CV.md...');
-    const markdownContent = fs.readFileSync(mdPath, 'utf8');
-    console.log('Parsing markdown and converting to JSON...');
+    const nlMdPath = path.join(cvDir, 'cv.md');
+    console.log('Reading NL CV.md...');
+    const markdownContent = fs.readFileSync(nlMdPath, 'utf8');
+    console.log('Parsing NL markdown and converting to JSON...');
     const cvData = parseCvMarkdown(markdownContent);
-    console.log(`Writing to ${jsonPath}...`);
-    fs.writeFileSync(jsonPath, JSON.stringify(cvData, null, 2));
-    console.log('Successfully updated cv.json!');
+    const nlJsonPath = path.join(dataDir, 'cv.json');
+    console.log(`Writing to ${nlJsonPath}...`);
+    fs.writeFileSync(nlJsonPath, JSON.stringify(cvData, null, 2));
+    console.log('Successfully updated cv.json (NL)!');
 } catch (error) {
-    console.error('Failed to update cv.json:', error);
-    process.exit(1);
+    console.error('Failed to update cv.json (NL):', error.message);
+}
+
+// Process ENG CV (if cv-eng.md exists)
+const engMdPath = path.join(cvDir, 'cv-eng.md');
+if (fs.existsSync(engMdPath)) {
+    try {
+        console.log('Reading ENG CV...');
+        const engMd = fs.readFileSync(engMdPath, 'utf8');
+        console.log('Parsing ENG markdown...');
+        const cvData = parseCvMarkdown(engMd);
+        const engJsonPath = path.join(dataDir, 'cv-eng.json');
+        console.log(`Writing to ${engJsonPath}...`);
+        fs.writeFileSync(engJsonPath, JSON.stringify(cvData, null, 2));
+        console.log('Successfully updated cv-eng.json!');
+    } catch (error) {
+        console.error('Failed to update cv-eng.json:', error.message);
+    }
+} else {
+    console.log('cv-eng.md not found, skipping ENG CV update.');
 }
