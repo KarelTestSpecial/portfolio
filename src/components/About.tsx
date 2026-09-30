@@ -77,8 +77,8 @@ const About: React.FC = () => {
         <h2 data-reveal>{t('about.title')}</h2>
 
         <div className="row g-4">
-          <div className="col-lg-7" data-reveal>
-            <div className="info-card info-card--profile">
+          <div className="col-lg-7 d-flex flex-column" data-reveal>
+            <div className="info-card info-card--profile flex-fill">
               <h4 className="mt-0">{t('about.profileTitle')}</h4>
               <p className="profile-text">{cvData.profile}</p>
               <div className="callout">
@@ -88,8 +88,8 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="col-lg-5" data-reveal data-reveal-delay="1">
-            <div className="info-card">
+          <div className="col-lg-5 d-flex flex-column" data-reveal data-reveal-delay="1">
+            <div className="info-card flex-fill">
               <h4 className="mt-0">{t('about.contactDetails')}</h4>
               <ul className="contact-list">
                 {contactRows.map((row) => (
@@ -136,64 +136,76 @@ const About: React.FC = () => {
           </div>
         </div>
 
+        {/* Experience + education sit side by side in cards of equal height. */}
         <div className="row g-4 mt-4">
-          <div className="col-lg-7" data-reveal>
-            <h4 className="mt-0">{t('about.experience')}</h4>
-            <ul className="timeline">
-              {cvData.workExperience.map((job, index) => (
-                <li className="timeline__item" key={`${job.role}-${index}`}>
-                  <span className="timeline__role">{job.role}</span>
-                  <span className="timeline__meta">
-                    {job.company}
-                    {job.company && job.period ? ' · ' : ''}
-                    {job.period}
-                  </span>
-                  {Array.isArray(job.description) && job.description.length > 0 && (
-                    <ul className="timeline__list">
-                      {job.description.map((bullet, i) => (
-                        <li key={i}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
+          <div className="col-lg-6 d-flex flex-column" data-reveal>
+            <div className="panel flex-fill">
+              <h4 className="mt-0">{t('about.experience')}</h4>
+              <ul className="timeline">
+                {cvData.workExperience.map((job, index) => (
+                  <li className="timeline__item" key={`${job.role}-${index}`}>
+                    <span className="timeline__role">{job.role}</span>
+                    <span className="timeline__meta">
+                      {job.company}
+                      {job.company && job.period ? ' · ' : ''}
+                      {job.period}
+                    </span>
+                    {Array.isArray(job.description) && job.description.length > 0 && (
+                      <ul className="timeline__list">
+                        {job.description.map((bullet, i) => (
+                          <li key={i}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <div className="col-lg-5" data-reveal data-reveal-delay="1">
-            <h4 className="mt-0">{t('about.education')}</h4>
-            <div className="panel mb-4">
-              {cvData.education.map((edu, index) => (
-                <div className="edu-item" key={`${edu.degree}-${index}`}>
-                  <span className="edu-item__year">{edu.year}</span>
-                  <span>
-                    <span className="edu-item__degree">{edu.degree}</span>
-                    {edu.institution && (
-                      <span className="edu-item__where"> — {edu.institution}</span>
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <h4>{t('about.skills')}</h4>
-            <div className="panel">
-              {Object.entries(cvData.skills).map(([category, skills]) => (
-                <div className="skill-group" key={category}>
-                  <span className="skill-group__label">{formatCategory(category)}</span>
-                  <div className="chips">
-                    {splitSkills(skills).map((skill) => (
-                      <span className="chip" key={skill}>
-                        {skill}
-                      </span>
-                    ))}
+          <div className="col-lg-6 d-flex flex-column" data-reveal data-reveal-delay="1">
+            <div className="panel flex-fill">
+              <h4 className="mt-0">{t('about.education')}</h4>
+              <div className="edu-list">
+                {cvData.education.map((edu, index) => (
+                  <div className="edu-item" key={`${edu.degree}-${index}`}>
+                    <span className="edu-item__year">{edu.year}</span>
+                    <span>
+                      <span className="edu-item__degree">{edu.degree}</span>
+                      {edu.institution && (
+                        <span className="edu-item__where"> — {edu.institution}</span>
+                      )}
+                    </span>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Skills get the full width: laid out in balanced columns so the long
+            list never stretches the row above it. */}
+        <div className="row g-4 mt-4">
+          <div className="col-12" data-reveal>
+            <div className="panel">
+              <h4 className="mt-0">{t('about.skills')}</h4>
+              <div className="skills-columns">
+                {Object.entries(cvData.skills).map(([category, skills]) => (
+                  <div className="skill-group" key={category}>
+                    <span className="skill-group__label">{formatCategory(category)}</span>
+                    <div className="chips">
+                      {splitSkills(skills).map((skill) => (
+                        <span className="chip" key={skill}>
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

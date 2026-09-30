@@ -70,6 +70,12 @@ pnpm test
 *   **Motion:** Elements marked with `data-reveal` (optionally `data-reveal-delay="1".."3"`) fade/slide in via
     `src/hooks/useScrollReveal.ts`, which is called once in `src/App.tsx` and respects
     `prefers-reduced-motion`. Heavy animation should keep this pattern.
+*   **Equal-height cards:** Bootstrap columns are flex items that stretch, so a short column inherits the
+    height of the tallest one. Fill a card with the `d-flex flex-column` + `flex-fill` pattern on the column
+    instead of `height: 100%` on the card: inside a stretched column `height: 100%` resolves against the whole
+    row and leaves very large empty blocks (this previously stretched the education card and the work
+    experience column). Keep tall content — such as the skills list — out of a two-column row, or lay it out
+    with `.skills-columns` (CSS multi-column, balanced).
 *   **Internationalisation:** All user-facing copy goes through `useLanguage()` / `t('key')`. Every new key must
     be added to **both** `src/i18n/nl.json` and `src/i18n/en.json`, otherwise the raw key is rendered.
 *   **Data:** Skills, project counts and showcase entries have single sources of truth —

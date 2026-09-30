@@ -775,9 +775,12 @@ hr {
 /* ==========================================================================
    About
    ========================================================================== */
+/* Cards stretch to their column via the `d-flex flex-column` + `.flex-fill`
+   pattern (see About.tsx). Never use `height: 100%` here: inside a stretched
+   Bootstrap column that resolves against the whole row and creates huge
+   empty blocks. */
 .info-card,
 .panel {
-  height: 100%;
   padding: 1.4rem 1.5rem;
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.72);
@@ -785,6 +788,11 @@ hr {
   box-shadow: var(--shadow-sm);
   transition: transform 0.35s var(--ease-out), box-shadow 0.35s ease,
     border-color 0.35s ease;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
 }
 
 .info-card:hover,
@@ -933,6 +941,13 @@ hr {
 }
 
 /* Education */
+.edu-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .edu-item {
   display: flex;
   align-items: baseline;
@@ -972,8 +987,32 @@ hr {
 }
 
 /* Skills */
-.skill-group + .skill-group {
-  margin-top: 1.1rem;
+.skills-columns {
+  columns: 3;
+  column-gap: 2rem;
+}
+
+@media (max-width: 1199.98px) {
+  .skills-columns {
+    columns: 2;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .skills-columns {
+    columns: 1;
+  }
+}
+
+.skill-group {
+  margin-bottom: 1.35rem;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
 }
 
 .skill-group__label {
