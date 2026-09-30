@@ -1,17 +1,31 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import App from './App';
 
-test('renders the main project heading', async () => {
+test('renders the projects heading', async () => {
   render(<App />);
-  // We look for a heading with the specific name "Recent Projects".
-  // This is more specific than searching by text and avoids matching the nav link.
-  const headingElement = await screen.findByRole('heading', { name: /Recent Projects/i });
+  // Language defaults to the browser language: accept both translations.
+  const headingElement = await screen.findByRole('heading', {
+    name: /My Projects|Recente Projecten/i,
+  });
   expect(headingElement).toBeInTheDocument();
 });
 
-test('header "My Portfolio" is a button', () => {
+test('brand links back to the top of the page', () => {
   render(<App />);
-  const portfolioButton = screen.getByRole('button', { name: /My Portfolio/i });
-  expect(portfolioButton).toBeInTheDocument();
+  const banner = screen.getByRole('banner');
+  const brandLink = within(banner).getByRole('link', {
+    name: /My Portfolio|Mijn Portfolio/i,
+  });
+  expect(brandLink).toHaveAttribute('href', '#top');
+});
+
+test('the language switcher translates the page', async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole('button', { name: 'NL' }));
+
+  const headingElement = await screen.findByRole('heading', {
+    name: /Recente Projecten/i,
+  });
+  expect(headingElement).toBeInTheDocument();
 });

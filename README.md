@@ -161,6 +161,31 @@ The **first row** of `projects.tsv` contains the column headers. The order and e
 
 ---
 
+## Design System
+
+The visual layer lives in [`src/App.css`](src/App.css) and is driven by CSS custom properties, so the whole
+look can be re-themed from one place.
+
+*   **Colours, radii, shadows, gradients** are defined as tokens on `:root` (e.g. `--brand-600`, `--accent-500`,
+  `--radius-lg`, `--grad-brand`). Change a token there and every component follows.
+*   **Components & utilities:** `section[id]` renders the glass card shell used by *About*, *Projects* and
+  *Athena Showcase*; `#contact` is a full-bleed dark CTA band; `.project-card`, `.showcase-card`,
+  `.info-card`, `.panel`, `.chip`, `.timeline`, `.stat-chip` and `.badge-soft` cover the rest.
+*   **Icons** are inline SVGs from [`src/components/Icons.tsx`](src/components/Icons.tsx) — no icon library
+  is bundled.
+*   **Motion:** sections and cards carry `data-reveal` (with an optional `data-reveal-delay="1…3"`) and are
+  animated by [`src/hooks/useScrollReveal.ts`](src/hooks/useScrollReveal.ts). All animation is disabled
+  automatically for visitors with `prefers-reduced-motion: reduce`.
+*   **Images:** `src/assets/desk-setup.jpg` (hero) and `src/assets/background-texture.jpg` (page texture) are
+  optimised derivatives of the original PNGs, which are kept in the repository as source material.
+
+### Adding a new translated string
+
+1.  Add the key to **both** `src/i18n/nl.json` and `src/i18n/en.json` (keys are flat, e.g. `"hero.subtitle"`).
+2.  Read it in a component with `const { t } = useLanguage();` and `t('your.key')`.
+
+---
+
 ## Advanced Scripts
 
 The following scripts are also available for more specific tasks.
