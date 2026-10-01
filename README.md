@@ -140,7 +140,7 @@ It can take a few minutes for the changes to become visible on the live URL.
 
 The **first row** of `projects.tsv` contains the column headers. The order and exact spelling are **very important**.
 
-`type` | `name` | `description` | `link` | `githubLink` | `liveLink` | `status`
+`type` | `name` | `githubLink` | `liveLink` | `status` | `description` | `descriptionEn`
 --- | --- | --- | --- | --- | --- | ---
 
 ### Explanation:
@@ -150,14 +150,59 @@ The **first row** of `projects.tsv` contains the column headers. The order and e
     *   `github` (for a GitHub Project)
     *   `website` (for another website)
 *   **name**: The name of your project (e.g., "My Cool App").
-*   **description**: A short description of the project.
-*   **link**: The main link for the project.
+*   **githubLink**: The link to the GitHub repository. For `chrome` and `website` projects this shows a "GitHub" button.
+*   **liveLink**: The link to the live version of the project.
     *   For `chrome`, this is the link to the Chrome Web Store.
     *   For `website`, this is the link to the website.
-    *   For `github`, this field is not required.
-*   **githubLink**: **Only** for `github` projects. The link to the GitHub repository.
-*   **liveLink**: **Only** for `github` projects. The link to a live demo of the project.
-*   **status**: (Optional) Determines if the "Live Demo" button is shown. Set to `active` to show the button. Any other value (or an empty cell) hides the button.
+    *   For `github`, this is the link to a live demo (only shown when `status` is `active`).
+*   **status**: (Optional) Determines if the "Live Demo" / "Visit Website" button is shown. Set to `active` to show the button. Any other value (or an empty cell) hides the button and marks the project as no longer active.
+*   **description**: The Dutch description of the project.
+*   **descriptionEn**: (Optional) The **English** description of the project. Shown when a visitor switches the site to English. When the cell is empty the Dutch `description` is used as a fallback, so you can translate projects one at a time. Add this column to your Google Sheet as well if you manage the list there.
+
+> **Note:** the file uses tab-separated values with Windows line endings (`CRLF`). Do not use tabs inside a description, and keep one project per line.
+
+
+---
+
+## Design System
+
+The visual layer lives in [`src/App.css`](src/App.css) and is driven by CSS custom properties, so the whole
+look can be re-themed from one place.
+
+*   **Colours, radii, shadows, gradients** are defined as tokens on `:root` (e.g. `--brand-600`, `--accent-500`,
+  `--radius-lg`, `--grad-brand`). Change a token there and every component follows.
+*   **Header controls:** every control in the top bar (brand mark, navigation links, hamburger, language
+  switcher, theme toggle) shares one height and one type scale, defined as tokens on `:root`:
+  `--nav-control-h` (40px), `--nav-font` (links), `--nav-font-sm` (labels) and `--nav-font-brand` (wordmark).
+  Because the heights are identical, the flex centring of the header lines everything up. When adding a control,
+  give it `height: var(--nav-control-h)` instead of a hard-coded size.
+*   **Light & dark theme:** `src/theme/ThemeContext.tsx` stores the visitor's choice in
+  `localStorage` (`portfolio-theme`) and falls back to the operating system preference. It puts the theme on
+  `<html>` as `data-theme` (our CSS), `data-bs-theme` (Bootstrap components) and `color-scheme` (native UI).
+  Dark mode is implemented purely by overriding the design tokens in `:root[data-theme='dark']`; the handful of
+  details that are not plain surfaces (badges, callout, status pill, page texture) are overridden at the end of
+  `src/App.css`. **Add a new colour as a token in both blocks**, otherwise it will not follow the theme.
+  `ThemeToggle.tsx` is the switch in the header.
+*   **Components & utilities:** `section[id]` renders the glass card shell used by *About*, *Projects* and
+  *Athena Showcase*; `#contact` is a full-bleed dark CTA band; `.project-card`, `.showcase-card`,
+  `.info-card`, `.panel`, `.chip`, `.timeline`, `.stat-chip` and `.badge-soft` cover the rest.
+*   **Button variants:** `.btn-brand` (purple→cyan gradient, primary actions), `.btn-github` (emerald gradient,
+  for repository links — deliberately coloured so it does not look disabled next to the primary button),
+  `.btn-outline-ink`, `.btn-soft`, `.btn-github` and `.btn-glass`. The GitHub colours live in `--btn-github-*`
+  tokens in *both* theme blocks, and `src/styles.test.ts` asserts they stay green-dominant and keep ≥4.5:1
+  contrast against the label.
+*   **Icons** are inline SVGs from [`src/components/Icons.tsx`](src/components/Icons.tsx) — no icon library
+  is bundled.
+*   **Motion:** sections and cards carry `data-reveal` (with an optional `data-reveal-delay="1…3"`) and are
+  animated by [`src/hooks/useScrollReveal.ts`](src/hooks/useScrollReveal.ts). All animation is disabled
+  automatically for visitors with `prefers-reduced-motion: reduce`.
+*   **Images:** `src/assets/desk-setup.jpg` (hero) and `src/assets/background-texture.jpg` (page texture) are
+  optimised derivatives of the original PNGs, which are kept in the repository as source material.
+
+### Adding a new translated string
+
+1.  Add the key to **both** `src/i18n/nl.json` and `src/i18n/en.json` (keys are flat, e.g. `"hero.subtitle"`).
+2.  Read it in a component with `const { t } = useLanguage();` and `t('your.key')`.
 
 ---
 

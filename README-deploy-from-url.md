@@ -13,6 +13,8 @@ The workflow fetches project data from a public Tab-Separated Values (TSV) file,
 1.  **Modify the Google Sheet**:
     *   Open the master Google Sheet that contains your project data.
     *   Make any desired changes (add, remove, or edit projects).
+    *   Each project can have both a Dutch `description` and an English `descriptionEn`. Keep the header of the
+        English column spelled exactly `descriptionEn`; leave the cell empty to fall back to the Dutch text.
 
 2.  **Publish the Google Sheet to the Web**:
     *   In the Google Sheet, go to `File > Share > Publish to web`.

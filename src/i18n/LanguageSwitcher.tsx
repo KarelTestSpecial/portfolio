@@ -1,36 +1,23 @@
 import React from 'react';
-import { useLanguage } from './LanguageContext';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="d-flex align-items-center ms-3">
+    <div className="lang-switch" role="group" aria-label="Language">
       <button
-        className="btn btn-sm me-1"
-        style={{
-          fontWeight: language === 'nl' ? 'bold' : 'normal',
-          textDecoration: language === 'nl' ? 'underline' : 'none',
-          border: 'none',
-          background: 'none',
-          cursor: 'pointer',
-          fontSize: '0.9rem',
-        }}
+        type="button"
+        className={language === 'nl' ? 'is-active' : undefined}
+        aria-pressed={language === 'nl'}
         onClick={() => setLanguage('nl')}
       >
         NL
       </button>
-      <span className="text-muted">|</span>
       <button
-        className="btn btn-sm ms-1"
-        style={{
-          fontWeight: language === 'en' ? 'bold' : 'normal',
-          textDecoration: language === 'en' ? 'underline' : 'none',
-          border: 'none',
-          background: 'none',
-          cursor: 'pointer',
-          fontSize: '0.9rem',
-        }}
+        type="button"
+        className={language === 'en' ? 'is-active' : undefined}
+        aria-pressed={language === 'en'}
         onClick={() => setLanguage('en')}
       >
         EN
