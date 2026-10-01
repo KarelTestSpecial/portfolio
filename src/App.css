@@ -70,7 +70,7 @@
   --nav-font-brand: 1.02rem;/* wordmark */
   --nav-gap: 0.9rem;
 
-  --header-h: 64px;
+  --header-h: calc(var(--nav-control-h) + 1.2rem + 1px); /* controls + header padding + border */
   --ease-out: cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
@@ -443,7 +443,10 @@ hr {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  margin-left: auto;
+  /* Bootstrap's reboot adds `margin-bottom: 1rem` to every <ul>. Without this
+     reset the list is 16px taller than the other controls and floats above the
+     centre line of the header. `margin-left` is set per breakpoint below. */
+  margin: 0;
   padding: 0;
   list-style: none;
 }
