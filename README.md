@@ -186,6 +186,11 @@ look can be re-themed from one place.
 *   **Components & utilities:** `section[id]` renders the glass card shell used by *About*, *Projects* and
   *Athena Showcase*; `#contact` is a full-bleed dark CTA band; `.project-card`, `.showcase-card`,
   `.info-card`, `.panel`, `.chip`, `.timeline`, `.stat-chip` and `.badge-soft` cover the rest.
+*   **Button variants:** `.btn-brand` (purple→cyan gradient, primary actions), `.btn-github` (emerald gradient,
+  for repository links — deliberately coloured so it does not look disabled next to the primary button),
+  `.btn-outline-ink`, `.btn-soft`, `.btn-github` and `.btn-glass`. The GitHub colours live in `--btn-github-*`
+  tokens in *both* theme blocks, and `src/styles.test.ts` asserts they stay green-dominant and keep ≥4.5:1
+  contrast against the label.
 *   **Icons** are inline SVGs from [`src/components/Icons.tsx`](src/components/Icons.tsx) — no icon library
   is bundled.
 *   **Motion:** sections and cards carry `data-reveal` (with an optional `data-reveal-delay="1…3"`) and are

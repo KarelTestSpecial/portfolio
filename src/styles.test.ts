@@ -61,3 +61,89 @@ test('the navigation list resets the browser list margin', () => {
 test('the anchor offset follows the real header height', () => {
   expect(css).toMatch(/--header-h:\s*calc\(var\(--nav-control-h\)/);
 });
+
+/* --------------------------------------------------------------------------
+   GitHub action buttons: they must look active (coloured, not grey) next to
+   the gradient brand buttons, and stay readable in both themes.
+   -------------------------------------------------------------------------- */
+
+const THEMES = [':root', ":root[data-theme='dark']"];
+
+const token = (name: string, theme: string): string => {
+  const body = ruleBodies(theme)[0];
+  const match = body.match(new RegExp(`--${name}:\\s*([^;]+);`));
+  if (!match) throw new Error(`--${name} not found in ${theme}`);
+  return match[1].trim();
+};
+
+const hexToRgb = (hex: string): [number, number, number] => [
+  parseInt(hex.slice(1, 3), 16),
+  parseInt(hex.slice(3, 5), 16),
+  parseInt(hex.slice(5, 7), 16),
+];
+
+const channelLuminance = (value: number): number => {
+  const channel = value / 255;
+  return channel <= 0.03928
+    ? channel / 12.92
+    : Math.pow((channel + 0.055) / 1.055, 2.4);
+};
+
+const relativeLuminance = (hex: string): number => {
+  const [r, g, b] = hexToRgb(hex);
+  return (
+    0.2126 * channelLuminance(r) +
+    0.7152 * channelLuminance(g) +
+    0.0722 * channelLuminance(b)
+  );
+};
+
+const contrastRatio = (a: string, b: string): number => {
+  const first = relativeLuminance(a);
+  const second = relativeLuminance(b);
+  const lighter = Math.max(first, second);
+  const darker = Math.min(first, second);
+  return (lighter + 0.05) / (darker + 0.05);
+};
+
+const gradientStops = (value: string): string[] =>
+  value.match(/#[0-9a-fA-F]{6}/g) ?? [];
+
+test('the GitHub button uses its own gradient tokens', () => {
+  const base = ruleBodies('.btn-github')[0];
+  expect(base).toMatch(/background:\s*var\(--btn-github-grad\)/);
+  expect(css).toMatch(/var\(--btn-github-grad-hover\)/);
+  // Before, dark mode rendered it as a flat translucent grey.
+  expect(token('btn-github-grad', ":root[data-theme='dark']")).toMatch(/gradient/);
+});
+
+test('the GitHub gradient is green, never grey, in both themes', () => {
+  THEMES.forEach((theme) => {
+    const stops = [
+      ...gradientStops(token('btn-github-grad', theme)),
+      ...gradientStops(token('btn-github-grad-hover', theme)),
+    ];
+
+    expect(stops.length).toBeGreaterThanOrEqual(3);
+    stops.forEach((stop) => {
+      const [r, g, b] = hexToRgb(stop);
+      // A green-dominant hue reads as "active"; grey would have r ≈ g ≈ b.
+      expect(g).toBeGreaterThan(r + 30);
+      expect(g).toBeGreaterThan(b + 20);
+    });
+  });
+});
+
+test('GitHub button text stays readable on every gradient stop', () => {
+  THEMES.forEach((theme) => {
+    const foreground = token('btn-github-fg', theme);
+    const stops = [
+      ...gradientStops(token('btn-github-grad', theme)),
+      ...gradientStops(token('btn-github-grad-hover', theme)),
+    ];
+
+    stops.forEach((stop) => {
+      expect(contrastRatio(stop, foreground)).toBeGreaterThanOrEqual(4.5);
+    });
+  });
+});
