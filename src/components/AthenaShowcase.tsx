@@ -1,7 +1,22 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { showcaseSites, showcaseUrl } from '../data/showcase';
-import { IconExternal } from './Icons';
+
+interface ShowcaseSite {
+  name: string;
+  category: string;
+  url: string;
+}
+
+const sites: ShowcaseSite[] = [
+  { name: 'Urban Brew & Bite', category: 'Hospitality', url: 'https://athena-cms-factory.github.io/urban-brew-bite' },
+  { name: 'Urban Soles', category: 'E-commerce', url: 'https://athena-cms-factory.github.io/urban-soles' },
+  { name: 'Belgian Chocolate Shop', category: 'E-commerce', url: 'https://athena-cms-factory.github.io/chocolade-shop' },
+  { name: 'Academy-1', category: 'Education', url: 'https://athena-cms-factory.github.io/academy-1' },
+  { name: 'De Schaar', category: 'Beauty & Wellness', url: 'https://athena-cms-factory.github.io/de-schaar' },
+  { name: 'Athena Pro', category: 'B2B / SaaS', url: 'https://athena-cms-factory.github.io/athena-pro' },
+  { name: 'Gentse Dakwerken', category: 'Construction', url: 'https://athena-cms-factory.github.io/gentse-dakwerken-v10' },
+  { name: 'Lex & Justitia Advocaten', category: 'Legal Services', url: 'https://athena-cms-factory.github.io/lex-justitia' },
+];
 
 const AthenaShowcase: React.FC = () => {
   const { t } = useLanguage();
@@ -9,37 +24,27 @@ const AthenaShowcase: React.FC = () => {
   return (
     <section id="athena-showcase">
       <div className="container">
-        <h2 data-reveal>{t('athena.title')}</h2>
-
-        <p data-reveal>
+        <h2>{t('athena.title')}</h2>
+        <p>
           {t('athena.description')}{' '}
-          <a href={showcaseUrl} target="_blank" rel="noopener noreferrer">
+          <a href="https://athena-cms-factory.github.io/athena-hub/" target="_blank" rel="noopener noreferrer">
             Athena CMS Factory
           </a>
           {t('athena.descriptionSuffix')}
         </p>
-
-        <div className="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-4">
-          {showcaseSites.map((site, index) => (
-            <div
-              className="col d-flex align-items-stretch"
-              key={site.name}
-              data-reveal
-              data-reveal-delay={`${(index % 4) + 1}`}
-            >
+        <div className="row g-3 row-cols-1 row-cols-md-3 row-cols-lg-4">
+          {sites.map((site) => (
+            <div className="col d-flex align-items-stretch" key={site.name}>
               <a
                 href={site.url}
-                className="showcase-card"
+                className="card shadow-sm text-decoration-none w-100"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="showcase-card__preview" aria-hidden="true" />
-                <h5 className="showcase-card__name">{site.name}</h5>
-                <p className="showcase-card__category">{site.category}</p>
-                <span className="showcase-card__foot">
-                  {t('athena.visit')}
-                  <IconExternal size={15} />
-                </span>
+                <div className="card-body">
+                  <h5 className="card-title">{site.name}</h5>
+                  <p className="card-text text-muted mb-0">{site.category}</p>
+                </div>
               </a>
             </div>
           ))}
