@@ -50,6 +50,8 @@
   "footer.builtWith": "Built with React & TypeScript",
   "footer.top": "Back to top",
   "footer.copyright": "© 2025 Karel Decherf",
+  "theme.switchToDark": "Switch to dark theme",
+  "theme.switchToLight": "Switch to light theme",
   "lang.nl": "NL",
   "lang.en": "EN"
 }

@@ -171,6 +171,13 @@ look can be re-themed from one place.
 
 *   **Colours, radii, shadows, gradients** are defined as tokens on `:root` (e.g. `--brand-600`, `--accent-500`,
   `--radius-lg`, `--grad-brand`). Change a token there and every component follows.
+*   **Light & dark theme:** `src/theme/ThemeContext.tsx` stores the visitor's choice in
+  `localStorage` (`portfolio-theme`) and falls back to the operating system preference. It puts the theme on
+  `<html>` as `data-theme` (our CSS), `data-bs-theme` (Bootstrap components) and `color-scheme` (native UI).
+  Dark mode is implemented purely by overriding the design tokens in `:root[data-theme='dark']`; the handful of
+  details that are not plain surfaces (badges, callout, status pill, page texture) are overridden at the end of
+  `src/App.css`. **Add a new colour as a token in both blocks**, otherwise it will not follow the theme.
+  `ThemeToggle.tsx` is the switch in the header.
 *   **Components & utilities:** `section[id]` renders the glass card shell used by *About*, *Projects* and
   *Athena Showcase*; `#contact` is a full-bleed dark CTA band; `.project-card`, `.showcase-card`,
   `.info-card`, `.panel`, `.chip`, `.timeline`, `.stat-chip` and `.badge-soft` cover the rest.

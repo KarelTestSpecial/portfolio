@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import LanguageSwitcher from '../i18n/LanguageSwitcher';
+import ThemeToggle from '../theme/ThemeToggle';
 
 const NAV_ITEMS = [
   { id: 'about', key: 'header.about' },
@@ -47,16 +48,19 @@ const Header: React.FC = () => {
             <span className="brand__text">{t('header.brand')}</span>
           </a>
 
-          <button
-            className="nav-toggle"
-            type="button"
-            aria-controls="navbarNav"
-            aria-expanded={isNavOpen}
-            aria-label="Toggle navigation"
-            onClick={() => setIsNavOpen((open) => !open)}
-          >
-            <span className="nav-toggle__bars" />
-          </button>
+          <div className="site-nav__actions">
+            <ThemeToggle />
+            <button
+              className="nav-toggle"
+              type="button"
+              aria-controls="navbarNav"
+              aria-expanded={isNavOpen}
+              aria-label="Toggle navigation"
+              onClick={() => setIsNavOpen((open) => !open)}
+            >
+              <span className="nav-toggle__bars" />
+            </button>
+          </div>
 
           <div className={`site-nav__collapse ${isNavOpen ? 'is-open' : ''}`} id="navbarNav">
             <ul className="nav-links">

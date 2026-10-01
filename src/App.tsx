@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { LanguageProvider } from './i18n/LanguageContext';
+import { ThemeProvider } from './theme/ThemeContext';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -14,19 +15,21 @@ function App() {
   useScrollReveal();
 
   return (
-    <LanguageProvider>
-      <div className="app-shell" id="top">
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Projects />
-          <AthenaShowcase />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="app-shell" id="top">
+          <Header />
+          <main>
+            <Hero />
+            <About />
+            <Projects />
+            <AthenaShowcase />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

@@ -67,6 +67,11 @@ pnpm test
     `.btn-outline-ink`, `.btn-github`, `.btn-glass`) over adding inline `style={{}}` or new one-off rules.
 *   **Icons:** Inline stroke SVGs are defined in `src/components/Icons.tsx`. Add new icons there instead of
     pulling in an icon package.
+*   **Theming:** `src/theme/ThemeContext.tsx` (provider, `useTheme()`) applies light/dark to `<html>` via
+    `data-theme`, `data-bs-theme` and `color-scheme`, persists the choice and follows the system preference
+    until the visitor chooses. `applyStoredTheme()` runs in `src/index.tsx` before the first paint. Dark mode is
+    only a second set of tokens in `:root[data-theme='dark']`, so new colours must be added to **both** token
+    blocks (plus a rule in the dark section at the end of `App.css` when the element is not a plain surface).
 *   **Motion:** Elements marked with `data-reveal` (optionally `data-reveal-delay="1".."3"`) fade/slide in via
     `src/hooks/useScrollReveal.ts`, called once in `src/App.tsx`. Two rules keep this safe, and both matter:
     the hidden state only applies while `<html>` carries `reveal-ready` (set in `src/index.tsx`, so content is

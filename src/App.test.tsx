@@ -7,6 +7,8 @@ import App from './App';
 // the next test render in Dutch instead of the default (browser) language.
 beforeEach(() => {
   window.localStorage.clear();
+  document.documentElement.removeAttribute('data-theme');
+  document.documentElement.removeAttribute('data-bs-theme');
 });
 
 test('renders the projects heading', async () => {
@@ -65,6 +67,30 @@ test('the Athena showcase explains the Google Sheet CMS in both languages', () =
 
   expect(showcaseText()).toMatch(/Google Sheet/i);
   expect(showcaseText()).toContain('klanten passen zelf hun teksten');
+});
+
+test('the theme toggle switches the theme and remembers the choice', () => {
+  render(<App />);
+
+  // jsdom reports no prefers-color-scheme, so the default is light.
+  expect(document.documentElement.dataset.theme).toBe('light');
+
+  fireEvent.click(screen.getByRole('button', { name: /dark theme|donker thema/i }));
+
+  expect(document.documentElement.dataset.theme).toBe('dark');
+  expect(document.documentElement.dataset.bsTheme).toBe('dark');
+  expect(window.localStorage.getItem('portfolio-theme')).toBe('dark');
+
+  // The button now offers the way back.
+  fireEvent.click(screen.getByRole('button', { name: /light theme|licht thema/i }));
+  expect(document.documentElement.dataset.theme).toBe('light');
+  expect(window.localStorage.getItem('portfolio-theme')).toBe('light');
+});
+
+test('a stored theme is restored on load', () => {
+  window.localStorage.setItem('portfolio-theme', 'dark');
+  render(<App />);
+  expect(document.documentElement.dataset.theme).toBe('dark');
 });
 
 const cardByTitle = (container: HTMLElement, name: string) =>

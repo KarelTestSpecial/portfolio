@@ -23,6 +23,19 @@ const base = (size: number) => ({
   focusable: 'false' as const,
 });
 
+export const IconSun: React.FC<IconProps> = ({ size = 18, className }) => (
+  <svg {...base(size)} className={className}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2.8v2.1M12 19.1v2.1M4.5 4.5l1.5 1.5M18 18l1.5 1.5M2.8 12h2.1M19.1 12h2.1M4.5 19.5 6 18M18 6l1.5-1.5" />
+  </svg>
+);
+
+export const IconMoon: React.FC<IconProps> = ({ size = 18, className }) => (
+  <svg {...base(size)} className={className}>
+    <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" />
+  </svg>
+);
+
 export const IconMail: React.FC<IconProps> = ({ size = 18, className }) => (
   <svg {...base(size)} className={className}>
     <rect x="3" y="5" width="18" height="14" rx="3" />
