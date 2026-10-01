@@ -171,6 +171,11 @@ look can be re-themed from one place.
 
 *   **Colours, radii, shadows, gradients** are defined as tokens on `:root` (e.g. `--brand-600`, `--accent-500`,
   `--radius-lg`, `--grad-brand`). Change a token there and every component follows.
+*   **Header controls:** every control in the top bar (brand mark, navigation links, hamburger, language
+  switcher, theme toggle) shares one height and one type scale, defined as tokens on `:root`:
+  `--nav-control-h` (40px), `--nav-font` (links), `--nav-font-sm` (labels) and `--nav-font-brand` (wordmark).
+  Because the heights are identical, the flex centring of the header lines everything up. When adding a control,
+  give it `height: var(--nav-control-h)` instead of a hard-coded size.
 *   **Light & dark theme:** `src/theme/ThemeContext.tsx` stores the visitor's choice in
   `localStorage` (`portfolio-theme`) and falls back to the operating system preference. It puts the theme on
   `<html>` as `data-theme` (our CSS), `data-bs-theme` (Bootstrap components) and `color-scheme` (native UI).

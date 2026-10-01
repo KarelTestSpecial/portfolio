@@ -67,6 +67,11 @@ pnpm test
     `.btn-outline-ink`, `.btn-github`, `.btn-glass`) over adding inline `style={{}}` or new one-off rules.
 *   **Icons:** Inline stroke SVGs are defined in `src/components/Icons.tsx`. Add new icons there instead of
     pulling in an icon package.
+*   **Header controls:** sizing and vertical alignment of the top bar rely on shared tokens
+    (`--nav-control-h: 40px`, `--nav-font`, `--nav-font-sm`, `--nav-font-brand`, `--nav-gap`). Brand mark,
+    navigation links, hamburger, language switcher and theme toggle all declare `height: var(--nav-control-h)`
+    (the mobile menu uses `height: auto; min-height: var(--nav-control-h)`), which is what keeps them on one
+    line. Never hard-code a height or font size for a header control.
 *   **Theming:** `src/theme/ThemeContext.tsx` (provider, `useTheme()`) applies light/dark to `<html>` via
     `data-theme`, `data-bs-theme` and `color-scheme`, persists the choice and follows the system preference
     until the visitor chooses. `applyStoredTheme()` runs in `src/index.tsx` before the first paint. Dark mode is

@@ -62,7 +62,15 @@
   --grad-brand-soft: linear-gradient(140deg, rgba(124, 58, 237, 0.14), rgba(6, 182, 212, 0.14));
   --grad-ink: linear-gradient(160deg, #312e81 0%, #6d28d9 55%, #0891b2 100%);
 
-  --header-h: 74px;
+  /* Header controls: every button, label and badge shares one height and one
+     type scale so the bar lines up exactly. */
+  --nav-control-h: 40px;
+  --nav-font: 0.94rem;      /* navigation links */
+  --nav-font-sm: 0.82rem;   /* language labels, small captions */
+  --nav-font-brand: 1.02rem;/* wordmark */
+  --nav-gap: 0.9rem;
+
+  --header-h: 64px;
   --ease-out: cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
@@ -367,7 +375,7 @@ hr {
   position: sticky;
   top: 0;
   z-index: 1030;
-  padding: 0.65rem 0;
+  padding: 0.6rem 0;
   backdrop-filter: blur(16px) saturate(150%);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
   background: var(--glass-bg);
@@ -387,7 +395,7 @@ hr {
 .site-nav__inner {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--nav-gap);
   flex-wrap: wrap;
 }
 
@@ -395,6 +403,7 @@ hr {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
+  min-height: var(--nav-control-h);
   text-decoration: none;
   color: var(--ink-900);
   font-weight: 600;
@@ -408,12 +417,12 @@ hr {
 .brand__mark {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
+  width: var(--nav-control-h);
+  height: var(--nav-control-h);
+  border-radius: 13px;
   background: var(--grad-brand);
   color: #fff;
-  font-size: 0.82rem;
+  font-size: var(--nav-font-sm);
   font-weight: 700;
   letter-spacing: 0.02em;
   box-shadow: var(--shadow-brand);
@@ -425,7 +434,8 @@ hr {
 }
 
 .brand__text {
-  font-size: 1.02rem;
+  font-size: var(--nav-font-brand);
+  line-height: 1.1;
   white-space: nowrap;
 }
 
@@ -440,12 +450,15 @@ hr {
 
 .nav-links .nav-link {
   position: relative;
-  display: inline-block;
-  padding: 0.5rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  height: var(--nav-control-h);
+  padding: 0 0.95rem;
   border-radius: 999px;
   color: var(--ink-700);
-  font-size: 0.94rem;
+  font-size: var(--nav-font);
   font-weight: 500;
+  line-height: 1;
   text-decoration: none;
   transition: color 0.2s ease, background 0.2s ease;
 }
@@ -454,7 +467,7 @@ hr {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: 0.28rem;
+  bottom: 0.45rem;
   width: 0;
   height: 2px;
   border-radius: 2px;
@@ -481,8 +494,8 @@ hr {
 .nav-toggle {
   display: none;
   width: 44px;
-  height: 40px;
-  border-radius: 12px;
+  height: var(--nav-control-h);
+  border-radius: 13px;
   border: 1px solid var(--control-border);
   background: var(--control-bg);
   color: var(--ink-900);
@@ -551,7 +564,9 @@ hr {
   }
 
   .nav-links .nav-link {
-    padding: 0.7rem 1rem;
+    height: auto;
+    min-height: var(--nav-control-h);
+    padding: 0 1rem;
   }
 
   .lang-switch {
@@ -601,6 +616,7 @@ hr {
 .lang-switch {
   display: inline-flex;
   align-items: center;
+  height: var(--nav-control-h);
   padding: 3px;
   gap: 2px;
   border-radius: 999px;
@@ -609,12 +625,16 @@ hr {
 }
 
 .lang-switch button {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
   border: none;
   background: none;
-  padding: 0.3rem 0.75rem;
+  padding: 0 0.8rem;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: var(--nav-font-sm);
   font-weight: 600;
+  line-height: 1;
   letter-spacing: 0.04em;
   color: var(--ink-500);
   transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
@@ -1778,8 +1798,8 @@ html.reveal-ready [data-reveal][data-reveal-delay='3'] { transition-delay: 0.24s
 .theme-toggle {
   position: relative;
   flex: none;
-  width: 66px;
-  height: 34px;
+  width: 68px;
+  height: var(--nav-control-h);
   padding: 0;
   border-radius: 999px;
   border: 1px solid var(--control-border);
@@ -1799,18 +1819,18 @@ html.reveal-ready [data-reveal][data-reveal-delay='3'] { transition-delay: 0.24s
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8px;
+  padding: 0 10px;
   pointer-events: none;
 }
 
 .theme-toggle__thumb {
   position: absolute;
-  top: 3px;
-  left: 3px;
+  top: 4px;
+  left: 4px;
   display: grid;
   place-items: center;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   color: #fff;
   background: var(--grad-brand);
@@ -1819,7 +1839,7 @@ html.reveal-ready [data-reveal][data-reveal-delay='3'] { transition-delay: 0.24s
 }
 
 .theme-toggle[aria-pressed='true'] .theme-toggle__thumb {
-  transform: translateX(32px);
+  transform: translateX(28px);
 }
 
 /* ==========================================================================
