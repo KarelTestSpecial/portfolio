@@ -68,8 +68,12 @@ pnpm test
 *   **Icons:** Inline stroke SVGs are defined in `src/components/Icons.tsx`. Add new icons there instead of
     pulling in an icon package.
 *   **Motion:** Elements marked with `data-reveal` (optionally `data-reveal-delay="1".."3"`) fade/slide in via
-    `src/hooks/useScrollReveal.ts`, which is called once in `src/App.tsx` and respects
-    `prefers-reduced-motion`. Heavy animation should keep this pattern.
+    `src/hooks/useScrollReveal.ts`, called once in `src/App.tsx`. Two rules keep this safe, and both matter:
+    the hidden state only applies while `<html>` carries `reveal-ready` (set in `src/index.tsx`, so content is
+    visible whenever JS does not run), and the revealed state is stored in the **`data-reveal-state`
+    attribute** — never in a CSS class, because React rewrites `class` on re-render and would silently drop it
+    (that bug once blanked the entire CV section). The hook also re-scans the DOM through a MutationObserver,
+    so elements mounted later (hot reload, new data) are picked up.
 *   **Equal-height cards:** Bootstrap columns are flex items that stretch, so a short column inherits the
     height of the tallest one. Fill a card with the `d-flex flex-column` + `flex-fill` pattern on the column
     instead of `height: 100%` on the card: inside a stretched column `height: 100%` resolves against the whole

@@ -29,3 +29,20 @@ test('the language switcher translates the page', async () => {
   });
   expect(headingElement).toBeInTheDocument();
 });
+
+test('no scroll-reveal element stays hidden after re-rendering', () => {
+  // Regression test: the revealed state used to live in a CSS class, which React
+  // wiped on re-render, leaving whole sections invisible. It now lives in the
+  // `data-reveal-state` attribute.
+  const { container } = render(<App />);
+  fireEvent.click(screen.getByRole('button', { name: 'NL' }));
+  fireEvent.click(screen.getByRole('button', { name: 'EN' }));
+
+  const targets = Array.from(container.querySelectorAll('[data-reveal]'));
+  expect(targets.length).toBeGreaterThan(20);
+
+  const hidden = targets.filter(
+    (element) => element.getAttribute('data-reveal-state') !== 'shown'
+  );
+  expect(hidden).toHaveLength(0);
+});

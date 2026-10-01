@@ -5,6 +5,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Flag that scripts are running before React paints: scroll-reveal animations
+// only hide their elements while this class is present, so a JS failure can
+// never leave the page empty. See hooks/useScrollReveal.ts.
+document.documentElement.classList.add('reveal-ready');
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
