@@ -83,7 +83,12 @@ pnpm test
 *   **Internationalisation:** All user-facing copy goes through `useLanguage()` / `t('key')`. Every new key must
     be added to **both** `src/i18n/nl.json` and `src/i18n/en.json`, otherwise the raw key is rendered.
 *   **Data:** Skills, project counts and showcase entries have single sources of truth —
-    `src/data/projects.json` (generated from `projects/projects.tsv`) and `src/data/showcase.ts`. The hero
-    statistics are derived from those, so numbers never drift out of sync.
+    `projects/projects.tsv` (project list; a published Google Sheet can be used instead, see
+    `scripts/update-projects-from-url.js`) and `src/data/showcase.ts`. Both scripts share
+    `scripts/lib/projects.js`, so the generated `src/data/projects.json` always has the same shape. The hero
+    statistics are derived from that data, so numbers never drift out of sync.
+*   **Bilingual project descriptions:** each project carries a Dutch `description` and an optional English
+    `descriptionEn`. `Projects.tsx` picks the one matching the active language and falls back to Dutch when the
+    English text is missing, so translations can be added incrementally.
 *   **Data Management:** Project data is managed in a structured TSV file (`projects/projects.tsv`), which is then processed into a JSON file for the application to consume. This separation of data and presentation is a key architectural feature.
 *   **Component Structure:** The application is structured into reusable React components located in the `src/components` directory.

@@ -140,7 +140,7 @@ It can take a few minutes for the changes to become visible on the live URL.
 
 The **first row** of `projects.tsv` contains the column headers. The order and exact spelling are **very important**.
 
-`type` | `name` | `description` | `link` | `githubLink` | `liveLink` | `status`
+`type` | `name` | `githubLink` | `liveLink` | `status` | `description` | `descriptionEn`
 --- | --- | --- | --- | --- | --- | ---
 
 ### Explanation:
@@ -150,14 +150,17 @@ The **first row** of `projects.tsv` contains the column headers. The order and e
     *   `github` (for a GitHub Project)
     *   `website` (for another website)
 *   **name**: The name of your project (e.g., "My Cool App").
-*   **description**: A short description of the project.
-*   **link**: The main link for the project.
+*   **githubLink**: The link to the GitHub repository. For `chrome` and `website` projects this shows a "GitHub" button.
+*   **liveLink**: The link to the live version of the project.
     *   For `chrome`, this is the link to the Chrome Web Store.
     *   For `website`, this is the link to the website.
-    *   For `github`, this field is not required.
-*   **githubLink**: **Only** for `github` projects. The link to the GitHub repository.
-*   **liveLink**: **Only** for `github` projects. The link to a live demo of the project.
-*   **status**: (Optional) Determines if the "Live Demo" button is shown. Set to `active` to show the button. Any other value (or an empty cell) hides the button.
+    *   For `github`, this is the link to a live demo (only shown when `status` is `active`).
+*   **status**: (Optional) Determines if the "Live Demo" / "Visit Website" button is shown. Set to `active` to show the button. Any other value (or an empty cell) hides the button and marks the project as no longer active.
+*   **description**: The Dutch description of the project.
+*   **descriptionEn**: (Optional) The **English** description of the project. Shown when a visitor switches the site to English. When the cell is empty the Dutch `description` is used as a fallback, so you can translate projects one at a time. Add this column to your Google Sheet as well if you manage the list there.
+
+> **Note:** the file uses tab-separated values with Windows line endings (`CRLF`). Do not use tabs inside a description, and keep one project per line.
+
 
 ---
 

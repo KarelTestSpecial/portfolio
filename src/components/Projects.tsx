@@ -16,6 +16,7 @@ type ProjectType = 'website' | 'chrome' | 'github';
 interface Project {
   name: string;
   description: string;
+  descriptionEn?: string;
   liveLink?: string;
   githubLink?: string;
   status?: string;
@@ -38,7 +39,16 @@ const Projects: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedType, setSelectedType] = useState<ProjectType>('website');
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  /**
+   * Project descriptions come from `projects/projects.tsv` (or the Google Sheet).
+   * The English text is optional: without it the Dutch description is shown.
+   */
+  const describe = (project: Project) =>
+    language === 'en' && project.descriptionEn
+      ? project.descriptionEn
+      : project.description;
 
   const handleShowModal = (project: Project, type: ProjectType) => {
     setSelectedProject(project);
@@ -86,7 +96,7 @@ const Projects: React.FC = () => {
         </div>
 
         <h5 className="project-card__title">{project.name}</h5>
-        <p className="project-card__text">{project.description}</p>
+        <p className="project-card__text">{describe(project)}</p>
 
         <div className="project-card__actions">
           {type === 'chrome' && project.liveLink && active && (
@@ -212,7 +222,7 @@ const Projects: React.FC = () => {
                 </span>
               </p>
             )}
-            <p className="mb-0">{selectedProject.description}</p>
+            <p className="mb-0">{describe(selectedProject)}</p>
 
             <div className="d-flex flex-wrap gap-2 mt-4">
               {selectedProject.liveLink && isActive(selectedProject) && (
