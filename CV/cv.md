@@ -8,7 +8,7 @@
 
 ### **Profiel**
 
-Gedreven en analytische IT-professional met een levenslange passie voor programmeren en een solide achtergrond in (web)ontwikkeling. Ervaren in een breed scala aan technologieën, waaronder JavaScript, TypeScript, Visual Basic, Python, Java en SQL. Mijn actuele skills worden geïllustreerd door diverse gepubliceerde websites, open-source code op GitHub en Chrome Web Store-extensies. Na een periode van inactiviteit, ben ik opnieuw volledig inzetbaar en gemotiveerd om mijn probleemoplossend vermogen en technische expertise bij te dragen aan een vooruitstrevend team.
+Gedreven en analytische IT-professional met een levenslange passie voor programmeren en een solide achtergrond in (web)ontwikkeling. Ervaren in een breed scala aan technologieën, waaronder JavaScript, TypeScript, Visual Basic, Python, Java en SQL. Mijn focus ligt op de moderne ontwikkelingen in AI: agents, generative engineering, agentic architecture en AI-architectuur. Ik ontwerp en bouw systemen waarin AI-modellen als bouwstenen fungeren — van retrieval en tool-use tot autonome workflows en veilige, onderhoudbare architecturen. Mijn actuele skills worden geïllustreerd door diverse gepubliceerde websites, open-source code op GitHub en Chrome Web Store-extensies. Ik breng probleemoplossend vermogen en technische expertise mee naar een vooruitstrevend team.
 
 *Komt in aanmerking voor werkgeversubsidieregelingen, wat een extra voordeel kan bieden voor werkgevers.*
 

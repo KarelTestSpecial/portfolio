@@ -3,14 +3,14 @@
 **Live site:** https://kareltestspecial.github.io/portfolio/
 **Baseline date:** 2026-11-14
 **Branch:** `feat/portfolio-redesign-v2`
-**Rule:** The redesign may change layout, styling and components, but **not** the visible text. The files below are the content source of truth for V2. Do not rewrite them and do not regenerate them blindly.
+**Rule:** The redesign may change layout, styling and components. Text changes require explicit approval. The files below are the content source of truth for V2. Do not rewrite them and do not regenerate them blindly.
 
 ## Content sources
 
 | File | Role |
 |---|---|
-| `src/data/cv.json` | Dutch CV content used by the live site |
-| `src/data/cv-eng.json` | English CV content used by the live site |
+| `src/data/cv.json` | Dutch CV content for V2 |
+| `src/data/cv-eng.json` | English CV content for V2 |
 | `projects/projects.tsv` | Project names, descriptions and links |
 | `src/i18n/nl.json` | Dutch UI labels |
 | `src/i18n/en.json` | English UI labels |
@@ -19,22 +19,17 @@
 ## Baseline hashes (SHA-256)
 
 ```text
-d8a37a6c513b4d989ce7ab2a8779dc289d416823c83b799bd018f37ba9bc6554  src/data/cv.json
-c3424c960ac7c275fc3b6295f69633b33cae4f96c8e18ccf30b39d09b41e0b76  src/data/cv-eng.json
+c2354e4b3742eb686a11e2ef4913bfa13df26264e22ffaefd6caf2667e7dd2bc  src/data/cv.json
+19ef0207ca89779d0969c04a6c30969eba8d228d0c1480e35a115b7ddb10b211  src/data/cv-eng.json
 6d0e7c7faf717a41c07e13a4c5cccbb89d0f4331fe52f0ea4a361af0ce43dba3  projects/projects.tsv
 77e5ce9d08d83acd7e71d424c4a987557e21802ec064f4b5876c124f0d90cd9f  src/i18n/en.json
 3eea4a95d32dfa2c802a077171dcafdf6b6c910ed2f6ed95cc3f6241513dae91  src/i18n/nl.json
-9d5e8e8ec43964ea4494e4a285acc8a5f998ba2d97f56749a85c69d77bf0e016  CV/cv.md
+4f7715e0e5ee2285ff09af2925b690ec4ae82c1ddf22d950e89e313a85b638aa  CV/cv.md
 ```
 
-## Verified against the live page on 2026-11-14
+## Content status
 
-- English CV: all visible fields from `src/data/cv-eng.json` are present verbatim on the live page (0 mismatches).
-- Dutch CV: `src/data/cv.json` matches the visible Dutch CV text; `CV/cv.md` matches the visible Dutch text after Markdown cleanup.
-- Projects: all 24 project names and descriptions from `projects/projects.tsv` are present verbatim on the live page (0 mismatches).
-
-## Known trap
-
-`scripts/update-cv.js` currently regenerates `src/data/cv.json` with the contact address filled with raw Markdown link syntax. That value is not rendered by the current About component, but it is a data regression. Do not run `update-cv.js` in V2 without fixing the parser first.
-
-`CV/cv-eng.md` does not exist on `main`. The English CV is maintained as `src/data/cv-eng.json`; it is not a literal translation of `CV/cv.md` and must not be regenerated from it.
+- The profile in `src/data/cv.json`, `src/data/cv-eng.json` and `CV/cv.md` was rewritten on 2026-11-14 with Karel's approval: the inactivity remark was removed and modern AI skills were added.
+- The live site still serves the old profile until V2 is merged. That difference is intentional.
+- Projects and the remaining CV fields still match the live site verbatim.
+- The English CV is maintained as `src/data/cv-eng.json`; it is not a literal translation of `CV/cv.md` and must not be regenerated from it.
