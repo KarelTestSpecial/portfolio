@@ -95,11 +95,13 @@ function renderProjectFilters() {
   };
 
   $$(".capability-card").forEach((card) => {
-    const type = card.dataset.capability;
+    const filter = card.dataset.filter;
     const label = $("[data-capability-label]", card);
     const count = $("[data-capability-count]", card);
-    if (label) label.textContent = capabilityLabels[type] || type;
-    if (count) count.textContent = String(counts[type] || 0).padStart(2, "0");
+    if (label) label.textContent = capabilityLabels[filter] || filter;
+    if (count) count.textContent = String(counts[filter] || 0).padStart(2, "0");
+    card.classList.toggle("is-active", filter === state.filter);
+    card.setAttribute("aria-pressed", String(filter === state.filter));
   });
 }
 
@@ -229,24 +231,25 @@ function renderAthena() {
   intro.innerHTML = `${esc(t("athena.description"))} <a href="https://athena-cms-factory.github.io/athena-hub/" target="_blank" rel="noopener noreferrer">Athena CMS Factory</a>${esc(t("athena.descriptionSuffix"))}`;
 
   const sites = [
-    { name: "Urban Brew & Bite", category: "Hospitality", url: "https://athena-cms-factory.github.io/urban-brew-bite" },
-    { name: "Urban Soles", category: "E-commerce", url: "https://athena-cms-factory.github.io/urban-soles" },
-    { name: "Belgian Chocolate Shop", category: "E-commerce", url: "https://athena-cms-factory.github.io/chocolade-shop" },
-    { name: "Academy-1", category: "Education", url: "https://athena-cms-factory.github.io/academy-1" },
-    { name: "De Schaar", category: "Beauty & Wellness", url: "https://athena-cms-factory.github.io/de-schaar" },
-    { name: "Athena Pro", category: "B2B / SaaS", url: "https://athena-cms-factory.github.io/athena-pro" },
-    { name: "Gentse Dakwerken", category: "Construction", url: "https://athena-cms-factory.github.io/gentse-dakwerken-v10" },
-    { name: "Lex & Justitia Advocaten", category: "Legal Services", url: "https://athena-cms-factory.github.io/lex-justitia" },
+    { name: "Urban Brew & Bite", category: "Hospitality", url: "https://athena-cms-factory.github.io/urban-brew-bite", image: "./assets/athena/urban-brew-bite.jpg" },
+    { name: "Urban Soles", category: "E-commerce", url: "https://athena-cms-factory.github.io/urban-soles", image: "./assets/athena/urban-soles.jpg" },
+    { name: "Belgian Chocolate Shop", category: "E-commerce", url: "https://athena-cms-factory.github.io/chocolade-shop", image: "./assets/athena/chocolade-shop.jpg" },
+    { name: "Academy-1", category: "Education", url: "https://athena-cms-factory.github.io/academy-1", image: "./assets/athena/academy-1.jpg" },
+    { name: "De Schaar", category: "Beauty & Wellness", url: "https://athena-cms-factory.github.io/de-schaar", image: "./assets/athena/de-schaar.jpg" },
+    { name: "Athena Pro", category: "B2B / SaaS", url: "https://athena-cms-factory.github.io/athena-pro", image: "./assets/athena/athena-pro.jpg" },
+    { name: "Gentse Dakwerken", category: "Construction", url: "https://athena-cms-factory.github.io/gentse-dakwerken-v10", image: "./assets/athena/gentse-dakwerken-v10.jpg" },
+    { name: "Lex & Justitia Advocaten", category: "Legal Services", url: "https://athena-cms-factory.github.io/lex-justitia", image: "./assets/athena/lex-justitia.jpg" },
   ];
 
   $("#showcase-grid").innerHTML = sites
     .map(
       (site, index) => `
-        <a class="showcase-card" href="${esc(site.url)}" target="_blank" rel="noopener noreferrer">
+        <a class="showcase-card" href="${esc(site.url)}" target="_blank" rel="noopener noreferrer" aria-label="Bezoek ${esc(site.name)}">
+          <img class="showcase-image" src="${esc(site.image)}" alt="Screenshot van ${esc(site.name)}" loading="lazy">
+          <span class="showcase-overlay"></span>
           <span class="showcase-card-top"><span>${String(index + 1).padStart(2, "0")}</span><span>${esc(site.category)}</span></span>
-          <span>
-            <span class="showcase-title">${esc(site.name)}</span>
-            <span class="showcase-arrow">↗</span>
+          <span class="showcase-card-body">
+            <span class="showcase-title">${esc(site.name)}</span><span class="showcase-arrow">↗</span>
           </span>
         </a>
       `
@@ -324,6 +327,13 @@ $(".theme-toggle").addEventListener("click", () => {
 
 $("#filters").addEventListener("click", (event) => {
   const button = event.target.closest(".filter");
+  if (!button) return;
+  state.filter = button.dataset.filter;
+  renderProjects();
+});
+
+$("#capability-band").addEventListener("click", (event) => {
+  const button = event.target.closest(".capability-card");
   if (!button) return;
   state.filter = button.dataset.filter;
   renderProjects();
