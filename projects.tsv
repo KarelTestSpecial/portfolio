@@ -13,7 +13,6 @@ github	Linux Partitie Analyser	https://github.com/KarelTestSpecial/linuxanalyser
 github	Account Migration	https://github.com/KarelTestSpecial/accountmigration		active	Tool om volledige mappenstructuren en bestanden te migreren tussen Google Drive-accounts.
 github	DocLog One	https://github.com/KarelTestSpecial/Gmail-doclog-one		active	Gmail-add-on die automatisch metadata van e-mailbijlagen logt in een Google Sheet.
 github	OCR combi	https://github.com/KarelTestSpecial/ocr-combi-addon		active	Google Workspace-add-on voor OCR-tekstherkenning en documentsamenvoeging in Google Drive.
-github	URL-pulse	https://github.com/KarelTestSpecial/url-pulse	https://kareltestspecial.github.io/url-pulse/	inactive	Een monitoringtool die URL-statussen controleert en rapporteert via GitHub Actions.
 github	Home Assistant MCP (PR #1371)	https://github.com/homeassistant-ai/ha-mcp/pull/1371		active	Gemergede bijdrage: thread-safe singleton cache voor ruamel.yaml en async Executor-wrapper die CPU-spikes elimineert.
 github	Home Assistant MCP (PR #1396)	https://github.com/homeassistant-ai/ha-mcp/pull/1396		active	Thread-Local YAML Cache Refactoring voor betere prestaties en threadveiligheid.
 github	Actual Budget (PR #7891)	https://github.com/actualbudget/actual/pull/7891		active	Float-naar-integer validatie voor consistente financiële data.
