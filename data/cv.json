@@ -1,0 +1,98 @@
+{
+  "name": "Karel Decherf",
+  "contact": {
+    "address": "",
+    "email": "karel.decherf@gmail.com",
+    "linkedin": "linkedin.com/in/karel-decherf-bb0b7140a",
+    "github": "github.com/KarelTestSpecial"
+  },
+  "profile": "Gedreven en analytische IT-professional met een levenslange passie voor programmeren en een solide achtergrond in (web)ontwikkeling. Ervaren in een breed scala aan technologieën, waaronder JavaScript, TypeScript, Visual Basic, Python, Java en SQL. Mijn focus ligt op de moderne ontwikkelingen in AI: agents, generative engineering, agentic architecture en AI-architectuur. Ik ontwerp en bouw systemen waarin AI-modellen als bouwstenen fungeren — van retrieval en tool-use tot autonome workflows en veilige, onderhoudbare architecturen. Mijn actuele skills worden geïllustreerd door diverse gepubliceerde websites, open-source code op GitHub en Chrome Web Store-extensies. Ik breng probleemoplossend vermogen en technische expertise mee naar een vooruitstrevend team.",
+  "notice": "Komt in aanmerking voor werkgeversubsidieregelingen, wat een extra voordeel kan bieden voor werkgevers.",
+  "workExperience": [
+    {
+      "role": "Webontwikkelaar",
+      "company": "Visitronics NV, Leuven",
+      "period": "01/2001 – 08/2001",
+      "description": [
+        "Ontwikkelen en onderhouden van webapplicaties op maat voor diverse klanten.",
+        "Toepassen van een reeks webtechnologieën om te voldoen aan specifieke functionele eisen."
+      ]
+    },
+    {
+      "role": "Overige functies",
+      "company": "Diverse rollen",
+      "period": "1994 - 2025",
+      "description": [
+        "Fabrieksarbeider (Pasec)",
+        "Keukenhulp",
+        "Klerenhersteller",
+        "Kok",
+        "Koerier (Pizza City)",
+        "Uitzendkracht (Randstad, Brussel)",
+        "Magazijnier (IKEA, Ternat)",
+        "Keukenhulp (Restaura, Zaventem)",
+        "Tele-enquêteur (Tele-Performance)"
+      ]
+    }
+  ],
+  "skills": {
+    "ai_tools_automation": "Anthropic Claude Code, OpenAI Codex, Google Antigravity IDE, OpenCode",
+    "full-stack_development": "Java (JSP, Spring Boot, Spring Security (JWT), Spring Data JPA (Hibernate), Maven), JavaScript/TypeScript (Node.js, Express.js, NestJS; React; Vite, Vitest), Python (Django, Flask, FastAPI), PHP (Laravel), Perl, Visual Basic, .NET (ASP.NET Core), IBM RPG, SQL, HTML, CSS, JSON, XML, RESTful API",
+    "devops,_cloud_infrastructure": "PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Google Cloud Platform, Azure, Netlify, Vercel, Render",
+    "testing_qa": "JUnit 5, Mockito, Spring Boot Test (`@SpringBootTest`), Jest, Vitest, React Testing Library, Cypress, Playwright, Postman",
+    "development_tools_software": "VS Code, Microsoft Office, Google Workspace, Odoo, Notion, Bash / PowerShell / Terminal, LibreOffice",
+    "web_design_graphics": "Paper, Figma, Canva, Photoshop, Photopea, Google Stitch, WordPress, Wix",
+    "operating_systems_networking": "Linux, Windows, ChromeOS, WINS, DHCP, DNS"
+  },
+  "education": [
+    {
+      "degree": "Inleiding tot de Psychologie",
+      "institution": "Open Universiteit",
+      "year": "2012"
+    },
+    {
+      "degree": "Omzetting Industrieel Ingenieur Mechanica (HTL4MMC)",
+      "institution": "",
+      "year": "2011"
+    },
+    {
+      "degree": "Hogere opleiding Toegepaste Informatica (A1)",
+      "institution": "GOCI Aarschot",
+      "year": "2001"
+    },
+    {
+      "degree": "Kandidatuur Industrieel Ingenieur (1e kand. cum laude)",
+      "institution": "KIH De Nayer",
+      "year": "1995"
+    },
+    {
+      "degree": "Kandidatuur Filosofie",
+      "institution": "KU Leuven",
+      "year": "1993 – 1994"
+    },
+    {
+      "degree": "ASO Wetenschappen-Wiskunde (8u Wis.)",
+      "institution": "Sint-Godelieve-Instituut Lennik",
+      "year": "1993"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Nederlands",
+      "proficiency": "Moedertaal"
+    },
+    {
+      "language": "Engels",
+      "proficiency": "Goed"
+    },
+    {
+      "language": "Frans",
+      "proficiency": "Goed"
+    },
+    {
+      "language": "Duits en Spaans",
+      "proficiency": "Noties"
+    }
+  ],
+  "transport": "Rijbewijs B"
+}
