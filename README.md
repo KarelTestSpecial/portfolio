@@ -170,27 +170,29 @@ Accessibility texts (`aria-label`, image `alt`) live in `src/i18n/nl.json` / `en
 
 ## Advanced Scripts
 
+Build and deploy run **only in GitHub Actions** — nothing is built or published locally. `node_modules/` is not installed locally either; the repo is 13 MB and the three workflows under `.github/workflows/` (`deploy.yml`, `update-cv.yml`, `deploy-from-url.yml`) do `pnpm install → build:prototype → deploy:prototype` on push or on dispatch.
+
 The following scripts are also available for more specific tasks.
 
 **`pnpm start`**
 
-Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it locally.
+Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it locally. Requires `pnpm install` first.
 
 **`pnpm run update-projects`**
 
-Only updates the project list from `projects.tsv` without deploying. Useful for checking the data locally before publishing.
+Only updates the project list from `projects.tsv` without deploying. Useful for checking the data locally before publishing. No dependencies needed — pure Node built-ins.
 
 **`pnpm run update-cv`**
 
-Only updates the `cv.json` data from `CV/cv.md` without committing the changes. Useful for checking the generated data locally.
+Only updates the `cv.json` data from `CV/cv.md` without committing the changes. Useful for checking the generated data locally. No dependencies needed — pure Node built-ins.
 
-**`pnpm run deploy`**
+**`pnpm run build:prototype`**
 
-Only deploys the website with the current local data. Use this if you have already updated the project data and just want to re-deploy.
+Assembles `dist/` from `prototype/` + `src/data` + `src/i18n` + `projects.tsv`. No dependencies needed — pure Node built-ins. In CI this is followed by `deploy:prototype`; locally it is only useful to inspect the output.
 
 **`pnpm test`**
 
-Launches the test runner.
+Launches the test runner. Currently non-functional: the Jest/Babel config does not enable JSX (`App.test.tsx`), so the suite fails to parse. No CI workflow runs it.
 
 ---
 

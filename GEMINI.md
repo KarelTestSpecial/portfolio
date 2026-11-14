@@ -16,13 +16,14 @@ pnpm install
 
 ### Development
 
-To run the app in development mode, use:
+To run the app in development mode, install dependencies first and then use:
 
 ```bash
+pnpm install
 pnpm start
 ```
 
-This will open the website at [http://localhost:3000](http://localhost:3000).
+This will open the website at [http://localhost:3000](http://localhost:3000). Note that the published site is built from `prototype/` via `build:prototype`, not from the React app — `pnpm start` shows the React version, which is kept for development but is not what GitHub Pages serves.
 
 ### Updating Content
 
@@ -37,17 +38,9 @@ To update the projects displayed on the website:
 
 ### Deployment
 
-To deploy the website to GitHub Pages, run:
+Build and deploy run **only in GitHub Actions**. Pushing to `main` triggers `deploy.yml`; `update-cv.yml` also rebuilds and deploys when `CV/**` changes; `deploy-from-url.yml` pulls the TSV from the Google Sheet and deploys. Nothing is published from a local machine.
 
-```bash
-pnpm run deploy
-```
-
-To update the content and deploy in one step, use:
-
-```bash
-pnpm run update-and-deploy
-```
+To update content and publish, commit and push — or run `pnpm run sheet:write` from the sheet side. There is no local deploy path.
 
 ### Testing
 
