@@ -216,9 +216,18 @@ function renderAbout() {
     .join("");
 
   const skills = $("#skills");
+  const skillLabels = {
+    ai_tools_automation: t("skills.aiTools"),
+    "full-stack_development": t("skills.fullStack"),
+    "devops,_cloud_infrastructure": t("skills.devops"),
+    testing_qa: t("skills.testing"),
+    development_tools_software: t("skills.devTools"),
+    web_design_graphics: t("skills.webDesign"),
+    operating_systems_networking: t("skills.osNetwork"),
+  };
   skills.innerHTML = Object.entries(cv.skills)
     .map(([category, value]) => {
-      const label = category
+      const label = skillLabels[category] || category
         .replaceAll("_", " ")
         .replace(/\b\w/g, (letter) => letter.toUpperCase());
       return `<dt>${esc(label)}</dt><dd>${esc(value)}</dd>`;

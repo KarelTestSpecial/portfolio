@@ -1,6 +1,6 @@
 # Portfolio V2 — Prototype
 
-Static, dependency-free design prototype. It reads the existing content directly from the repository so the visible text stays identical to the live site.
+Static, dependency-free design prototype. It reads the existing content directly from the repository, so visible text only changes when explicitly approved.
 
 ## Run locally
 
@@ -33,5 +33,6 @@ The content baseline and hashes are in `../CONTENT_BASELINE.md`.
 - The prototype is not deployed to GitHub Pages. The live site remains unchanged.
 - The current `main` app is still the React/CRA implementation; this prototype is the visual direction for V2.
 - Dark mode is available from the header toggle and persists in `localStorage` (`portfolio-theme`).
+- The hero uses a layered editorial visual: the generated hero image with an overlaid agent/system diagram in CSS.
 - Generated editorial visuals live in `assets/` and are served as optimized JPGs.
 - The Athena showcase uses 800×600 screenshots of the live generated sites in `assets/athena/`. Recapture them with headless Chrome if a site changes.

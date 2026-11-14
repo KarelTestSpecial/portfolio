@@ -19,17 +19,18 @@
 ## Baseline hashes (SHA-256)
 
 ```text
-c2354e4b3742eb686a11e2ef4913bfa13df26264e22ffaefd6caf2667e7dd2bc  src/data/cv.json
-19ef0207ca89779d0969c04a6c30969eba8d228d0c1480e35a115b7ddb10b211  src/data/cv-eng.json
+f184af19d2b8768bfee33a9d97607da31e7fc9d969c003108cd5cf1b09faf80d  src/data/cv.json
+4f8fb919e7fddde6ab7ec73890e3231299e5d4562c79340cf21a517d4359f24e  src/data/cv-eng.json
 6d0e7c7faf717a41c07e13a4c5cccbb89d0f4331fe52f0ea4a361af0ce43dba3  projects/projects.tsv
-77e5ce9d08d83acd7e71d424c4a987557e21802ec064f4b5876c124f0d90cd9f  src/i18n/en.json
-3eea4a95d32dfa2c802a077171dcafdf6b6c910ed2f6ed95cc3f6241513dae91  src/i18n/nl.json
-4f7715e0e5ee2285ff09af2925b690ec4ae82c1ddf22d950e89e313a85b638aa  CV/cv.md
+2c288d56ba8674fe8d5f210dcb2a955591191ac9877e16a7a76a57a40d6156fe  src/i18n/en.json
+1b0e565e295ee325f7dcd9aab7156b32582845420c169e078b4270a0ad54c663  src/i18n/nl.json
+fa84dccabf4b220c925748fce5ce820578d4a006f39aa5c57085862ebd9d0943  CV/cv.md
 ```
 
 ## Content status
 
 - The profile in `src/data/cv.json`, `src/data/cv-eng.json` and `CV/cv.md` was rewritten on 2026-11-14 with Karel's approval: the inactivity remark was removed and modern AI skills were added.
-- The live site still serves the old profile until V2 is merged. That difference is intentional.
-- Projects and the remaining CV fields still match the live site verbatim.
+- The skills section was refreshed on 2026-11-14 with Karel's supplied list, with a few corrections: FastAPI is grouped under Python, `LibreOffice` is spelled correctly, and outdated/duplicated tool entries were removed.
+- The live site still serves the old profile and skills until V2 is merged. That difference is intentional.
+- Projects still match the live site verbatim; the remaining CV fields are unchanged apart from the approved profile and skills updates.
 - The English CV is maintained as `src/data/cv-eng.json`; it is not a literal translation of `CV/cv.md` and must not be regenerated from it.
