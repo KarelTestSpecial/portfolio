@@ -36,3 +36,4 @@ The content baseline and hashes are in `../CONTENT_BASELINE.md`.
 - The hero uses a full-viewport-width editorial visual: the generated hero image with an overlaid agent/system diagram in CSS.
 - Generated editorial visuals live in `assets/` and are served as optimized JPGs.
 - The Athena showcase uses 800×600 screenshots of the live generated sites in `assets/athena/`. Recapture them with headless Chrome if a site changes.
+- Project rows are fully clickable. The primary action is the first link on the right: website, Chrome Web Store extension page or GitHub repository.

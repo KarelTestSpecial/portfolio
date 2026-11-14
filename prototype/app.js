@@ -128,6 +128,7 @@ function renderProjects() {
     projects.forEach((project) => {
       projectNumber += 1;
       const links = projectLinks(project);
+      const primaryLink = links[0];
       const row = document.createElement("article");
       row.className = "project-row";
       row.dataset.type = project.type;
@@ -136,6 +137,9 @@ function renderProjects() {
       }
 
       row.innerHTML = `
+        ${primaryLink
+          ? `<a class="project-row-link" href="${esc(primaryLink.href)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(project.name)} — ${esc(primaryLink.label)}"></a>`
+          : ""}
         <span class="project-num">${String(projectNumber).padStart(2, "0")}</span>
         <div class="project-main">
           <h3 class="project-title">${esc(project.name)}</h3>

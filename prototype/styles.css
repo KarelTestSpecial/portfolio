@@ -20,6 +20,8 @@
   --fs-contact: clamp(28px, 3.6vw, 54px);
   --fs-body: 16px;
   --fs-small: 15px;
+  --fs-cv: 14px;
+  --fs-cv-label: 10px;
   --fs-micro: 11px;
   --fs-tag: 10px;
   --fs-brand: 20px;
@@ -775,13 +777,38 @@ main {
 }
 
 .project-row {
+  position: relative;
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr) 150px 190px;
   gap: 24px;
   align-items: start;
   padding: 26px 18px;
   border-top: 1px solid var(--line);
+  cursor: pointer;
   transition: background 180ms ease, color 180ms ease, padding 180ms ease;
+}
+
+.project-row-link {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.project-row > :not(.project-row-link) {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.project-row .project-links a {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.project-row:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .project-row:hover {
@@ -939,7 +966,7 @@ main {
 .plain-list {
   display: grid;
   gap: 7px;
-  font-size: var(--fs-small);
+  font-size: var(--fs-cv);
 }
 
 .contact-list a {
@@ -982,7 +1009,7 @@ main {
 .notice {
   margin: 24px 0 0;
   max-width: 60ch;
-  font-size: var(--fs-small);
+  font-size: var(--fs-cv);
   line-height: 1.55;
   color: var(--muted);
   font-style: italic;
@@ -1017,7 +1044,7 @@ main {
 .experience-meta {
   margin: 4px 0 0;
   font-family: var(--mono);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-cv-label);
   letter-spacing: 0.04em;
   color: var(--muted);
 }
@@ -1028,7 +1055,7 @@ main {
   list-style: none;
   display: grid;
   gap: 5px;
-  font-size: var(--fs-small);
+  font-size: var(--fs-cv);
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1056,12 +1083,12 @@ main {
   gap: 16px;
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
-  font-size: var(--fs-small);
+  font-size: var(--fs-cv);
 }
 
 .education-year {
   font-family: var(--mono);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-cv-label);
   color: var(--accent);
   padding-top: 2px;
 }
@@ -1087,13 +1114,13 @@ main {
   margin: 0;
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: var(--fs-cv);
+  line-height: 1.5;
 }
 
 .skills-list dt {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: var(--fs-cv-label);
   letter-spacing: 0.04em;
   color: var(--muted);
   text-transform: uppercase;
