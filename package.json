@@ -34,7 +34,9 @@
     "deploy:prototype": "gh-pages -d dist",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d build",
-    "update-and-deploy": "pnpm run update-projects && pnpm run build && pnpm run deploy"
+    "update-and-deploy": "pnpm run update-projects && pnpm run build && pnpm run deploy",
+    "sheet:sync": "node scripts/sheet-sync.js",
+    "sheet:write": "node scripts/sheet-write.js"
   },
   "eslintConfig": {
     "extends": [

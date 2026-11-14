@@ -191,3 +191,26 @@ Only deploys the website with the current local data. Use this if you have alrea
 **`pnpm test`**
 
 Launches the test runner.
+
+---
+
+## 🛠️ Maintainer: the sheet as source of truth
+
+The project list lives in a Google Sheet, not in the repo. Two scripts talk to that sheet through a service account, so the list can be edited without clicking through the browser:
+
+**`pnpm run sheet:sync`** — reads tab `Sheet1` and writes `projects/projects.tsv`. The header must match exactly, otherwise the script stops instead of writing a broken file. `--check` and `--dry-run` validate without writing.
+
+**`pnpm run sheet:write`** — writes cell values (values only: no formatting, no `values.clear`, no sheet operations). Dry-run by default:
+
+```bash
+node scripts/sheet-write.js --range "Sheet1!H20" --set "The Free Reality"            # preview
+node scripts/sheet-write.js --range "Sheet1!H20" --set "The Free Reality" --write    # apply
+node scripts/sheet-write.js --range "Sheet1!G2:H21" --file /tmp/values.tsv --write   # block
+```
+
+Notes for maintainers:
+
+- **A1 row ≠ data row.** Row 1 is the header, so data row *n* lives on sheet row *n+1*. The dry-run prints the project name next to every row for exactly that reason; after writing, every cell is read back and compared.
+- Columns **A–F** (`type`, `name`, `githubLink`, `liveLink`, `status`, `description`) hold the Dutch source data and are refused unless `--force`.
+- Auth is a service account (`~/.config/maccha/service-account.json`, override `GOOGLE_SA_PATH`) with edit rights on the sheet, and `googleapis` resolved from `~/INFRA`. Neither is part of the site build, so a fresh checkout without them simply cannot run these two scripts — the site itself does not need them.
+- After editing the sheet, run `pnpm run sheet:sync`, commit `projects/projects.tsv`, and push: that is what triggers the live deploy.
