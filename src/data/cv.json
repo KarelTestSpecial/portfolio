@@ -6,7 +6,7 @@
     "linkedin": "linkedin.com/in/karel-decherf-bb0b7140a",
     "github": "github.com/KarelTestSpecial"
   },
-  "profile": "Gedreven en analytische IT-professional met een levenslange passie voor programmeren en een solide achtergrond in (web)ontwikkeling. Ervaren in een breed scala aan technologieën, waaronder JavaScript, TypeScript, Visual Basic, Python, Java en SQL. Mijn actuele skills worden geïllustreerd door diverse gepubliceerde websites, open-source code op GitHub en Chrome Web Store-extensies. Na een periode van inactiviteit, ben ik opnieuw volledig inzetbaar en gemotiveerd om mijn probleemoplossend vermogen en technische expertise bij te dragen aan een vooruitstrevend team.",
+  "profile": "Gedreven en analytische IT-professional met een levenslange passie voor programmeren en een solide achtergrond in (web)ontwikkeling. Ervaren in een breed scala aan technologieën, waaronder JavaScript, TypeScript, Visual Basic, Python, Java en SQL. Mijn focus ligt op de moderne ontwikkelingen in AI: agents, generative engineering, agentic architecture en AI-architectuur. Ik ontwerp en bouw systemen waarin AI-modellen als bouwstenen fungeren — van retrieval en tool-use tot autonome workflows en veilige, onderhoudbare architecturen. Mijn actuele skills worden geïllustreerd door diverse gepubliceerde websites, open-source code op GitHub en Chrome Web Store-extensies. Ik breng probleemoplossend vermogen en technische expertise mee naar een vooruitstrevend team.",
   "notice": "Komt in aanmerking voor werkgeversubsidieregelingen, wat een extra voordeel kan bieden voor werkgevers.",
   "workExperience": [
     {
@@ -36,13 +36,13 @@
     }
   ],
   "skills": {
-    "ai_tools_automation": "Claude Code, OpenAI Codex, Google Antigravity IDE, Google Firebase Studio, Google AI Studio, OpenCode, GitHub SpecKit, GitHub Copilot, Perplexity, Qwen, Manus AI, Genspark, Abacus DeepAgent, Lemon AI, AWS Kiro",
-    "full-stack_development": "Java (JSP, Spring Boot, Spring Security (JWT), Spring Data JPA (Hibernate), Maven), JavaScript/TypeScript (Node.js, Express.js, NestJS; React; Vite, Vitest), Python (Django, Flask), PHP (Laravel, FastAPI), Perl, Visual Basic, .NET (ASP.NET Core), IBM RPG, SQL, HTML, CSS, JSON, XML, RESTful API",
-    "devops,_cloud_infrastructure": "PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Claude Cloud Platform, Google Cloud Platform, Azure, Netlify, Vercel, Render",
+    "ai_tools_automation": "Anthropic Claude Code, OpenAI Codex, Google Antigravity IDE, OpenCode",
+    "full-stack_development": "Java (JSP, Spring Boot, Spring Security (JWT), Spring Data JPA (Hibernate), Maven), JavaScript/TypeScript (Node.js, Express.js, NestJS; React; Vite, Vitest), Python (Django, Flask, FastAPI), PHP (Laravel), Perl, Visual Basic, .NET (ASP.NET Core), IBM RPG, SQL, HTML, CSS, JSON, XML, RESTful API",
+    "devops,_cloud_infrastructure": "PostgreSQL, MySQL, SQL Server, Firebase, Supabase, Nginx, Apache, IIS, Git, GitHub Actions (CI/CD), Docker, Google Cloud Platform, Azure, Netlify, Vercel, Render",
     "testing_qa": "JUnit 5, Mockito, Spring Boot Test (`@SpringBootTest`), Jest, Vitest, React Testing Library, Cypress, Playwright, Postman",
-    "development_tools_software": "VS Code, Cursor, Replit, Microsoft Office, Google Workspace, Odoo, Notion, Bash / PowerShell / Terminal",
-    "web_design_graphics": "Figma, Canva, Photoshop, Photopea, WordPress, Wix",
-    "operating_systems_networking": "Windows, Linux, ChromeOS, WINS, DHCP, DNS"
+    "development_tools_software": "VS Code, Microsoft Office, Google Workspace, Odoo, Notion, Bash / PowerShell / Terminal, LibreOffice",
+    "web_design_graphics": "Paper, Figma, Canva, Photoshop, Photopea, Google Stitch, WordPress, Wix",
+    "operating_systems_networking": "Linux, Windows, ChromeOS, WINS, DHCP, DNS"
   },
   "education": [
     {
