@@ -131,6 +131,10 @@ Accessibility texts (`aria-label`, image `alt`) live in `src/i18n/nl.json` / `en
 
 There is no `start`, `build`, `test`, or `deploy` script, and no React toolchain. A previous CRA/React implementation was removed on 2026-11-14: it was never deployed, and the deployed site had already moved to `prototype/`.
 
+## Agent instructions
+
+`AGENTS.md` is the context file for coding agents (OpenCode, Claude Code). `GEMINI.md` is a symlink to it, because Antigravity reads that filename — one file, one name, no second copy. Edit `AGENTS.md`; never edit through the symlink.
+
 ---
 
 ## 🛠️ Maintainer: the sheet as source of truth
