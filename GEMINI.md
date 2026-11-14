@@ -1,57 +1,35 @@
 ## Project Overview
 
-This is a personal portfolio website built with React and TypeScript. It showcases projects and professional information. The website is designed to be easily updatable by editing a local TSV file. The site is deployed via GitHub Pages.
+This is a personal portfolio website: static HTML, CSS and vanilla JavaScript. There is no framework and no runtime build step — `scripts/build-prototype.mjs` only assembles `dist/` from the sources below. The site is deployed to GitHub Pages by GitHub Actions.
 
-The project data is stored in `projects/projects.tsv`. A Node.js script (`scripts/update-projects.js`) reads this file, categorizes the projects, and generates a JSON file at `src/data/projects.json`. The React components then use this JSON file to dynamically render the project listings on the website.
+| Path | Role |
+|---|---|
+| `prototype/` | The site: `index.html`, `styles.css`, `app.js`, `assets/` |
+| `src/data/cv.json`, `src/data/cv-eng.json` | CV content (NL, EN) |
+| `src/i18n/nl.json`, `src/i18n/en.json` | UI labels and accessibility texts |
+| `projects/projects.tsv` | Projects (generated from the Google Sheet, which is the real source of truth) |
+| `CV/cv.md` | Dutch CV as Markdown; `src/data/cv.json` is generated from it |
+| `scripts/` | Build, CV conversion and sheet-sync helpers |
 
-## Building and Running
+## Build and Deploy
 
-### Installation
-
-To install the project's dependencies, run:
-
-```bash
-pnpm install
-```
-
-### Development
-
-To run the app in development mode, install dependencies first and then use:
+Build and deploy run **only in GitHub Actions**. `node_modules/` is not installed locally — the repository is ~13 MB.
 
 ```bash
-pnpm install
-pnpm start
+node scripts/build-prototype.mjs   # assemble dist/ — no dependencies needed
 ```
 
-This will open the website at [http://localhost:3000](http://localhost:3000). Note that the published site is built from `prototype/` via `build:prototype`, not from the React app — `pnpm start` shows the React version, which is kept for development but is not what GitHub Pages serves.
+The three workflows under `.github/workflows/` all do `pnpm install → build:prototype → deploy:prototype`:
 
-### Updating Content
+- `deploy.yml` — push to `main`
+- `update-cv.yml` — push to `main` on `CV/**`; regenerates `cv.json` first
+- `deploy-from-url.yml` — manual dispatch; fetches the TSV from the Google Sheet
 
-To update the projects displayed on the website:
-
-1.  Edit the `projects/projects.tsv` file.
-2.  Run the following command to update the local data:
-
-    ```bash
-    pnpm run update-projects
-    ```
-
-### Deployment
-
-Build and deploy run **only in GitHub Actions**. Pushing to `main` triggers `deploy.yml`; `update-cv.yml` also rebuilds and deploys when `CV/**` changes; `deploy-from-url.yml` pulls the TSV from the Google Sheet and deploys. Nothing is published from a local machine.
-
-To update content and publish, commit and push — or run `pnpm run sheet:write` from the sheet side. There is no local deploy path.
-
-### Testing
-
-To run the tests, use:
-
-```bash
-pnpm test
-```
+There is no `pnpm start`, `pnpm build`, `pnpm test` or `pnpm run deploy`. A previous CRA/React implementation was removed on 2026-11-14; it was never deployed, and it duplicated the content pipeline.
 
 ## Development Conventions
 
-*   **Styling:** The project uses Bootstrap for styling, as indicated by the `bootstrap` dependency in `package.json` and the use of Bootstrap classes in the components.
-*   **Data Management:** Project data is managed in a structured TSV file (`projects/projects.tsv`), which is then processed into a JSON file for the application to consume. This separation of data and presentation is a key architectural feature.
-*   **Component Structure:** The application is structured into reusable React components located in the `src/components` directory.
+*   **Styling:** hand-written CSS in `prototype/styles.css`, responsive through four media queries (down to 520px). No CSS framework.
+*   **Data management:** content lives in JSON and TSV, not in the markup. `app.js` fetches them at runtime, so a text change never requires touching layout code.
+*   **No framework:** `app.js` renders by building DOM nodes directly. Keep it dependency-free — `build-prototype.mjs` uses only `node:fs` and `node:path`, and that is what keeps CI fast.
+*   **Content sources are the contract.** `CONTENT_BASELINE.md` records which files are the source of truth and their SHA-256 hashes. Text changes require explicit approval; do not regenerate content files blindly.

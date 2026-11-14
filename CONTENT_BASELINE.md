@@ -34,6 +34,6 @@
 - The skills section was refreshed on 2026-11-14 with Karel's supplied list, with a few corrections: FastAPI is grouped under Python, `LibreOffice` is spelled correctly, and outdated/duplicated tool entries were removed.
 - `projects/projects.tsv` was regenerated from the Google Sheet by the sheet-write pipeline (`de2a2b8`, 2026-11-14); the hash above is post-rebase. The sheet remains the source of truth — do not hand-edit the TSV.
 - The live links for Vegan BioTech Report and Longevity Food Health were corrected to their lowercase GitHub Pages URLs on 2026-11-14; GitHub Pages paths are case-sensitive.
-- The live site still serves the old profile and skills until V2 is merged. That difference is intentional.
+- The live site was serving the old profile and skills until V2 went live. Since 2026-11-14 it serves the current content in this baseline.
 - Projects still match the live site verbatim; the remaining CV fields are unchanged apart from the approved profile and skills updates.
 - The English CV is maintained as `src/data/cv-eng.json`; it is not a literal translation of `CV/cv.md` and must not be regenerated from it.

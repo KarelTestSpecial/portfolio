@@ -4,62 +4,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.126",
-    "@types/react": "^19.1.11",
-    "@types/react-dom": "^19.1.7",
-    "bootstrap": "^5.3.7",
-    "csv-parse": "^5.5.6",
-    "react": "^19.1.1",
-    "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.1.1",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "csv-parse": "^5.5.6"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "prebuild": "node scripts/update-projects.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "update-projects": "node scripts/update-projects.js",
     "update-projects-from-url": "node scripts/update-projects-from-url.js",
     "update-cv": "node scripts/update-cv.js",
     "build:prototype": "node scripts/build-prototype.mjs",
     "deploy:prototype": "gh-pages -d dist",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d build",
-    "update-and-deploy": "pnpm run update-projects && pnpm run build && pnpm run deploy",
     "sheet:sync": "node scripts/sheet-sync.js",
     "sheet:write": "node scripts/sheet-write.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "gh-pages": "^6.3.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["core-js", "core-js-pure"]
   }
 }
