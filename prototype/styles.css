@@ -12,6 +12,19 @@
   --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
   --max: 1440px;
   --pad: clamp(20px, 4vw, 64px);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --paper: #11110f;
+  --paper-2: #1b1b18;
+  --ink: #f3f0e8;
+  --muted: #aaa398;
+  --line: rgba(243, 240, 232, 0.18);
+  --line-light: rgba(17, 17, 15, 0.22);
+  --accent: #8b98ff;
+  --accent-2: #ff7a4d;
+  color-scheme: dark;
 }
 
 * {
@@ -43,6 +56,11 @@ body::before {
   opacity: 0.16;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
+}
+
+[data-theme="dark"] body::before {
+  opacity: 0.08;
+  mix-blend-mode: screen;
 }
 
 ::selection {
@@ -162,6 +180,44 @@ button {
   transition: border-color 160ms ease, background 160ms ease;
 }
 
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--ink);
+}
+
+.theme-icon {
+  width: 10px;
+  height: 10px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: linear-gradient(90deg, currentColor 50%, transparent 50%);
+  transition: transform 240ms ease;
+}
+
+[data-theme="dark"] .theme-icon {
+  transform: rotate(180deg);
+}
+
 .lang-toggle:hover {
   border-color: var(--ink);
 }
@@ -255,6 +311,39 @@ main {
   font-size: clamp(18px, 1.5vw, 24px);
   line-height: 1.35;
   letter-spacing: -0.02em;
+}
+
+.hero-figure {
+  position: relative;
+  justify-self: center;
+  width: 280px;
+  height: 230px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  box-shadow: 12px 12px 0 color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.hero-figure img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.hero-figure:hover img {
+  transform: scale(1.035);
+}
+
+.hero-figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--paper) 40%, transparent);
+  mix-blend-mode: screen;
 }
 
 .hero-orbit {
@@ -418,6 +507,51 @@ main {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.capability-band {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.capability-card {
+  position: relative;
+  min-height: 230px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+}
+
+.capability-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.capability-card:hover img {
+  transform: scale(1.035);
+}
+
+.capability-card figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px;
+  background: linear-gradient(transparent, rgba(17, 17, 15, 0.78));
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .filters {
@@ -992,6 +1126,11 @@ main {
     display: none;
   }
 
+  .hero-figure {
+    width: 240px;
+    height: 200px;
+  }
+
   .project-row {
     grid-template-columns: 44px minmax(0, 1fr) 170px;
   }
@@ -1026,8 +1165,23 @@ main {
     gap: 24px;
   }
 
+  .hero-figure {
+    justify-self: start;
+    width: min(100%, 380px);
+    height: 220px;
+    grid-row: 2;
+  }
+
   .scroll-cue {
     justify-self: start;
+  }
+
+  .capability-band {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-card {
+    min-height: 190px;
   }
 
   .section-head {
@@ -1116,6 +1270,10 @@ main {
 @media (max-width: 520px) {
   .hero-meta {
     gap: 14px;
+  }
+
+  .hero-figure {
+    height: 180px;
   }
 
   .brand-role {

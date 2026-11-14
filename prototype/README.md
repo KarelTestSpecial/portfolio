@@ -32,3 +32,5 @@ The content baseline and hashes are in `../CONTENT_BASELINE.md`.
 - No build step and no dependencies.
 - The prototype is not deployed to GitHub Pages. The live site remains unchanged.
 - The current `main` app is still the React/CRA implementation; this prototype is the visual direction for V2.
+- Dark mode is available from the header toggle and persists in `localStorage` (`portfolio-theme`).
+- Generated editorial visuals live in `assets/` and are served as optimized JPGs.

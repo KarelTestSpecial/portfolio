@@ -1,5 +1,6 @@
 const state = {
   lang: localStorage.getItem("portfolio-lang") || "nl",
+  theme: localStorage.getItem("portfolio-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"),
   translations: { nl: null, en: null },
   cv: { nl: null, en: null },
   projects: [],
@@ -86,6 +87,20 @@ function renderProjectFilters() {
     ? `${state.projects.length} projecten`
     : `${state.projects.length} projects`;
   $("#project-count").textContent = projectCount;
+
+  const capabilityLabels = {
+    website: t("projects.websites"),
+    chrome: t("projects.chromeExtensions"),
+    github: t("projects.githubProjects"),
+  };
+
+  $$(".capability-card").forEach((card) => {
+    const type = card.dataset.capability;
+    const label = $("[data-capability-label]", card);
+    const count = $("[data-capability-count]", card);
+    if (label) label.textContent = capabilityLabels[type] || type;
+    if (count) count.textContent = String(counts[type] || 0).padStart(2, "0");
+  });
 }
 
 function renderProjects() {
@@ -250,6 +265,7 @@ function renderContact() {
 
 function render() {
   renderLanguage();
+  renderTheme();
   renderProjects();
   renderAbout();
   renderAthena();
@@ -261,6 +277,26 @@ function setLanguage(lang) {
   state.lang = lang;
   localStorage.setItem("portfolio-lang", lang);
   render();
+}
+
+function renderTheme() {
+  const isDark = state.theme === "dark";
+  document.documentElement.dataset.theme = state.theme;
+  const toggle = $(".theme-toggle");
+  const label = $("[data-theme-label]");
+  if (toggle) toggle.setAttribute("aria-pressed", String(isDark));
+  if (label) {
+    label.textContent = isDark
+      ? (state.lang === "nl" ? "Licht" : "Light")
+      : (state.lang === "nl" ? "Donker" : "Dark");
+  }
+}
+
+function setTheme(theme) {
+  if (theme !== "light" && theme !== "dark") return;
+  state.theme = theme;
+  localStorage.setItem("portfolio-theme", theme);
+  renderTheme();
 }
 
 async function loadData() {
@@ -282,12 +318,18 @@ $(".lang-toggle").addEventListener("click", () => {
   setLanguage(state.lang === "nl" ? "en" : "nl");
 });
 
+$(".theme-toggle").addEventListener("click", () => {
+  setTheme(state.theme === "dark" ? "light" : "dark");
+});
+
 $("#filters").addEventListener("click", (event) => {
   const button = event.target.closest(".filter");
   if (!button) return;
   state.filter = button.dataset.filter;
   renderProjects();
 });
+
+renderTheme();
 
 loadData().catch((error) => {
   console.error(error);
