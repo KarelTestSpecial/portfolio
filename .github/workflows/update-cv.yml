@@ -8,6 +8,12 @@ on:
       - 'CV/**'
   workflow_dispatch:
 
+# Eén deploy per keer — zie deploy.yml. Deze workflow deployt zelf, omdat zijn
+# eigen token-commit (chore: Update data files) geen nieuwe workflow triggert.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
 jobs:
   update-cv:
     runs-on: ubuntu-latest
@@ -34,9 +40,6 @@ jobs:
 
       - name: Update CV data
         run: pnpm run update-cv
-
-      - name: Update projects data
-        run: pnpm run update-projects
 
       - name: Commit and push changes
         run: |

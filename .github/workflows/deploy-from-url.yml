@@ -7,6 +7,11 @@ on:
         description: 'URL of the TSV file (optional; defaults to the content of the `tsv-url` file)'
         required: false
 
+# Eén deploy per keer — zie deploy.yml.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -53,7 +58,6 @@ jobs:
 
       - name: Generate data, Build and Deploy
         run: |
-          pnpm run update-projects
           pnpm run build:prototype
           pnpm run deploy:prototype
         env:

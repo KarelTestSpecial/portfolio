@@ -28,9 +28,13 @@ Build and deploy run **only in GitHub Actions**. There is no local deploy path, 
 
 | Workflow | Trigger | What it does |
 |---|---|---|
-| `deploy.yml` | push to `main` | `build:prototype` → `deploy:prototype` |
+| `deploy.yml` | push to `main` (except `CV/**`) | `build:prototype` → `deploy:prototype` |
 | `update-cv.yml` | push to `main` on `CV/**` | regenerate `cv.json` → commit → build → deploy |
 | `deploy-from-url.yml` | manual dispatch | fetch TSV from the sheet → commit → build → deploy |
+
+All three share the `gh-pages-deploy` concurrency group, so only one deploy runs at a time. Without that they overwrite each other on `gh-pages`, and the last one wins with whichever build finished last — not necessarily the newest content.
+
+`update-cv.yml` deliberately deploys itself rather than letting `deploy.yml` pick it up. It commits `cv.json` with `GITHUB_TOKEN`, and a token commit does not trigger a new workflow — so if `deploy.yml` were the only deployer, a CV change would sit un-published. That is also why `deploy.yml` ignores `CV/**`: otherwise it would build with the old `cv.json` and publish stale content.
 
 To publish: commit and push. To publish from the sheet side: the Apps Script menu item, or `pnpm run sheet:write` followed by `sheet:sync` and a push.
 

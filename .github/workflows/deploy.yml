@@ -3,7 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    # CV/** wordt door update-cv.yml gedaan: dat regeneert cv.json en pusht dat
+    # met GITHUB_TOKEN. Zo'n token-commit triggert géén nieuwe workflow, dus als
+    # deze workflow ook op CV/** zou vuren, deployde hij de OUDE cv.json.
+    paths-ignore:
+      - 'CV/**'
   workflow_dispatch:
+
+# Eén deploy per keer. Zonder dit schrijven update-cv.yml en deze workflow
+# gelijktijdig naar gh-pages, en dan wint de laatste — met een oudere build.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:

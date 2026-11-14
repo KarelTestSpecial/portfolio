@@ -19,10 +19,10 @@ Build and deploy run **only in GitHub Actions**. `node_modules/` is not installe
 node scripts/build-prototype.mjs   # assemble dist/ — no dependencies needed
 ```
 
-The three workflows under `.github/workflows/` all do `pnpm install → build:prototype → deploy:prototype`:
+The three workflows under `.github/workflows/` all do `pnpm install → build:prototype → deploy:prototype`, and share the `gh-pages-deploy` concurrency group so only one deploy runs at a time:
 
-- `deploy.yml` — push to `main`
-- `update-cv.yml` — push to `main` on `CV/**`; regenerates `cv.json` first
+- `deploy.yml` — push to `main`, except `CV/**`
+- `update-cv.yml` — push to `main` on `CV/**`; regenerates `cv.json`, commits it with `GITHUB_TOKEN`, then deploys itself (a token commit triggers no workflow, so it cannot rely on `deploy.yml`)
 - `deploy-from-url.yml` — manual dispatch; fetches the TSV from the Google Sheet
 
 There is no `pnpm start`, `pnpm build`, `pnpm test` or `pnpm run deploy`. A previous CRA/React implementation was removed on 2026-11-14; it was never deployed, and it duplicated the content pipeline.
