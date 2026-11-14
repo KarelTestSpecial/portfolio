@@ -41,13 +41,16 @@ function parseCvMarkdown(md) {
     const contactSection = md.split('---')[1].trim();
     const contactLines = contactSection.split('\n').filter(line => line.trim() !== '');
     cv.name = cleanLine(contactLines[0]);
-    const detailsLine = contactLines[1];
-    const addressMatch = detailsLine.includes('|') ? detailsLine.match(/^([^|]+)/) : null;
+    const detailsLine = contactLines[1] || '';
+    // Enkel een echt adressegment vóór de eerste '|' is een adres; begint het
+    // met een link of bevat het '@', dan is het contactinfo en geen adres.
+    const addressSegment = detailsLine.includes('|') ? detailsLine.split('|')[0].trim() : '';
+    const addressMatch = addressSegment && !/[@[\]()]/.test(addressSegment) ? addressSegment : null;
     const emailMatch = detailsLine.match(/\[(.*?@.*?)\]/);
     const linkedinMatch = detailsLine.match(/\[(linkedin.com.*?)\]/);
     const githubMatch = detailsLine.match(/\[(github.com.*?)\]/);
     cv.contact = {
-        address: addressMatch ? addressMatch[1].trim() : '',
+        address: addressMatch ? cleanLine(addressMatch) : '',
         email: emailMatch ? emailMatch[1].trim() : '',
         linkedin: linkedinMatch ? linkedinMatch[1].trim() : '',
         github: githubMatch ? githubMatch[1].trim() : '',
@@ -187,7 +190,7 @@ try {
     const cvData = parseCvMarkdown(markdownContent);
     const nlJsonPath = path.join(dataDir, 'cv.json');
     console.log(`Writing to ${nlJsonPath}...`);
-    fs.writeFileSync(nlJsonPath, JSON.stringify(cvData, null, 2));
+    fs.writeFileSync(nlJsonPath, JSON.stringify(cvData, null, 2) + '\n');
     console.log('Successfully updated cv.json (NL)!');
 } catch (error) {
     console.error('Failed to update cv.json (NL):', error.message);
@@ -203,7 +206,7 @@ if (fs.existsSync(engMdPath)) {
         const cvData = parseCvMarkdown(engMd);
         const engJsonPath = path.join(dataDir, 'cv-eng.json');
         console.log(`Writing to ${engJsonPath}...`);
-        fs.writeFileSync(engJsonPath, JSON.stringify(cvData, null, 2));
+        fs.writeFileSync(engJsonPath, JSON.stringify(cvData, null, 2) + '\n');
         console.log('Successfully updated cv-eng.json!');
     } catch (error) {
         console.error('Failed to update cv-eng.json:', error.message);
