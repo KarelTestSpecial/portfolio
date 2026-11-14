@@ -37,5 +37,17 @@
   "contact.text": "Open for high-impact freelance projects. Reach me at",
   "footer.copyright": "© 2025 Karel Decherf",
   "lang.nl": "NL",
-  "lang.en": "EN"
+  "lang.en": "EN",
+  "filters.all": "All",
+  "a11y.brand": "Karel Decherf — home",
+  "a11y.nav": "Main navigation",
+  "a11y.theme": "Change theme",
+  "a11y.lang": "Change language",
+  "a11y.capabilities": "Project categories",
+  "a11y.filterWebsite": "Filter websites",
+  "a11y.filterChrome": "Filter Chrome extensions",
+  "a11y.filterGithub": "Filter GitHub projects",
+  "a11y.filters": "Filter projects",
+  "a11y.athenaVisit": "Visit {name}",
+  "a11y.athenaShot": "Screenshot of {name}"
 }

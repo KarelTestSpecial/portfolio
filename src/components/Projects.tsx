@@ -5,6 +5,8 @@ import { useLanguage } from '../i18n/LanguageContext';
 
 interface Project {
   name: string;
+  /** Engelse naam uit de `name_en`-kolom; ontbreekt ze, dan blijft `name` (NL) staan. */
+  nameEn?: string;
   description: string;
   /** Engelse tekst uit de `description_en`-kolom; ontbreekt ze, dan blijft `description` (NL) staan. */
   descriptionEn?: string;
@@ -19,7 +21,8 @@ const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const { t, language } = useLanguage();
 
-  // Eén plek waar de projectbeschrijving per taal gekozen wordt (NL = `description`, EN = `description_en`).
+  // Eén plek waar de projecttekst per taal gekozen wordt (NL = `name`/`description`, EN = `*_en`).
+  const localizedName = (project: Project) => (language === 'en' ? project.nameEn : '') || project.name;
   const localizedDescription = (project: Project) =>
     (language === 'en' ? project.descriptionEn : '') || project.description;
 
@@ -38,7 +41,7 @@ const Projects: React.FC = () => {
     <div className="col d-flex align-items-stretch" key={index}>
       <div className="card shadow-sm" onClick={() => handleShowModal(project)}>
         <div className="card-body d-flex flex-column">
-          <h5 className="card-title">{project.name}</h5>
+          <h5 className="card-title">{localizedName(project)}</h5>
           <p className="card-text">{localizedDescription(project)}</p>
           <div className="mt-auto">
             {type === 'chrome' && project.liveLink && project.status === 'active' && (
@@ -102,7 +105,7 @@ const Projects: React.FC = () => {
       {selectedProject && (
         <Modal show={showModal} onHide={handleCloseModal} centered>
           <Modal.Header closeButton>
-            <Modal.Title>{selectedProject.name}</Modal.Title>
+            <Modal.Title>{localizedName(selectedProject)}</Modal.Title>
           </Modal.Header>
           <Modal.Body>{localizedDescription(selectedProject)}</Modal.Body>
           <Modal.Footer>

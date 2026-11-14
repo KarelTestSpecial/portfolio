@@ -12,7 +12,7 @@ The website has three main ways to update the content: via **Google Sheets**, by
 
 You can update the website directly from your project management Google Sheet using a custom menu.
 
-> **Kolommen in de sheet:** tabblad 1 heeft naast `type`, `name`, `githubLink`, `liveLink`, `status` en `description` (Nederlands) ook een kolom **`description_en`** (Engels). Ontbreekt die kolom of is een cel leeg, dan toont de site gewoon de Nederlandse tekst — de site breekt dus niet, maar de taalomschakeling levert dan geen Engels op.
+> **Kolommen in de sheet:** tabblad 1 heeft naast `type`, `name`, `githubLink`, `liveLink`, `status` en `description` (Nederlands) ook de kolommen **`description_en`** (Engelse beschrijving) en **`name_en`** (Engelse naam). Ontbreekt een van die twee of is een cel leeg, dan toont de site gewoon de Nederlandse tekst — de site breekt dus niet, maar de taalomschakeling levert dan geen Engels op.
 
 #### Setup Instructions:
 
@@ -142,8 +142,8 @@ It can take a few minutes for the changes to become visible on the live URL.
 
 The **first row** of `projects.tsv` contains the column headers. The order and exact spelling are **very important**.
 
-`type` | `name` | `githubLink` | `liveLink` | `status` | `description` | `description_en`
---- | --- | --- | --- | --- | --- | ---
+`type` | `name` | `githubLink` | `liveLink` | `status` | `description` | `description_en` | `name_en`
+--- | --- | --- | --- | --- | --- | --- | ---
 
 ### Explanation:
 
@@ -151,7 +151,7 @@ The **first row** of `projects.tsv` contains the column headers. The order and e
     *   `chrome` (for a Chrome Extension)
     *   `github` (for a GitHub Project)
     *   `website` (for another website)
-*   **name**: The name of your project (e.g., "My Cool App").
+*   **name**: The name of your project (e.g., "My Cool App"), in **Dutch**.
 *   **githubLink**: The link to the GitHub repository.
 *   **liveLink**: The main link for the project.
     *   For `chrome`, this is the link to the Chrome Web Store.
@@ -159,9 +159,12 @@ The **first row** of `projects.tsv` contains the column headers. The order and e
     *   For `github`, this is an optional live demo.
 *   **status**: (Optional) Determines if the "Live Demo" button is shown. Set to `active` to show the button. Any other value (or an empty cell) hides the button.
 *   **description**: The **Dutch** description (this is the original column — it is *not* renamed, so older sheets keep working).
-*   **description_en**: The **English** description. Optional: if a cell is empty, the site falls back to the Dutch text instead of showing a blank.
+*   **description_en**: The **English** description.
+*   **name_en**: The **English** project name.
 
-Both descriptions are shown according to the language toggle: `NL` shows `description`, `EN` shows `description_en`. The build script warns about projects that still lack `description_en`.
+`description` and `name` are the Dutch values; `description_en` and `name_en` are optional. If an English cell is empty, the site falls back to the Dutch text instead of showing a blank, so an incomplete sheet never breaks the page. Both descriptions and names follow the language toggle: `NL` shows the Dutch columns, `EN` the English ones. The build script warns about projects that still lack either English column.
+
+Accessibility texts (`aria-label`, image `alt`) live in `src/i18n/nl.json` / `en.json` under the `a11y.*` keys and are applied at runtime via `data-i18n-aria` / `data-i18n-alt`.
 
 ---
 
