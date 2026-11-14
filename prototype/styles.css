@@ -13,16 +13,16 @@
   --max: 1440px;
   --pad: clamp(20px, 4vw, 64px);
   --fs-hero: clamp(70px, 13.2vw, 208px);
-  --fs-display: clamp(40px, 5vw, 76px);
-  --fs-profile: clamp(28px, 3vw, 46px);
-  --fs-project: clamp(25px, 2.2vw, 36px);
-  --fs-showcase: clamp(23px, 1.9vw, 31px);
-  --fs-contact: clamp(30px, 4.2vw, 64px);
+  --fs-display: clamp(38px, 4.4vw, 66px);
+  --fs-profile: clamp(19px, 1.5vw, 22px);
+  --fs-project: clamp(23px, 2vw, 32px);
+  --fs-showcase: clamp(21px, 1.7vw, 28px);
+  --fs-contact: clamp(28px, 3.6vw, 54px);
   --fs-body: 16px;
   --fs-small: 15px;
   --fs-micro: 11px;
   --fs-tag: 10px;
-  --fs-brand: 22px;
+  --fs-brand: 20px;
   color-scheme: light;
 }
 
@@ -629,8 +629,8 @@ main {
   font-family: var(--serif);
   font-size: var(--fs-display);
   font-weight: 400;
-  line-height: 0.94;
-  letter-spacing: -0.035em;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
   text-wrap: balance;
 }
 
@@ -970,10 +970,12 @@ main {
 
 .profile {
   margin: 0;
-  font-family: var(--serif);
+  max-width: 65ch;
+  font-family: var(--sans);
   font-size: var(--fs-profile);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
   text-wrap: pretty;
 }
 
@@ -1259,8 +1261,8 @@ main {
   justify-self: end;
   font-family: var(--serif);
   font-size: var(--fs-contact);
-  line-height: 0.95;
-  letter-spacing: -0.035em;
+  line-height: 1;
+  letter-spacing: -0.025em;
   border-bottom: 2px solid var(--ink);
   padding-bottom: 8px;
   transition: color 180ms ease, border-color 180ms ease;
