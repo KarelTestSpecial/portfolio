@@ -34,6 +34,13 @@ function typeLabel(type) {
   return { website: "Website", chrome: "Chrome", github: "GitHub" }[type] || type;
 }
 
+// Projectbeschrijving per taal: `description` = Nederlands, `description_en` = Engels.
+// Ontbreekt de Engelse kolom (of is ze leeg), dan blijft de Nederlandse tekst staan.
+function projectDescription(project) {
+  const english = (project.description_en || "").trim();
+  return state.lang === "en" && english ? english : project.description;
+}
+
 function projectLinks(project) {
   const links = [];
   const live = project.liveLink;
@@ -143,7 +150,7 @@ function renderProjects() {
         <span class="project-num">${String(projectNumber).padStart(2, "0")}</span>
         <div class="project-main">
           <h3 class="project-title">${esc(project.name)}</h3>
-          <p class="project-description">${esc(project.description)}</p>
+          <p class="project-description">${esc(projectDescription(project))}</p>
         </div>
         <div class="project-meta">
           <span class="project-tag">${esc(typeLabel(project.type))}</span>
