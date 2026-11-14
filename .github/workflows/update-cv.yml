@@ -51,10 +51,10 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-      - name: Build
-        run: pnpm run build
+      - name: Build prototype
+        run: pnpm run build:prototype
 
-      - name: Deploy to GitHub Pages
-        run: pnpm run deploy
+      - name: Deploy prototype to GitHub Pages
+        run: pnpm run deploy:prototype
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

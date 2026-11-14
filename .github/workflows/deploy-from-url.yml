@@ -54,7 +54,7 @@ jobs:
       - name: Generate data, Build and Deploy
         run: |
           pnpm run update-projects
-          pnpm run build
-          pnpm run deploy
+          pnpm run build:prototype
+          pnpm run deploy:prototype
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
