@@ -34,6 +34,13 @@ function typeLabel(type) {
   return { website: "Website", chrome: "Chrome", github: "GitHub" }[type] || type;
 }
 
+// Projectnaam per taal: `name` = Nederlands, `name_en` = Engels.
+// Ontbreekt de Engelse kolom (of is ze leeg), dan blijft de Nederlandse naam staan.
+function projectName(project) {
+  const english = (project.name_en || "").trim();
+  return state.lang === "en" && english ? english : project.name;
+}
+
 // Projectbeschrijving per taal: `description` = Nederlands, `description_en` = Engels.
 // Ontbreekt de Engelse kolom (of is ze leeg), dan blijft de Nederlandse tekst staan.
 function projectDescription(project) {
@@ -66,6 +73,13 @@ function renderLanguage() {
   $$("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
+  // Toegankelijkheidsteksten (aria-label / alt) horen net zo goed mee te schakelen.
+  $$("[data-i18n-aria]").forEach((node) => {
+    node.setAttribute("aria-label", t(node.dataset.i18nAria));
+  });
+  $$("[data-i18n-alt]").forEach((node) => {
+    node.setAttribute("alt", t(node.dataset.i18nAlt));
+  });
   $$("[data-lang-label]").forEach((node) => {
     node.classList.toggle("is-active", node.dataset.langLabel === state.lang);
   });
@@ -85,7 +99,7 @@ function renderProjectFilters() {
   $$(".filter").forEach((button) => {
     const filter = button.dataset.filter;
     const count = filter === "all" ? state.projects.length : counts[filter] || 0;
-    const countNode = $("span", button);
+    const countNode = $(".filter-count", button);
     if (countNode) countNode.textContent = String(count).padStart(2, "0");
     button.classList.toggle("is-active", filter === state.filter);
   });
@@ -145,11 +159,11 @@ function renderProjects() {
 
       row.innerHTML = `
         ${primaryLink
-          ? `<a class="project-row-link" href="${esc(primaryLink.href)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(project.name)} — ${esc(primaryLink.label)}"></a>`
+          ? `<a class="project-row-link" href="${esc(primaryLink.href)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(projectName(project))} — ${esc(primaryLink.label)}"></a>`
           : ""}
         <span class="project-num">${String(projectNumber).padStart(2, "0")}</span>
         <div class="project-main">
-          <h3 class="project-title">${esc(project.name)}</h3>
+          <h3 class="project-title">${esc(projectName(project))}</h3>
           <p class="project-description">${esc(projectDescription(project))}</p>
         </div>
         <div class="project-meta">
@@ -264,8 +278,8 @@ function renderAthena() {
   $("#showcase-grid").innerHTML = sites
     .map(
       (site, index) => `
-        <a class="showcase-card" href="${esc(site.url)}" target="_blank" rel="noopener noreferrer" aria-label="Bezoek ${esc(site.name)}">
-          <img class="showcase-image" src="${esc(site.image)}" alt="Screenshot van ${esc(site.name)}" loading="lazy">
+        <a class="showcase-card" href="${esc(site.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(t("a11y.athenaVisit").replace("{name}", site.name))}">
+          <img class="showcase-image" src="${esc(site.image)}" alt="${esc(t("a11y.athenaShot").replace("{name}", site.name))}" loading="lazy">
           <span class="showcase-overlay"></span>
           <span class="showcase-card-top"><span>${String(index + 1).padStart(2, "0")}</span><span>${esc(site.category)}</span></span>
           <span class="showcase-card-body">
