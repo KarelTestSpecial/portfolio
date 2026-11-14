@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
+// Kolommen in projects.tsv (SPC: de Google Sheet is de bron, zie README):
+//   type, name, githubLink, liveLink, status, description (= NL), description_en (= EN)
+// `description` blijft de Nederlandse tekst (bestaande kolom, niet hernoemd);
+// `description_en` is optioneel: ontbreekt ze, dan valt de site terug op het Nederlands.
+
 const inputPath = path.join(__dirname, '..', 'projects', 'projects.tsv');
 const outputPath = path.join(__dirname, '..', 'src', 'data', 'projects.json');
 
@@ -10,6 +15,10 @@ try {
     const categorizedProjects = categorizeProjects(projects);
     fs.writeFileSync(outputPath, JSON.stringify(categorizedProjects, null, 2));
     console.log(`Successfully updated projects.json with ${projects.length} projects.`);
+    const zonderEngels = projects.filter(p => !p.description_en).map(p => p.name);
+    if (zonderEngels.length) {
+        console.warn(`⚠️  ${zonderEngels.length} project(en) zonder description_en: ${zonderEngels.join(' · ')}`);
+    }
 } catch (e) {
     console.error('Error processing data:', e.message);
 }
@@ -43,6 +52,7 @@ function categorizeProjects(projects) {
         const project = {
             name: p.name,
             description: p.description,
+            descriptionEn: p.description_en || '',
             githubLink: p.githubLink,
             liveLink: p.liveLink,
             status: p.status

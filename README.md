@@ -12,6 +12,8 @@ The website has three main ways to update the content: via **Google Sheets**, by
 
 You can update the website directly from your project management Google Sheet using a custom menu.
 
+> **Kolommen in de sheet:** tabblad 1 heeft naast `type`, `name`, `githubLink`, `liveLink`, `status` en `description` (Nederlands) ook een kolom **`description_en`** (Engels). Ontbreekt die kolom of is een cel leeg, dan toont de site gewoon de Nederlandse tekst — de site breekt dus niet, maar de taalomschakeling levert dan geen Engels op.
+
 #### Setup Instructions:
 
 1.  **Generate a GitHub Personal Access Token (PAT):**
@@ -140,7 +142,7 @@ It can take a few minutes for the changes to become visible on the live URL.
 
 The **first row** of `projects.tsv` contains the column headers. The order and exact spelling are **very important**.
 
-`type` | `name` | `description` | `link` | `githubLink` | `liveLink` | `status`
+`type` | `name` | `githubLink` | `liveLink` | `status` | `description` | `description_en`
 --- | --- | --- | --- | --- | --- | ---
 
 ### Explanation:
@@ -150,14 +152,16 @@ The **first row** of `projects.tsv` contains the column headers. The order and e
     *   `github` (for a GitHub Project)
     *   `website` (for another website)
 *   **name**: The name of your project (e.g., "My Cool App").
-*   **description**: A short description of the project.
-*   **link**: The main link for the project.
+*   **githubLink**: The link to the GitHub repository.
+*   **liveLink**: The main link for the project.
     *   For `chrome`, this is the link to the Chrome Web Store.
     *   For `website`, this is the link to the website.
-    *   For `github`, this field is not required.
-*   **githubLink**: **Only** for `github` projects. The link to the GitHub repository.
-*   **liveLink**: **Only** for `github` projects. The link to a live demo of the project.
+    *   For `github`, this is an optional live demo.
 *   **status**: (Optional) Determines if the "Live Demo" button is shown. Set to `active` to show the button. Any other value (or an empty cell) hides the button.
+*   **description**: The **Dutch** description (this is the original column — it is *not* renamed, so older sheets keep working).
+*   **description_en**: The **English** description. Optional: if a cell is empty, the site falls back to the Dutch text instead of showing a blank.
+
+Both descriptions are shown according to the language toggle: `NL` shows `description`, `EN` shows `description_en`. The build script warns about projects that still lack `description_en`.
 
 ---
 

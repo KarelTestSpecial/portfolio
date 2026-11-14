@@ -6,6 +6,8 @@ import { useLanguage } from '../i18n/LanguageContext';
 interface Project {
   name: string;
   description: string;
+  /** Engelse tekst uit de `description_en`-kolom; ontbreekt ze, dan blijft `description` (NL) staan. */
+  descriptionEn?: string;
   liveLink?: string;
   githubLink?: string;
   status?: string;
@@ -15,7 +17,11 @@ const Projects: React.FC = () => {
   const { chromeExtensions, githubProjects, websites } = projectsData;
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // Eén plek waar de projectbeschrijving per taal gekozen wordt (NL = `description`, EN = `description_en`).
+  const localizedDescription = (project: Project) =>
+    (language === 'en' ? project.descriptionEn : '') || project.description;
 
   const handleShowModal = (project: Project) => {
     setSelectedProject(project);
@@ -33,7 +39,7 @@ const Projects: React.FC = () => {
       <div className="card shadow-sm" onClick={() => handleShowModal(project)}>
         <div className="card-body d-flex flex-column">
           <h5 className="card-title">{project.name}</h5>
-          <p className="card-text">{project.description}</p>
+          <p className="card-text">{localizedDescription(project)}</p>
           <div className="mt-auto">
             {type === 'chrome' && project.liveLink && project.status === 'active' && (
               <a href={project.liveLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>{t('projects.viewExtension')}</a>
@@ -98,7 +104,7 @@ const Projects: React.FC = () => {
           <Modal.Header closeButton>
             <Modal.Title>{selectedProject.name}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>{selectedProject.description}</Modal.Body>
+          <Modal.Body>{localizedDescription(selectedProject)}</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseModal}>
               {t('projects.close')}

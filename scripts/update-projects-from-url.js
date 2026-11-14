@@ -51,8 +51,15 @@ const fetchData = (url, redirectCount = 0) => {
           websites: records.filter(p => p.type === 'website'),
         };
 
+        // description_en optioneel: site valt terug op description (NL) als de kolom ontbreekt.
+        Object.values(projectsData).flat().forEach((p) => {
+          p.descriptionEn = p.description_en || '';
+        });
+
         fs.writeFileSync(PROJECTS_JSON_PATH, JSON.stringify(projectsData, null, 2));
         console.log(`Successfully updated ${PROJECTS_JSON_PATH} from ${initialUrl}`);
+        const zonderEngels = Object.values(projectsData).flat().filter((p) => !p.descriptionEn).map((p) => p.name);
+        if (zonderEngels.length) console.warn(`⚠️  ${zonderEngels.length} project(en) zonder description_en: ${zonderEngels.join(' · ')}`);
       } catch (err) {
         console.error('Error parsing TSV data:', err.message);
         // Log a snippet of the received data to help debug content issues (e.g., HTML instead of TSV)
