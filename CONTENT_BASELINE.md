@@ -21,7 +21,7 @@
 ```text
 94cd10d1649889447b3f5b8c613ca8f02aba8e4a7ec8ca48a9195f704e6c2cdd  src/data/cv.json
 76dd9dd5b1fbe36081512437e373c834fa4fa90e7cc384d24763e5ab18105dd3  src/data/cv-eng.json
-49c70d613623cd0206c2909517e26d7415effa1464e18b018e65b246004b1615  projects/projects.tsv
+fa6fc1661eae89e82dc3d38a477daf0ac3beec47f13e3fdfb2f9c6292f4a21ff  projects/projects.tsv
 5c8d69a03017e59d9c7f732d582d3596e9f6d9a233de3b45ac4c2d5c5b79ac93  src/i18n/en.json
 032e02fdb04c21249eb70b109d77deaaa7548fd66658c3cdd9bb90b6e2bccd58  src/i18n/nl.json
 0ef42c1dfa06c0e24ddedc131aecbcc1edbf4cd842af4901b54868b9c3a199d7  CV/cv.md
@@ -33,6 +33,7 @@
 - On 2026-11-14 (later, same day) Karel rewrote the AI sentence of the profile in all three files: "moderne ontwikkelingen rond AI-agents: context engineering, harness engineering en agentic architecture" (EN equivalent). "Generative engineering" and the separate "AI-architectuur" were dropped — "agentic architecture" covers the latter, and Karel explicitly wants to keep the sentence short so a tired reader keeps reading. The em-dash before "van retrieval" became a comma in both languages.
 - The skills section was refreshed on 2026-11-14 with Karel's supplied list, with a few corrections: FastAPI is grouped under Python, `LibreOffice` is spelled correctly, and outdated/duplicated tool entries were removed.
 - `projects/projects.tsv` was regenerated from the Google Sheet by the sheet-write pipeline (`de2a2b8`, 2026-11-14); the hash above is post-rebase. The sheet remains the source of truth — do not hand-edit the TSV.
+- On 2026-11-19 Karel removed the `YouTube Playlist Collector` project from both the Google Sheet and `projects/projects.tsv`; `sheet-sync.js --dry-run` confirms sheet and TSV are identical (19 projects). The hash above is updated accordingly.
 - The live links for Vegan BioTech Report and Longevity Food Health were corrected to their lowercase GitHub Pages URLs on 2026-11-14; GitHub Pages paths are case-sensitive.
 - The live site was serving the old profile and skills until V2 went live. Since 2026-11-14 it serves the current content in this baseline.
 - Projects still match the live site verbatim; the remaining CV fields are unchanged apart from the approved profile and skills updates.
